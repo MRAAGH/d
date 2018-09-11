@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp ~/.config/i3/config ./i3
+cp ~/.Xresources ./.Xresources
