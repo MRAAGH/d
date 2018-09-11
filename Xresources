@@ -49,3 +49,7 @@ URxvt*color15: #9E9E9C
 !! white
 !URxvt*color7:  #B2B2B2
 !URxvt*color15: #FFFFFF
+
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false

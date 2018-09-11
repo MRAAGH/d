@@ -1,4 +1,5 @@
 #!/bin/sh
 
 cp ./i3 ~/.config/i3/config 
-cp ./.Xresources ~/.Xresources 
+cp ./Xresources ~/.Xresources 
+cp ./vimrc ~/.vimrc
