@@ -53,3 +53,5 @@ URxvt*color15: #9E9E9C
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
+
+URxvt.saveLines: 10000

@@ -37,21 +37,21 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run -fn "xft:droid sans:bold:pixelsize=11:antialias=true:hinting=slight" -nb "#0f0f0f" -nf "#a6a6a6" -sb "#0f0f0f" -sf "#8f8fed"
-#bindsym 0xffe4 exec dmenu_run
-#bindsym 0xffe4 exec my-dmenu-run
-#bindsym $mod+0xffe4 exec my-dmenu-run-history
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn "xft:droid sans:bold:pixelsize=11:antialias=true:hinting=slight" -nb "#0f0f0f" -nf "#a6a6a6" -sb "#0f0f0f" -sf "#8f8fed"
+#bindsym 0xffe4 exec --no-startup-id dmenu_run
+#bindsym 0xffe4 exec --no-startup-id my-dmenu-run
+#bindsym $mod+0xffe4 exec --no-startup-id my-dmenu-run-history
 
 # just like dmenu_run, except it also appends the result to ~/.bash_history"
-bindsym $mod+0xffe4 exec dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+bindsym $mod+0xffe4 exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 # this one also grabs commands from ~/.bash_history, and appends the result ofc.
-bindsym 0xffe4 exec dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -140,17 +140,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-# alternatively, uoip
-#bindsym $mod+u workspace 1
-#bindsym $mod+o workspace 2
-#bindsym $mod+i workspace 3
-#bindsym $mod+p workspace 4
-# alternatively, yuiop
-#bindsym $mod+y workspace 5
-#bindsym $mod+u workspace 1
-bindsym $mod+u workspace prev_on_output
-bindsym $mod+i workspace next_on_output
-#bindsym $mod+p workspace 4
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -163,18 +152,17 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-# alternatively, uoip
-#bindsym $mod+Shift+u move container to workspace 1
-#bindsym $mod+Shift+o move container to workspace 2
-#bindsym $mod+Shift+i move container to workspace 3
-#bindsym $mod+Shift+p move container to workspace 4
-# alternatively, yuiop
-#bindsym $mod+Shift+y move container to workspace 5
-#bindsym $mod+Shift+u move container to workspace 1
-#TODO: custom logic instead of this wrapped nonsense
-bindsym $mod+Shift+u move container to workspace prev_on_output
-bindsym $mod+Shift+i move container to workspace next_on_output
-#bindsym $mod+Shift+p move container to workspace 4
+
+
+# u - one workspace back
+bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
+# U - move container one workspace back
+bindsym $mod+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
+
+# i - one workspace forward
+bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
+# I - move container one workspace forward
+bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -209,73 +197,73 @@ bar {
 # bindsym $mod+Shift+u move container to workspace prev; workspace prev
 
 # music commands
-bindsym $mod+Control+k exec "mpc prev"
-bindsym $mod+Control+j exec "mpc next"
-bindsym $mod+Control+h exec "mpc seek -10%"
-bindsym $mod+Control+l exec "mpc seek +10%"
-bindsym $mod+Control+u exec "mpc seek -00:01:00"
-bindsym $mod+Control+p exec "mpc seek +00:01:00"
-bindsym $mod+Control+i exec "mpc seek -00:00:10"
-bindsym $mod+Control+o exec "mpc seek +00:00:10"
-bindsym $mod+Control+comma exec "mpc toggle"
-bindsym $mod+Control+period exec "mpc stop"
-bindsym $mod+Control+Delete exec "mpc del 0"
-bindsym $mod+Control+slash exec "mpc single off"
-bindsym $mod+Control+m exec "mpc single on"
-#bindsym $mod+Control+equal exec amixer -q set Master 4%+ unmute
-bindsym $mod+Control+equal exec amixer -q set Master 2dB+ unmute
-bindsym $mod+Control+minus exec amixer -q set Master 2dB- unmute
+bindsym $mod+Control+k exec --no-startup-id "mpc prev"
+bindsym $mod+Control+j exec --no-startup-id "mpc next"
+bindsym $mod+Control+h exec --no-startup-id "mpc seek -10%"
+bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
+bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:01:00"
+bindsym $mod+Control+p exec --no-startup-id "mpc seek +00:01:00"
+bindsym $mod+Control+i exec --no-startup-id "mpc seek -00:00:10"
+bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:00:10"
+bindsym $mod+Control+comma exec --no-startup-id "mpc toggle"
+bindsym $mod+Control+period exec --no-startup-id "mpc stop"
+bindsym $mod+Control+Delete exec --no-startup-id "mpc del 0"
+bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
+bindsym $mod+Control+m exec --no-startup-id "mpc single on"
+#bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 4%+ unmute
+bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym $mod+Control+minus exec --no-startup-id amixer -q set Master 2dB- unmute
 
 # open music player in terminal
 #bindsym $mod+Control+apostrophe exec --no-startup-id $term -e ncmpc
-#bindsym $mod+apostrophe exec --no-startup-id i3-msg 'workspace 10; exec gnome-terminal -e mp'
+#bindsym $mod+apostrophe exec --no-startup-id i3-msg 'workspace 10; exec --no-startup-id gnome-terminal -e mp'
 
 
 # TODO: something else than mod5+backspace pls
 # a different caps lock
-bindsym Mod5+BackSpace exec xdotool key Caps_Lock
+bindsym Mod5+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
 # HALT ALL THE THINGS
-bindsym $mod+Mod1+Control+Return exec halt-scripts
+bindsym $mod+Mod1+Control+Return exec --no-startup-id halt-scripts
 
 # lock screen
-# bindsym $mod+o exec "i3lock -c 101820 -u"
-bindsym $mod+x exec "i3lock -i ~/.lockbg -t -f -e"
+# bindsym $mod+o exec --no-startup-id "i3lock -c 101820 -u"
+bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
 
 
 # scrot - root
-#bindsym Print exec scrot -e 'mv $f ~/pict/scr'
+#bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pict/scr'
 # scrot - select window or rectangle
-#bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/pict/scr/'
+#bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/pict/scr/'
 # scrot & gimp - root
-#bindsym Control+Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+#bindsym Control+Print exec --no-startup-id scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
-#bindsym --release Shift+Control+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
+#bindsym --release Shift+Control+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec --no-startup-id xfce4-screenshooter
 
 # move workspaces between screens
 bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
 
 # cut and uncut ethernet
-bindsym Control+KP_Subtract exec sudo /sbin/ifconfig enp4s0 down
-bindsym Control+KP_Add exec sudo /sbin/ifconfig enp4s0 up
+bindsym Control+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
+bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 # txt with key bindings
-bindsym $mod+bracketright exec ~/.bin/txth
-#bindsym $mod+bracketleft exec ~/.bin/txt
+bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
+#bindsym $mod+bracketleft exec --no-startup-id ~/.bin/txt
 
 # firefox with keybindings
-bindsym $mod+backslash exec /usr/bin/firefox
+bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
 
 # ranger with keybindings
 bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
 
 
 # riot with keybind
-bindsym $mod+bracketleft exec /usr/local/bin/riot-web
+bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
 
 # SCRATCHPAD ^.^
 # Make the currently focused window a scratchpad
@@ -308,7 +296,7 @@ for_window [workspace=__focused__] border pixel 3
 
 
 # network manager applet is nice I guess
-exec nm-applet
+exec --no-startup-id nm-applet
 
 # start some stuff
 for_window [instance="dropdown"] floating enable
@@ -320,7 +308,7 @@ exec --no-startup-id $term -name dropdown -e ncmpc
 #exec --no-startup-id i3-msg 'for_window [title="Terminal"] floating enable'
 # for_window [title="Terminal"] move scratchpad;
  #for_window [instance="dropdown"] move scratchpad;
-# exec --no-startup-id i3-msg 'workspace 10; exec $term -e mp; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 10; exec --no-startup-id $term -e mp; workspace 1'
 
  #bindsym $mod+Shift+Control+9 for_window [name="Terminal"] floating enable
  #bindsym $mod+Shift+Control+0 for_window [instance="dropdown"] move scratchpad
