@@ -154,10 +154,22 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 
+# TODO: make screen switching relative without wrapping.
+# With wrapping would be "focus output right"
+# y - left screen
+bindsym $mod+y focus output DisplayPort-0
+# Y - move container to left screen
+bindsym $mod+Shift+y move container to output DisplayPort-0
+
+# o - right screen
+bindsym $mod+o focus output DVI-D-0
+# O - move container to right screen
+bindsym $mod+Shift+o move container to output DVI-D-0
+
 # u - one workspace back
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
 # U - move container one workspace back
-bindsym $mod+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
+bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
 
 # i - one workspace forward
 bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
@@ -190,11 +202,6 @@ bar {
         tray_output primary
 }
 
-# workspace relative
-# bindsym $mod+p workspace next
-# bindsym $mod+u workspace prev
-# bindsym $mod+Shift+p move container to workspace next; workspace next
-# bindsym $mod+Shift+u move container to workspace prev; workspace prev
 
 # music commands
 bindsym $mod+Control+k exec --no-startup-id "mpc prev"
@@ -253,7 +260,6 @@ bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 # txt with key bindings
 bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
-#bindsym $mod+bracketleft exec --no-startup-id ~/.bin/txt
 
 # firefox with keybindings
 bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
@@ -292,7 +298,6 @@ bindsym $mod+Shift+Control+8 border normal
 for_window [workspace=__focused__] border pixel 3
 
 #focus_wrapping no
-#force_focus_wrapping lwel
 
 
 # network manager applet is nice I guess
@@ -304,14 +309,7 @@ for_window [instance="dropdown"] move scratchpad
 #for_window [instance="dropdown"] resize set 960 700
 #for_window [instance="dropdown"] move position center 
 exec --no-startup-id $term -name dropdown -e ncmpc
-#exec --no-startup-id $term --name=dropdown -e mp 
-#exec --no-startup-id i3-msg 'for_window [title="Terminal"] floating enable'
-# for_window [title="Terminal"] move scratchpad;
- #for_window [instance="dropdown"] move scratchpad;
-# exec --no-startup-id i3-msg 'workspace 10; exec --no-startup-id $term -e mp; workspace 1'
-
- #bindsym $mod+Shift+Control+9 for_window [name="Terminal"] floating enable
- #bindsym $mod+Shift+Control+0 for_window [instance="dropdown"] move scratchpad
 
 
-
+# set up starting workspaces
+workspace 101 output DVI-D-0
