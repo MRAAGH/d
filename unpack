@@ -1,3 +1,4 @@
 #!/bin/sh
 cat filelist | awk 'NF {print "cp " $1 " " $2;}' | /bin/sh
+type jq >/dev/null 2>&1 || { echo >&2 "I require jq for custom workspace switching logic, but it is not installed!"; }
 
