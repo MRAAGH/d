@@ -36,12 +36,6 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id $term
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "xft:droid sans:bold:pixelsize=11:antialias=true:hinting=slight" -nb "#0f0f0f" -nf "#a6a6a6" -sb "#0f0f0f" -sf "#8f8fed"
 #bindsym 0xffe4 exec --no-startup-id dmenu_run
@@ -72,87 +66,99 @@ bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a
 
 
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-#bindsym $mod+j focus left
-#bindsym $mod+k focus right
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus down
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+n split h
-
-# split in vertical orientation
-#bindsym $mod+v split v
-bindsym $mod+semicolon split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# TODO: use this
 # bindsym $mod+e layout toggle split
-bindsym $mod+e layout default
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-bindsym $mod+c focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+#bindsym $mod+1 workspace 1
+#bindsym $mod+2 workspace 2
+#bindsym $mod+3 workspace 3
+#bindsym $mod+4 workspace 4
+#bindsym $mod+5 workspace 5
+#bindsym $mod+6 workspace 6
+#bindsym $mod+7 workspace 7
+#bindsym $mod+8 workspace 8
+#bindsym $mod+9 workspace 9
+#bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+#bindsym $mod+Shift+1 move container to workspace 1
+#bindsym $mod+Shift+2 move container to workspace 2
+#bindsym $mod+Shift+3 move container to workspace 3
+#bindsym $mod+Shift+4 move container to workspace 4
+#bindsym $mod+Shift+5 move container to workspace 5
+#bindsym $mod+Shift+6 move container to workspace 6
+#bindsym $mod+Shift+7 move container to workspace 7
+#bindsym $mod+Shift+8 move container to workspace 8
+#bindsym $mod+Shift+9 move container to workspace 9
+#bindsym $mod+Shift+0 move container to workspace 10
 
+# ` -
+# ~ - exit i3 (logs you out of your X session)
+bindsym $mod+Shift+grave exit 
+
+# 1 -
+# ! -
+
+# 2 -
+# @ -
+
+# 3 -
+# # -
+
+# 4 -
+# $ -
+
+# 5 -
+# % -
+
+# 6 -
+# ^ -
+
+# 7 -
+# & -
+
+# 8 -
+# * -
+
+# 9 -
+# ( -
+
+# 0 -
+# ) -
+
+# - -
+# _ -
+
+# = -
+# + -
+
+# tab -
+# Tab -
+
+# q - 
+# Q - kill focused window
+bindsym $mod+Shift+q kill
+
+# w - change container layout to tabbed
+bindsym $mod+w layout tabbed
+# W - 
+
+# e - change container layout to split
+bindsym $mod+e layout default
+# E - 
+
+# r - 
+# R - restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# t - 
+# T - 
 
 # TODO: make screen switching relative without wrapping.
 # With wrapping would be "focus output right"
@@ -160,11 +166,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+y focus output DisplayPort-0
 # Y - move container to left screen
 bindsym $mod+Shift+y move container to output DisplayPort-0
-
-# o - right screen
-bindsym $mod+o focus output DVI-D-0
-# O - move container to right screen
-bindsym $mod+Shift+o move container to output DVI-D-0
 
 # u - one workspace back
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
@@ -176,12 +177,123 @@ bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspa
 # I - move container one workspace forward
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 
-# reload the configuration file
+# o - right screen
+bindsym $mod+o focus output DVI-D-0
+# O - move container to right screen
+bindsym $mod+Shift+o move container to output DVI-D-0
+
+# p - 
+# P - 
+
+# [ - riot
+bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
+# { -
+
+# ] - txt with key bindings
+bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
+# } -
+
+# backspace -
+# Backspace -
+
+# a - focus the parent container
+bindsym $mod+a focus parent
+# A - 
+
+# s - change container layout to stacked
+bindsym $mod+s layout stacking
+# S - 
+
+# d - 
+# D - 
+
+# f - enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# F - 
+
+# g - 
+# G - 
+
+# h - focus left
+bindsym $mod+h focus left
+# H - move container left
+bindsym $mod+Shift+h move left
+
+# j - focus down
+bindsym $mod+j focus down
+# J - move container down
+bindsym $mod+Shift+j move down
+
+# k - focus up
+bindsym $mod+k focus up
+# K - move container up
+bindsym $mod+Shift+k move up
+
+# l - focus right
+bindsym $mod+l focus right
+# L - move container right
+bindsym $mod+Shift+l move right
+
+# ; -
+# : -
+
+# ' - ranger
+bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
+# " -
+
+# \ - firefox
+bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
+# | -
+
+# return - start a terminal
+bindsym $mod+Return exec --no-startup-id $term
+# Return -
+
+# z - 
+# Z - 
+
+# x - lock screen
+bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
+# X - 
+
+# c - focus the child container
+bindsym $mod+c focus child
+# C - reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+grave exit 
+
+# v - split in vertical orientation
+bindsym $mod+semicolon split v
+# V - 
+
+# b - 
+# B - 
+
+# n - split in horizontal orientation
+bindsym $mod+n split h
+# N - 
+
+# m - 
+# M - 
+
+# , - 
+# < - 
+
+# . -
+# > -
+
+# / -
+# ? -
+
+# space - change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# Space - toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+
+
+
+
+
 
 
 # resizing, mod4+shift+control
@@ -236,7 +348,6 @@ bindsym $mod+Mod1+Control+Return exec --no-startup-id halt-scripts
 
 # lock screen
 # bindsym $mod+o exec --no-startup-id "i3lock -c 101820 -u"
-bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
 
 
 # scrot - root
@@ -258,20 +369,13 @@ bindsym $mod+Shift+Right move workspace to output right
 bindsym Control+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
 bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
-# txt with key bindings
-bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
-
-# firefox with keybindings
-bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
-
-# ranger with keybindings
-bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
 
 
-# riot with keybind
-bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
+
+
 
 # SCRATCHPAD ^.^
+# TODO: without these bindings. Scratchpad should be absolute.
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
