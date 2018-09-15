@@ -5,4 +5,5 @@ ranger/rc.conf ~/.config/ranger/rc.conf
 ranger/scope.sh ~/.config/ranger/scope.sh
 bg ~/.bg
 lockbg ~/.lockbg
+loginbg ~/.loginbg
 
