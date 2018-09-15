@@ -1,0 +1,3 @@
+#!/bin/sh
+cat rootfilelist | awk 'NF {print "cp " $1 " " $2;}' | /bin/sh
+
