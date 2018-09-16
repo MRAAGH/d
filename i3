@@ -162,10 +162,11 @@ bindsym $mod+Shift+r restart
 
 # TODO: make screen switching relative without wrapping.
 # With wrapping would be "focus output right"
+# absolute would be "focus output DisplayPort-0"
 # y - left screen
-bindsym $mod+y focus output DisplayPort-0
+bindsym $mod+y focus output left
 # Y - move container to left screen
-bindsym $mod+Shift+y move container to output DisplayPort-0
+bindsym $mod+Shift+y move container to output left
 
 # u - one workspace back
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
@@ -178,9 +179,9 @@ bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspa
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 
 # o - right screen
-bindsym $mod+o focus output DVI-D-0
+bindsym $mod+o focus output right
 # O - move container to right screen
-bindsym $mod+Shift+o move container to output DVI-D-0
+bindsym $mod+Shift+o move container to output right
 
 # p - 
 # P - 
