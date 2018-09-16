@@ -244,7 +244,7 @@ bindsym $mod+Shift+l move right
 
 bindsym $mod+semicolon split v
 #bindsym $mod+Shift+semicolon 
-#bindsym $mod+Control+;
+bindsym $mod+Control+semicolon [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
 bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
@@ -274,24 +274,24 @@ bindsym $mod+Shift+c reload
 #bindsym $mod+Shift+v 
 #bindsym $mod+Control+v
 
-#bindsym $mod+b 
+bindsym $mod+b split h
 #bindsym $mod+Shift+b 
 #bindsym $mod+Control+b
 
-bindsym $mod+n split h
-bindsym $mod+Shift+n resize shrink width 10 px or 10 ppt
+bindsym $mod+n resize grow left 10 px or 10 ppt
+bindsym $mod+Shift+n resize shrink right 10 px or 10 ppt
 #bindsym $mod+Control+n
 
-#bindsym $mod+m 
-bindsym $mod+Shift+m resize grow height 10 px or 10 ppt
+bindsym $mod+m resize grow down 10 px or 10 ppt
+bindsym $mod+Shift+m resize shrink up 10 px or 10 ppt
 #bindsym $mod+Control+m
 
-#bindsym $mod+comma 
-bindsym $mod+Shift+comma resize shrink height 10 px or 10 ppt
+bindsym $mod+comma resize grow up 10 px or 10 ppt
+bindsym $mod+Shift+comma resize shrink down 10 px or 10 ppt
 #bindsym $mod+Control+comma
 
-#bindsym $mod+period
-bindsym $mod+Shift+period resize grow width 10 px or 10 ppt
+bindsym $mod+period resize grow right 10 px or 10 ppt
+bindsym $mod+Shift+period resize shrink left 10 px or 10 ppt
 #bindsym $mod+Control+period
 
 #bindsym $mod+slash
