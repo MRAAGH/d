@@ -112,3 +112,4 @@ endif
 packadd matchit
 
 :nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
+:set scrolloff=8
