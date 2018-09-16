@@ -420,4 +420,5 @@ exec --no-startup-id $term -name dropdown -e ncmpc
 
 
 # set up starting workspaces
-workspace 101 output DVI-D-0
+workspace 101 output HDMI-A-0
+workspace 201 output DVI-D-0
