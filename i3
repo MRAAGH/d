@@ -70,8 +70,6 @@ bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a
 
 
 
-# TODO: use this
-# bindsym $mod+e layout toggle split
 
 
 # switch to workspace
@@ -98,210 +96,215 @@ bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a
 #bindsym $mod+Shift+9 move container to workspace 9
 #bindsym $mod+Shift+0 move container to workspace 10
 
-# ` -
-# ~ - exit i3 (logs you out of your X session)
 bindsym $mod+Shift+grave exit 
+#bindsym $mod+Control+` 
 
-# 1 -
-# ! -
+#bindsym $mod+1
+#bindsym $mod+Shift+1
+#bindsym $mod+Control+1 
 
-# 2 -
-# @ -
+#bindsym $mod+2
+#bindsym $mod+Shift+2
+#bindsym $mod+Control+2
 
-# 3 -
-# # -
+bindsym $mod+3 exec --no-startup-id $term -e vim ~/.config/i3/config
+#bindsym $mod+Shift+3
+#bindsym $mod+Control+3
 
-# 4 -
-# $ -
+#bindsym $mod+4
+#bindsym $mod+Shift+4
+#bindsym $mod+Control+4
 
-# 5 -
-# % -
+#bindsym $mod+5
+#bindsym $mod+Shift+5
+#bindsym $mod+Control+5
 
-# 6 -
-# ^ -
+#bindsym $mod+6
+#bindsym $mod+Shift+6
+#bindsym $mod+Control+6
 
-# 7 -
-# & -
+#bindsym $mod+7
+#bindsym $mod+Shift+7
+#bindsym $mod+Control+7
 
-# 8 -
-# * -
+#bindsym $mod+8
+#bindsym $mod+Shift+8
+#bindsym $mod+Control+8
 
-# 9 -
-# ( -
+#bindsym $mod+9
+#bindsym $mod+Shift+9
+#bindsym $mod+Control+9
 
-# 0 -
-# ) -
+#bindsym $mod+0
+#bindsym $mod+Shift+0
+#bindsym $mod+Control+0
 
-# - -
-# _ -
+#bindsym $mod+minus
+#bindsym $mod+Shift+minus
+#bindsym $mod+Control+minus
 
-# = -
-# + -
+#bindsym $mod+equal
+#bindsym $mod+Shift+equal
+#bindsym $mod+Control+equal
 
-# tab -
-# Tab -
+#bindsym $mod+Tab
+#bindsym $mod+Shift+Tab
+#bindsym $mod+Control+Tab
 
-# q - 
-# Q - kill focused window
+#bindsym $mod+q 
 bindsym $mod+Shift+q kill
+#bindsym $mod+Control+q
 
-# w - change container layout to tabbed
 bindsym $mod+w layout tabbed
-# W - 
+#bindsym $mod+Shift+w 
+#bindsym $mod+Control+w
 
-# e - change container layout to split
 bindsym $mod+e layout default
-# E - 
+bindsym $mod+Shift+e layout toggle split
+#bindsym $mod+Control+e
 
-# r - 
-# R - restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+#bindsym $mod+r 
 bindsym $mod+Shift+r restart
+#bindsym $mod+Control+r
 
-# t - 
-# T - 
+#bindsym $mod+t 
+bindsym $mod+Shift+t exec --no-startup-id $term -e htop
+#bindsym $mod+Control+t
 
 # TODO: make screen switching relative without wrapping.
 # With wrapping would be "focus output right"
 # absolute would be "focus output DisplayPort-0"
-# y - left screen
 bindsym $mod+y focus output left
-# Y - move container to left screen
 bindsym $mod+Shift+y move container to output left
+#bindsym $mod+Control+y
 
-# u - one workspace back
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
-# U - move container one workspace back
 bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
+#bindsym $mod+Control+u
 
-# i - one workspace forward
 bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
-# I - move container one workspace forward
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
+#bindsym $mod+Control+i
 
-# o - right screen
 bindsym $mod+o focus output right
-# O - move container to right screen
 bindsym $mod+Shift+o move container to output right
+#bindsym $mod+Control+o
 
-# p - 
-# P - 
+#bindsym $mod+p 
+#bindsym $mod+Shift+p 
+#bindsym $mod+Control+p
 
-# [ - riot
 bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
-# { -
+#bindsym $mod+Shift+bracketleft 
+#bindsym $mod+Control+bracketleft
 
-# ] - txt with key bindings
 bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
-# } -
+#bindsym $mod+Shift+bracketright 
+#bindsym $mod+Control+bracketright
 
-# backspace -
-# Backspace -
+#bindsym $mod+backspace
+#bindsym $mod+Shift+backspace
+#bindsym $mod+Control+backspace
 
-# a - focus the parent container
 bindsym $mod+a focus parent
-# A - 
+bindsym $mod+Shift+a exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
+#bindsym $mod+Control+a
 
-# s - change container layout to stacked
 bindsym $mod+s layout stacking
-# S - 
+#bindsym $mod+Shift+s 
+#bindsym $mod+Control+s
 
-# d - 
-# D - 
+#bindsym $mod+d 
+#bindsym $mod+Shift+d 
+#bindsym $mod+Control+d
 
-# f - enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-# F - 
+#bindsym $mod+Shift+f 
+#bindsym $mod+Control+f
 
-# g - 
-# G - 
+bindsym $mod+g exec --no-startup-id gimp
+#bindsym $mod+Shift+g 
+#bindsym $mod+Control+g
 
-# h - focus left
 bindsym $mod+h focus left
-# H - move container left
 bindsym $mod+Shift+h move left
+#bindsym $mod+Control+h
 
-# j - focus down
 bindsym $mod+j focus down
-# J - move container down
 bindsym $mod+Shift+j move down
+#bindsym $mod+Control+j
 
-# k - focus up
 bindsym $mod+k focus up
-# K - move container up
 bindsym $mod+Shift+k move up
+#bindsym $mod+Control+k
 
-# l - focus right
 bindsym $mod+l focus right
-# L - move container right
 bindsym $mod+Shift+l move right
+#bindsym $mod+Control+l
 
-# ; -
-# : -
-
-# ' - ranger
-bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
-# " -
-
-# \ - firefox
-bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
-# | -
-
-# return - start a terminal
-bindsym $mod+Return exec --no-startup-id $term
-# Return -
-
-# z - 
-# Z - 
-
-# x - lock screen
-bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
-# X - 
-
-# c - focus the child container
-bindsym $mod+c focus child
-# C - reload the configuration file
-bindsym $mod+Shift+c reload
-
-# v - split in vertical orientation
 bindsym $mod+semicolon split v
-# V - 
+#bindsym $mod+Shift+semicolon 
+#bindsym $mod+Control+;
 
-# b - 
-# B - 
+bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
+bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
+#bindsym $mod+Control+'
 
-# n - split in horizontal orientation
+bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
+#bindsym $mod+Shift+backslash 
+#bindsym $mod+Control+\
+
+bindsym $mod+Return exec --no-startup-id $term
+#bindsym $mod+Shift+Return 
+#bindsym $mod+Control+return
+
+#bindsym $mod+z 
+bindsym $mod+Shift+z exec --no-startup-id kazam
+#bindsym $mod+Control+z
+
+bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
+#bindsym $mod+Shift+x 
+#bindsym $mod+Control+x
+
+bindsym $mod+c focus child
+bindsym $mod+Shift+c reload
+#bindsym $mod+Control+c
+
+#bindsym $mod+v 
+#bindsym $mod+Shift+v 
+#bindsym $mod+Control+v
+
+#bindsym $mod+b 
+#bindsym $mod+Shift+b 
+#bindsym $mod+Control+b
+
 bindsym $mod+n split h
-# N - 
+bindsym $mod+Shift+n resize shrink width 10 px or 10 ppt
+#bindsym $mod+Control+n
 
-# m - 
-# M - 
+#bindsym $mod+m 
+bindsym $mod+Shift+m resize grow height 10 px or 10 ppt
+#bindsym $mod+Control+m
 
-# , - 
-# < - 
+#bindsym $mod+comma 
+bindsym $mod+Shift+comma resize shrink height 10 px or 10 ppt
+#bindsym $mod+Control+comma
 
-# . -
-# > -
+#bindsym $mod+period
+bindsym $mod+Shift+period resize grow width 10 px or 10 ppt
+#bindsym $mod+Control+period
 
-# / -
-# ? -
+#bindsym $mod+slash
+#bindsym $mod+Shift+slash
+#bindsym $mod+Control+slash
 
-# space - change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-# Space - toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Control+space 
 
 
 
 
-
-
-
-
-# resizing, mod4+shift+control
-bindsym $mod+Shift+Control+h resize shrink width 10 px or 10 ppt
-bindsym $mod+Shift+Control+j resize grow height 10 px or 10 ppt
-bindsym $mod+Shift+Control+k resize shrink height 10 px or 10 ppt
-bindsym $mod+Shift+Control+l resize grow width 10 px or 10 ppt
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
