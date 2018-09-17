@@ -99,7 +99,7 @@ bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a
 bindsym $mod+Shift+grave exit 
 #bindsym $mod+Control+` 
 
-#bindsym $mod+1
+bindsym $mod+1 exec --no-startup-id $term -e vim ~/.vimrc
 #bindsym $mod+Shift+1
 #bindsym $mod+Control+1 
 
@@ -141,11 +141,11 @@ bindsym $mod+3 exec --no-startup-id $term -e vim ~/.config/i3/config
 
 #bindsym $mod+minus
 #bindsym $mod+Shift+minus
-#bindsym $mod+Control+minus
+bindsym $mod+Control+minus exec --no-startup-id amixer -q set Master 2dB- unmute
 
 #bindsym $mod+equal
 #bindsym $mod+Shift+equal
-#bindsym $mod+Control+equal
+bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 2dB+ unmute
 
 #bindsym $mod+Tab
 #bindsym $mod+Shift+Tab
@@ -180,19 +180,19 @@ bindsym $mod+Shift+y move container to output left
 
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
 bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
-#bindsym $mod+Control+u
+bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:01:00"
 
 bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
-#bindsym $mod+Control+i
+bindsym $mod+Control+i exec --no-startup-id "mpc seek -00:00:10"
 
 bindsym $mod+o focus output right
 bindsym $mod+Shift+o move container to output right
-#bindsym $mod+Control+o
+bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:00:10"
 
 #bindsym $mod+p 
 #bindsym $mod+Shift+p 
-#bindsym $mod+Control+p
+bindsym $mod+Control+p exec --no-startup-id "mpc seek +00:01:00"
 
 bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
 #bindsym $mod+Shift+bracketleft 
@@ -228,19 +228,19 @@ bindsym $mod+g exec --no-startup-id gimp
 
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left
-#bindsym $mod+Control+h
+bindsym $mod+Control+h exec --no-startup-id "mpc seek -10%"
 
 bindsym $mod+j focus down
 bindsym $mod+Shift+j move down
-#bindsym $mod+Control+j
+bindsym $mod+Control+j exec --no-startup-id "mpc next"
 
 bindsym $mod+k focus up
 bindsym $mod+Shift+k move up
-#bindsym $mod+Control+k
+bindsym $mod+Control+k exec --no-startup-id "mpc prev"
 
 bindsym $mod+l focus right
 bindsym $mod+Shift+l move right
-#bindsym $mod+Control+l
+bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
 
 bindsym $mod+semicolon split v
 #bindsym $mod+Shift+semicolon 
@@ -284,19 +284,19 @@ bindsym $mod+Shift+n resize shrink right 10 px or 10 ppt
 
 bindsym $mod+m resize grow down 10 px or 10 ppt
 bindsym $mod+Shift+m resize shrink up 10 px or 10 ppt
-#bindsym $mod+Control+m
+bindsym $mod+Control+m exec --no-startup-id "mpc single on"
 
 bindsym $mod+comma resize grow up 10 px or 10 ppt
 bindsym $mod+Shift+comma resize shrink down 10 px or 10 ppt
-#bindsym $mod+Control+comma
+bindsym $mod+Control+comma exec --no-startup-id "mpc toggle"
 
 bindsym $mod+period resize grow right 10 px or 10 ppt
 bindsym $mod+Shift+period resize shrink left 10 px or 10 ppt
-#bindsym $mod+Control+period
+bindsym $mod+Control+period exec --no-startup-id "mpc stop"
 
 #bindsym $mod+slash
 #bindsym $mod+Shift+slash
-#bindsym $mod+Control+slash
+bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
@@ -313,33 +313,14 @@ bar {
 	position bottom
         mode hide
         hidden_state hide
-        modifier $mod
+        modifier Mod5
         status_command i3status
         tray_output primary
 }
 
 
-# music commands
-bindsym $mod+Control+k exec --no-startup-id "mpc prev"
-bindsym $mod+Control+j exec --no-startup-id "mpc next"
-bindsym $mod+Control+h exec --no-startup-id "mpc seek -10%"
-bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
-bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:01:00"
-bindsym $mod+Control+p exec --no-startup-id "mpc seek +00:01:00"
-bindsym $mod+Control+i exec --no-startup-id "mpc seek -00:00:10"
-bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:00:10"
-bindsym $mod+Control+comma exec --no-startup-id "mpc toggle"
-bindsym $mod+Control+period exec --no-startup-id "mpc stop"
-bindsym $mod+Control+Delete exec --no-startup-id "mpc del 0"
-bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
-bindsym $mod+Control+m exec --no-startup-id "mpc single on"
+#bindsym $mod+Control+Delete exec --no-startup-id "mpc del 0"
 #bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 4%+ unmute
-bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 2dB+ unmute
-bindsym $mod+Control+minus exec --no-startup-id amixer -q set Master 2dB- unmute
-
-# open music player in terminal
-#bindsym $mod+Control+apostrophe exec --no-startup-id $term -e ncmpc
-#bindsym $mod+apostrophe exec --no-startup-id i3-msg 'workspace 10; exec --no-startup-id gnome-terminal -e mp'
 
 
 # TODO: something else than mod5+backspace pls
