@@ -111,5 +111,16 @@ endif
 " compatible.
 packadd matchit
 
+" customize
+
 :nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
+
 :set scrolloff=8
+
+" tabs to spaces
+:se et
+:se ts=4
+
+" swap colon and semicolon
+nnoremap ; :
+nnoremap : ;
