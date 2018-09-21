@@ -6,4 +6,4 @@ ranger/scope.sh ~/.config/ranger/scope.sh
 bg ~/.bg
 lockbg ~/.lockbg
 loginbg ~/.loginbg
-
+ncmpckeys ~/.ncmpc/keys
