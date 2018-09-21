@@ -99,19 +99,19 @@ bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a
 bindsym $mod+Shift+grave exit 
 #bindsym $mod+Control+` 
 
-bindsym $mod+1 exec --no-startup-id $term -e vim ~/.vimrc
-#bindsym $mod+Shift+1
+#bindsym $mod+1 
+bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
 #bindsym $mod+Control+1 
 
 #bindsym $mod+2
-#bindsym $mod+Shift+2
+bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
 #bindsym $mod+Control+2
 
 bindsym $mod+3 exec --no-startup-id $term -e vim ~/.config/i3/config
 #bindsym $mod+Shift+3
 #bindsym $mod+Control+3
 
-#bindsym $mod+4
+bindsym $mod+4 exec --no-startup-id $term -e vim ~/.vimrc
 #bindsym $mod+Shift+4
 #bindsym $mod+Control+4
 
