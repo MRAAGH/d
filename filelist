@@ -7,3 +7,5 @@ bg ~/.bg
 lockbg ~/.lockbg
 loginbg ~/.loginbg
 ncmpckeys ~/.ncmpc/keys
+bashrc ~/.bashrc
+
