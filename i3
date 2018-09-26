@@ -176,23 +176,23 @@ bindsym $mod+Shift+t exec --no-startup-id $term -e htop
 # absolute would be "focus output DisplayPort-0"
 bindsym $mod+y focus output left
 bindsym $mod+Shift+y move container to output left
-#bindsym $mod+Control+y
+bindsym $mod+Control+y exec --no-startup-id "mpc seek -00:01:00"
 
 bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
 bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
-bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:01:00"
+bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:00:10"
 
 bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
-bindsym $mod+Control+i exec --no-startup-id "mpc seek -00:00:10"
+bindsym $mod+Control+i exec --no-startup-id "mpc seek +00:00:10"
 
 bindsym $mod+o focus output right
 bindsym $mod+Shift+o move container to output right
-bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:00:10"
+bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:01:00"
 
 #bindsym $mod+p 
 #bindsym $mod+Shift+p 
-bindsym $mod+Control+p exec --no-startup-id "mpc seek +00:01:00"
+#bindsym $mod+Control+p exec --no-startup-id "mpc seek +00:01:00"
 
 bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
 #bindsym $mod+Shift+bracketleft 
