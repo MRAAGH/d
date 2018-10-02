@@ -118,8 +118,11 @@ packadd matchit
 :set scrolloff=8
 
 " tabs to spaces
-:se et
-:se ts=4
+":se et
+":se ts=4
+:set expandtab
+:set shiftwidth=2
+:set softtabstop=2
 
 " swap colon and semicolon
 nnoremap ; :
