@@ -142,7 +142,7 @@ if [ $(( RANDOM % 100 )) -lt 8 ]; then
         fi
 fi
 
-alias feeh='feh -ZPGdp. --draw-tinted --force-aliasing -B black'
+alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
 
 export EDITOR=vim
 #export RANGER_LOAD_DEFAULT_RC=FALSE
