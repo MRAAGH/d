@@ -67,12 +67,12 @@ bindsym $mod+Shift+grave exit
 #bindsym $mod+Control+` 
 
 #bindsym $mod+1 
-bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
-#bindsym $mod+Control+1 
+#bindsym $mod+Shift+1
+bindsym $mod+Control+1 exec --no-startup-id systemctl poweroff 
 
 #bindsym $mod+2
-bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
-#bindsym $mod+Control+2
+#bindsym $mod+Shift+2
+bindsym $mod+Control+2 exec --no-startup-id systemctl reboot
 
 bindsym $mod+3 exec --no-startup-id $term -e vim ~/.config/i3/config
 #bindsym $mod+Shift+3
