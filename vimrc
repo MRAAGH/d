@@ -137,3 +137,10 @@ nnoremap <C-L> <C-W><C-L>
 " swap ^ and 0
 nnoremap ^ 0
 nnoremap 0 ^
+
+" position of new splits
+set splitbelow
+set splitright
+
+" case insensitive
+set ignorecase
