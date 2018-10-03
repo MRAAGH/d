@@ -148,3 +148,6 @@ export EDITOR=vim
 #export RANGER_LOAD_DEFAULT_RC=FALSE
 
 #for (( i=1; i<=68; i++ )); do echo; done; clear
+
+# Disable Ctrl-s
+stty -ixon
