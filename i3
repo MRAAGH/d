@@ -82,7 +82,7 @@ bindsym $mod+4 exec --no-startup-id $term -e vim ~/.vimrc
 #bindsym $mod+Shift+4
 #bindsym $mod+Control+4
 
-#bindsym $mod+5
+bindsym $mod+5 exec --no-startup-id $term -e vim ~/.config/ranger/rc.conf
 #bindsym $mod+Shift+5
 #bindsym $mod+Control+5
 
