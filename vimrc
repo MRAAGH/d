@@ -15,12 +15,12 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" choose your century
 set nocompatible
 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" nope
+" set backspace=indent,eol,start
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -35,8 +35,6 @@ set incsearch		" do incremental searching
 set number
 set relativenumber
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -45,7 +43,7 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
+" No mouse
 if has('mouse')
 "   set mouse=a
 endif
@@ -111,7 +109,7 @@ endif
 " compatible.
 packadd matchit
 
-" customize
+" CUSTOMIZE
 
 :nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
 
