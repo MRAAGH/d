@@ -126,7 +126,7 @@ fi
 
 alias sshh='ssh -p 44741'
 alias rsyncc='rsync -e "ssh -p 44741"'
-alias sa='eval $(ssh-agent) && ssh-add /home/maze/.ssh/id_rsa_r && ssh-add /home/maze/.ssh/id_rsa_c'
+#alias sa='eval $(ssh-agent) && ssh-add /home/maze/.ssh/id_rsa_r && ssh-add /home/maze/.ssh/id_rsa_c'
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
 alias sshha='sshh -R 52698:localhost:52698'
 alias amx='alsamixer'
