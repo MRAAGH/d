@@ -1,3 +1,6 @@
+# Disable Ctrl-s (and a few other things)
+stty -ixon
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -124,14 +127,12 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
+# uses port 44741 for security by obscurity, then posts it on github, lol
 alias sshh='ssh -p 44741'
 alias rsyncc='rsync -e "ssh -p 44741"'
-#alias sa='eval $(ssh-agent) && ssh-add /home/maze/.ssh/id_rsa_r && ssh-add /home/maze/.ssh/id_rsa_c'
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
-alias sshha='sshh -R 52698:localhost:52698'
 alias amx='alsamixer'
-alias nano='sleep 1 && echo no. && sleep 1 && echo bad. && sleep 1 && nano'
-
+alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
 
 
 if [ $(( RANDOM % 100 )) -lt 8 ]; then
@@ -142,12 +143,9 @@ if [ $(( RANDOM % 100 )) -lt 8 ]; then
         fi
 fi
 
-alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
 
 export EDITOR=vim
 #export RANGER_LOAD_DEFAULT_RC=FALSE
 
 #for (( i=1; i<=68; i++ )); do echo; done; clear
 
-# Disable Ctrl-s
-stty -ixon
