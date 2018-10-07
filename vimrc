@@ -1,5 +1,3 @@
-
-" An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2016 Mar 25
@@ -108,6 +106,14 @@ endif
 " The matchit plugin makes the % command work better, but it is not backwards
 " compatible.
 packadd matchit
+
+" PLUGINS
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+
+call plug#end()
 
 " CUSTOMIZE
 
