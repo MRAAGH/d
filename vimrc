@@ -112,8 +112,15 @@ packadd matchit
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-surround'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+"let g:ctrlp_custom_ignore = 'node_modules\|git'
 
 " CUSTOMIZE
 
