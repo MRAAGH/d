@@ -148,3 +148,5 @@ nnoremap Y y$
 
 " foldmethod
 set foldmethod=indent
+set nofoldenable
+set foldlevel=2
