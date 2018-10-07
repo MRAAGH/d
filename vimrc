@@ -19,6 +19,7 @@ set nocompatible
 " allow backspacing over everything in insert mode
 " nope
 " set backspace=indent,eol,start
+set backspace=indent,eol
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -163,3 +164,6 @@ nnoremap Y y$
 set foldmethod=indent
 set nofoldenable
 set foldlevel=2
+
+" clear search results with esc
+nnoremap <ESC> :noh<CR>
