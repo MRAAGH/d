@@ -134,7 +134,7 @@ bindsym $mod+Shift+e layout toggle split
 bindsym $mod+Shift+r restart
 #bindsym $mod+Control+r
 
-#bindsym $mod+t 
+bindsym $mod+t exec --no-startup-id thunar
 bindsym $mod+Shift+t exec --no-startup-id $term -e htop
 #bindsym $mod+Control+t
 
@@ -174,7 +174,7 @@ bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
 #bindsym $mod+Control+backspace
 
 bindsym $mod+a focus parent
-bindsym $mod+Shift+a exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
+#bindsym $mod+Shift+a 
 #bindsym $mod+Control+a
 
 bindsym $mod+s layout stacking
@@ -182,6 +182,8 @@ bindsym $mod+s layout stacking
 #bindsym $mod+Control+s
 
 #bindsym $mod+d 
+#bindsym $mod+Shift+d 
+#bindsym $mod+Control+d 
 
 bindsym $mod+f fullscreen toggle
 #bindsym $mod+Shift+f 
@@ -207,12 +209,12 @@ bindsym $mod+l focus right
 bindsym $mod+Shift+l move right
 bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
 
-bindsym $mod+semicolon split v
-#bindsym $mod+Shift+semicolon 
+#bindsym $mod+semicolon
+bindsym $mod+Shift+semicolon split v
 bindsym $mod+Control+semicolon [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 bindsym $mod+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
-bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
+#bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e env EDITOR=vim /usr/bin/ranger
 #bindsym $mod+Control+'
 
 bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
@@ -223,12 +225,12 @@ bindsym $mod+Return exec --no-startup-id $term
 #bindsym $mod+Shift+Return 
 #bindsym $mod+Control+return
 
-#bindsym $mod+z 
+bindsym $mod+z exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
 bindsym $mod+Shift+z exec --no-startup-id kazam
 #bindsym $mod+Control+z
 
-bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
-#bindsym $mod+Shift+x 
+bindsym $mod+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
+bindsym $mod+Shift+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio; sleep 1.0; mpc play"
 #bindsym $mod+Control+x
 
 bindsym $mod+c focus child
