@@ -142,3 +142,9 @@ set splitright
 
 " case insensitive
 set ignorecase
+
+" better Y
+nnoremap Y y$
+
+" foldmethod
+set foldmethod=indent
