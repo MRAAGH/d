@@ -134,8 +134,8 @@ bindsym $mod+Shift+e layout toggle split
 bindsym $mod+Shift+r restart
 #bindsym $mod+Control+r
 
-bindsym $mod+t exec --no-startup-id thunar
-bindsym $mod+Shift+t exec --no-startup-id $term -e htop
+bindsym $mod+t exec --no-startup-id thunderbird
+bindsym $mod+Shift+t exec --no-startup-id thunar
 #bindsym $mod+Control+t
 
 # TODO: make screen switching relative without wrapping.
