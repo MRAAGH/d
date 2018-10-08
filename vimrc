@@ -117,6 +117,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
