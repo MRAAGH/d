@@ -126,7 +126,9 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 " CUSTOMIZE
 
-:nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
+" nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
+
+nnoremap <C-N> :NERDTreeToggle<CR>
 
 :set scrolloff=8
 
