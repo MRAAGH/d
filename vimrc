@@ -169,4 +169,4 @@ set nofoldenable
 set foldlevel=2
 
 " clear search results with esc
-nnoremap <ESC> :noh<CR>
+" nnoremap <ESC> :noh<CR>
