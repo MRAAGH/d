@@ -74,16 +74,16 @@ bindsym $mod+Control+1 exec --no-startup-id systemctl poweroff
 #bindsym $mod+Shift+2
 bindsym $mod+Control+2 exec --no-startup-id systemctl reboot
 
-bindsym $mod+3 exec --no-startup-id $term -e sh -c "bash ~/.bashrc && vim ~/.config/i3/config"
+bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/i3/config"
 #bindsym $mod+Shift+3
 #bindsym $mod+Control+3
 
-bindsym $mod+4 exec --no-startup-id $term -e sh -c "bash ~/.bashrc && vim ~/.vimrc"
+bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
 # bindsym $mod+4 exec --no-startup-id urxvt -e sh -c "echo lel >> ~/hi && echo leel >> ~/hihi"
 #bindsym $mod+Shift+4
 #bindsym $mod+Control+4
 
-bindsym $mod+5 exec --no-startup-id $term -e sh -c "bash ~/.bashrc && vim ~/.config/ranger/rc.conf"
+bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/ranger/rc.conf"
 #bindsym $mod+Shift+5
 #bindsym $mod+Control+5
 
@@ -214,8 +214,8 @@ bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
 bindsym $mod+Shift+semicolon split v
 bindsym $mod+Control+semicolon [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-bindsym $mod+apostrophe exec --no-startup-id $term -e sh -c "bash ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
-#bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e sh -c "bash ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
+bindsym $mod+apostrophe exec --no-startup-id $term -e bash -c "source ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
+#bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e bash -c "source ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
 #bindsym $mod+Control+'
 
 bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
@@ -365,7 +365,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad 
 #for_window [instance="dropdown"] resize set 960 700
 #for_window [instance="dropdown"] move position center 
-exec --no-startup-id $term -name dropdown -e sh -c "bash ~/.bashrc && ncmpc"
+exec --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
 
 
 # set up starting workspaces
