@@ -328,7 +328,6 @@ bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 
 # SCRATCHPAD ^.^
-# TODO: without these bindings. Scratchpad should be absolute.
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
