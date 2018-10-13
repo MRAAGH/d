@@ -130,6 +130,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 nnoremap <C-N> :NERDTreeToggle<CR>
 
+" Hex read
+nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR>
+
+" Hex write
+nmap <F7> ;%!xxd -r<CR> ;set binary<CR> ;set filetype=<CR>
+
 :set scrolloff=8
 
 " tabs to spaces
@@ -169,4 +175,6 @@ set nofoldenable
 set foldlevel=2
 
 " clear search results with esc
+" TODO: maybe move before the remap of colon
 " nnoremap <ESC> :noh<CR>
+
