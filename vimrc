@@ -111,21 +111,22 @@ packadd matchit
 " PLUGINS
 
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  echo 'no plug'
+else
+
+  call plug#begin('~/.vim/plugged')
+
+  Plug 'tpope/vim-commentary'
+  Plug 'pangloss/vim-javascript'
+  Plug 'tpope/vim-surround'
+  Plug 'kien/ctrlp.vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Valloric/YouCompleteMe'
+
+  call plug#end()
+
 endif
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Valloric/YouCompleteMe'
-
-call plug#end()
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
