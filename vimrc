@@ -111,7 +111,6 @@ packadd matchit
 " PLUGINS
 
 if empty(glob('~/.vim/autoload/plug.vim'))
-  echo 'no plug'
 else
 
   call plug#begin('~/.vim/plugged')
