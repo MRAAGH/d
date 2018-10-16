@@ -93,19 +93,19 @@ bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/
 
 #bindsym $mod+7
 #bindsym $mod+Shift+7
-#bindsym $mod+Control+7
+bindsym $mod+Control+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
 
 #bindsym $mod+8
 #bindsym $mod+Shift+8
-bindsym $mod+Control+8 exec --no-startup-id "amixer set PCM 0db+,1db-"
+bindsym $mod+Control+8 exec --no-startup-id "amixer -q set PCM 100%"
 
 #bindsym $mod+9
 #bindsym $mod+Shift+9
-bindsym $mod+Control+9 exec --no-startup-id "amixer set PCM 100%"
+bindsym $mod+Control+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
 
 #bindsym $mod+0
 #bindsym $mod+Shift+0
-bindsym $mod+Control+0 exec --no-startup-id "amixer set PCM 1db-,0db+"
+#bindsym $mod+Control+0 
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
