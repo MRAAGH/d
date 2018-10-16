@@ -101,7 +101,7 @@ bindsym $mod+Control+8 exec --no-startup-id "amixer set PCM 0db+,1db-"
 
 #bindsym $mod+9
 #bindsym $mod+Shift+9
-bindsym $mod+Control+9 exec --no-startup-id "amixer set PCM 1db+"
+bindsym $mod+Control+9 exec --no-startup-id "amixer set PCM 100%"
 
 #bindsym $mod+0
 #bindsym $mod+Shift+0
