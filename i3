@@ -97,18 +97,18 @@ bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/
 
 #bindsym $mod+8
 #bindsym $mod+Shift+8
-#bindsym $mod+Control+8
+bindsym $mod+Control+8 exec --no-startup-id "amixer set PCM 0db+,1db-"
 
 #bindsym $mod+9
 #bindsym $mod+Shift+9
-#bindsym $mod+Control+9
+bindsym $mod+Control+9 exec --no-startup-id "amixer set PCM 1db+"
 
 #bindsym $mod+0
 #bindsym $mod+Shift+0
-#bindsym $mod+Control+0
+bindsym $mod+Control+0 exec --no-startup-id "amixer set PCM 1db-,0db+"
 
-#bindsym $mod+minus
-#bindsym $mod+Shift+minus
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+Control+minus exec --no-startup-id amixer -q set Master 2dB- unmute
 
 #bindsym $mod+equal
@@ -321,20 +321,6 @@ bindsym $mod+Shift+Right move workspace to output right
 # cut and uncut ethernet
 bindsym Control+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
 bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
-
-
-
-
-
-
-# SCRATCHPAD ^.^
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-
-
-
 
 
 
