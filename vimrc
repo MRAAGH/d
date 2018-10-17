@@ -137,10 +137,11 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 nnoremap <C-N> :NERDTreeToggle<CR>
 
 " Hex read
-nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR>
+nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR> ;set noendofline<CR>
 
 " Hex write
-nmap <F7> ;%!xxd -r<CR> ;set binary<CR> ;set filetype=<CR>
+nmap <F7> ;%!xxd -r<CR> ;set binary<CR> ;set filetype=<CR> ;set noendofline<CR>
+" ;set display=uhex<CR>
 
 :set scrolloff=8
 
