@@ -59,3 +59,13 @@ URxvt.saveLines: 10000
 URxvt*scrollTtyOutput:      false
 URxvt*scrollWithBuffer:     true
 URxvt*scrollTtyKeypress:    true
+
+! bind Control-Shift-h to Ctrl-w_H
+URxvt.keysym.C-0x48: \027H
+! bind Control-Shift-j to Ctrl-w_J
+URxvt.keysym.C-0x4a: \027J
+! bind Control-Shift-k to Ctrl-w_K
+URxvt.keysym.C-0x4b: \027K
+! bind Control-Shift-l to Ctrl-w_L
+URxvt.keysym.C-0x4c: \027L
+
