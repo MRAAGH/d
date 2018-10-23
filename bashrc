@@ -138,13 +138,13 @@ alias amx='alsamixer'
 alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
 
 
-if [ $(( RANDOM % 100 )) -lt 8 ]; then
-        if [ $(( RANDOM % 100 )) -lt 20 ]; then
-                fortune|ponysay
-        else
-                ponysay -q
-        fi
-fi
+# if [ $(( RANDOM % 100 )) -lt 8 ]; then
+        # if [ $(( RANDOM % 100 )) -lt 20 ]; then
+                # fortune|ponysay
+        # else
+                # ponysay -q
+        # fi
+# fi
 
 
 export EDITOR=vim
