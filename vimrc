@@ -176,6 +176,9 @@ set ignorecase
 " better Y
 nnoremap Y y$
 
+" better S
+nnoremap S :!bash<CR>
+
 " foldmethod
 set foldmethod=indent
 set nofoldenable
