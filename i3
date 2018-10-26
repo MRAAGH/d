@@ -218,7 +218,7 @@ bindsym $mod+apostrophe exec --no-startup-id $term -e bash -c "source ~/.bashrc 
 #bindsym $mod+Shift+apostrophe exec --no-startup-id $term -e bash -c "source ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
 #bindsym $mod+Control+'
 
-bindsym $mod+backslash exec --no-startup-id /usr/bin/firefox
+bindsym $mod+backslash exec /usr/bin/firefox
 #bindsym $mod+Shift+backslash 
 #bindsym $mod+Control+\
 
