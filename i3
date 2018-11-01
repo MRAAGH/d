@@ -319,8 +319,8 @@ bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
 
 # cut and uncut ethernet
-bindsym Control+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
-bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
+bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
+bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 
 
