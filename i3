@@ -129,7 +129,7 @@ bindsym $mod+w layout tabbed
 
 bindsym $mod+e layout default
 bindsym $mod+Shift+e layout toggle split
-#bindsym $mod+Control+e
+bindsym $mod+Control+e exec audacity ~/music/"$(mpc | head -1 | cut -d / -f 2)"
 
 #bindsym $mod+r 
 bindsym $mod+Shift+r restart
@@ -270,6 +270,10 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 #bindsym $mod+Control+space 
 
+#bindsym $mod+Delete
+#bindsym $mod+Shift+Delete
+bindsym $mod+Control+Delete exec mv ~/music/"$(mpc | head -1 | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
+
 
 
 
@@ -287,12 +291,8 @@ bar {
 }
 
 
-#bindsym $mod+Control+Delete exec --no-startup-id "mpc del 0"
-#bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 4%+ unmute
-
-
-# TODO: something else than mod5+backspace pls
 # a different caps lock
+# TODO: something else than mod5+backspace pls
 bindsym Mod5+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
