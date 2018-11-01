@@ -132,6 +132,10 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 " CUSTOMIZE
 
+" color scheme
+colorscheme pablo
+
+
 " go to next marker
 " nnoremap <Space><Space> /<++><CR>"_c4l
 
