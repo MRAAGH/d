@@ -132,6 +132,12 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 " CUSTOMIZE
 
+" go to next marker
+" nnoremap <Space><Space> /<++><CR>"_c4l
+
+" code snippet in md files
+autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
+
 " nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
 
 nnoremap <C-N> :NERDTreeToggle<CR>
