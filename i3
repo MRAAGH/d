@@ -272,7 +272,7 @@ bindsym $mod+Shift+space floating toggle
 
 #bindsym $mod+Delete
 #bindsym $mod+Shift+Delete
-bindsym $mod+Control+Delete exec mv ~/music/"$(mpc | head -1 | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
+bindsym $mod+Control+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %file% | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
 
 
 
