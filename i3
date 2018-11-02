@@ -43,9 +43,9 @@ floating_modifier $mod
 #bindsym $mod+0xffe4 exec --no-startup-id my-dmenu-run-history
 
 # just like dmenu_run, except it also appends the result to ~/.bash_history"
-bindsym $mod+0xffe4 exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+# bindsym $mod+0xffe4 exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 # this one also grabs commands from ~/.bash_history, and appends the result ofc.
-bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+# bindsym 0xffe4 exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -103,7 +103,7 @@ bindsym $mod+Control+8 exec --no-startup-id "amixer -q set PCM 100%"
 #bindsym $mod+Shift+9
 bindsym $mod+Control+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
 
-#bindsym $mod+0
+bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 #bindsym $mod+Shift+0
 #bindsym $mod+Control+0 
 
@@ -182,8 +182,8 @@ bindsym $mod+s layout stacking
 #bindsym $mod+Shift+s 
 #bindsym $mod+Control+s
 
-#bindsym $mod+d 
-#bindsym $mod+Shift+d 
+bindsym $mod+d exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+bindsym $mod+Shift+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 #bindsym $mod+Control+d 
 
 bindsym $mod+f fullscreen toggle
