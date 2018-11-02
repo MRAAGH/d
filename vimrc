@@ -118,7 +118,7 @@ else
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
-  Plug 'kien/ctrlp.vim'
+  " Plug 'kien/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'Valloric/YouCompleteMe'
 
