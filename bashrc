@@ -130,11 +130,7 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
-# uses port 44741 for security by obscurity, then posts it on github, lol
-alias sshh='ssh -p 44741'
-alias rsyncc='rsync -e "ssh -p 44741"'
 alias up='sudo apt-get update && sudo apt-get upgrade -y'
-alias amx='alsamixer'
 alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
 
 
