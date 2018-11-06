@@ -118,9 +118,11 @@ else
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
-  " Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'scrooloose/nerdtree'
   Plug 'Valloric/YouCompleteMe'
+  Plug 'michaeljsmith/vim-indent-object'
+  " Plug 'davidhalter/jedi-vim'
 
   call plug#end()
 
