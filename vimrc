@@ -68,7 +68,8 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " NOPE
+  " autocmd FileType text setlocal textwidth=78
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -122,6 +123,8 @@ else
   Plug 'scrooloose/nerdtree'
   Plug 'Valloric/YouCompleteMe'
   Plug 'michaeljsmith/vim-indent-object'
+  Plug 'austintaylor/vim-commaobject'
+
   " Plug 'davidhalter/jedi-vim'
 
   call plug#end()
@@ -174,6 +177,14 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" tabs
+nnoremap <C-Y> gT
+nnoremap <C-O> gt
+
+" scrolling
+nnoremap <C-U> <C-D>
+nnoremap <C-I> <C-U>
+
 " swap ^ and 0
 nnoremap ^ 0
 nnoremap 0 ^
@@ -184,6 +195,9 @@ set splitright
 
 " case insensitive
 set ignorecase
+
+" reload files
+set autoread
 
 " better Y
 nnoremap Y y$
