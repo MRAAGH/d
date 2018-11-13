@@ -120,10 +120,11 @@ else
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'scrooloose/nerdtree'
+  " Plug 'scrooloose/nerdtree'
   Plug 'Valloric/YouCompleteMe'
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'austintaylor/vim-commaobject'
+  Plug 'tpope/vim-fugitive'
 
   " Plug 'davidhalter/jedi-vim'
 
@@ -149,7 +150,7 @@ autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 
 " nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
 
-nnoremap <C-N> :NERDTreeToggle<CR>
+" nnoremap <C-N> :NERDTreeToggle<CR>
 
 " Hex read
 nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR> ;set noendofline<CR>
