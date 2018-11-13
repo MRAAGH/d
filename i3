@@ -314,9 +314,10 @@ bindsym $mod+Mod1+Control+Return exec --no-startup-id halt-scripts
 
 bindsym Print exec --no-startup-id xfce4-screenshooter
 
-# move workspaces between screens
-bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Right move workspace to output right
+# # move workspaces between screens
+# NOPE
+# bindsym $mod+Shift+Left move workspace to output left
+# bindsym $mod+Shift+Right move workspace to output right
 
 # cut and uncut ethernet
 bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
