@@ -152,6 +152,9 @@ autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 
 " nnoremap <C-N> :NERDTreeToggle<CR>
 
+" toggle numbers
+nnoremap <C-N> :set nu! relativenumber!<CR>
+
 " Hex read
 nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR> ;set noendofline<CR>
 
