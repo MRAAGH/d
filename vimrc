@@ -125,6 +125,8 @@ else
   Plug 'michaeljsmith/vim-indent-object'
   Plug 'austintaylor/vim-commaobject'
   Plug 'tpope/vim-fugitive'
+  Plug 'terryma/vim-smooth-scroll'
+
 
   " colors
   Plug 'trusktr/seti.vim'
@@ -159,13 +161,13 @@ autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 " nnoremap <C-N> :NERDTreeToggle<CR>
 
 " toggle numbers
-nnoremap <C-N> :set nu! relativenumber!<CR>
+nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
 
 " Hex read
-nnoremap <F6> :%!xxd<CR> :set filetype=xxd<CR> :set noendofline<CR>
+nnoremap <silent> <F6> :%!xxd<CR> :set filetype=xxd<CR> :set noendofline<CR>
 
 " Hex write
-nnoremap <F7> :%!xxd -r<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
+nnoremap <silent> <F7> :%!xxd -r<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
 :set scrolloff=8
@@ -192,8 +194,13 @@ nnoremap <C-Y> gT
 nnoremap <C-O> gt
 
 " scrolling
-nnoremap <C-U> <C-D>
-nnoremap <C-I> <C-U>
+" nnoremap <C-U> <C-D>
+" nnoremap <C-I> <C-U>
+noremap <silent> <C-I> :call smooth_scroll#up(&scroll, 6, 2)<CR>
+noremap <silent> <C-U> :call smooth_scroll#down(&scroll, 6, 4)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
 
 " swap ^ and 0
 nnoremap ^ 0
@@ -227,6 +234,6 @@ set foldlevel=2
 " prevent automatic comment
 " can not be set inside vimrc because plugins override this setting
 " therefore, set it just before opening the new line
-nnoremap o :set formatoptions-=o<CR>o
-nnoremap O :set formatoptions-=o<CR>O
+nnoremap <silent> o :set formatoptions-=o<CR>o
+nnoremap <silent> O :set formatoptions-=o<CR>O
 
