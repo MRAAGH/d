@@ -218,5 +218,9 @@ set foldlevel=2
 " TODO: maybe move before the remap of colon
 " nnoremap <ESC> :noh<CR>
 
-nnoremap o :set paste<CR>o<C-O>:set nopaste<CR>
+" prevent automatic comment
+" can not be set inside vimrc because plugins override this setting
+" therefore, set it just before opening the new line
+nnoremap o :set formatoptions-=o<CR>o
+nnoremap O :set formatoptions-=o<CR>O
 
