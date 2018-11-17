@@ -196,8 +196,8 @@ nnoremap <C-O> gt
 " scrolling
 " nnoremap <C-U> <C-D>
 " nnoremap <C-I> <C-U>
-noremap <silent> <C-I> :call smooth_scroll#up(&scroll, 6, 2)<CR>
-noremap <silent> <C-U> :call smooth_scroll#down(&scroll, 6, 4)<CR>
+noremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
+noremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
 " noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 " noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
