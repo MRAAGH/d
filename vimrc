@@ -126,7 +126,13 @@ else
   Plug 'austintaylor/vim-commaobject'
   Plug 'tpope/vim-fugitive'
 
-  " Plug 'davidhalter/jedi-vim'
+  " colors
+  Plug 'trusktr/seti.vim'
+  Plug 'wesgibbs/vim-irblack'
+  Plug 'Lokaltog/vim-distinguished'
+  Plug 'nanotech/jellybeans.vim'
+  Plug 'vim-scripts/twilight256.vim'
+
 
   call plug#end()
 
@@ -139,7 +145,7 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 " CUSTOMIZE
 
 " color scheme
-colorscheme pablo
+colorscheme twilight256
 
 
 " go to next marker
@@ -156,10 +162,10 @@ autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 nnoremap <C-N> :set nu! relativenumber!<CR>
 
 " Hex read
-nmap <F6> ;%!xxd<CR> ;set filetype=xxd<CR> ;set noendofline<CR>
+nnoremap <F6> :%!xxd<CR> :set filetype=xxd<CR> :set noendofline<CR>
 
 " Hex write
-nmap <F7> ;%!xxd -r<CR> ;set binary<CR> ;set filetype=<CR> ;set noendofline<CR>
+nnoremap <F7> :%!xxd -r<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
 :set scrolloff=8
