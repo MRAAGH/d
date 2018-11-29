@@ -8,4 +8,5 @@ lockbg ~/.lockbg
 loginbg ~/.loginbg
 ncmpckeys ~/.ncmpc/keys
 bashrc ~/.bashrc
+ranger/rifle.conf ~/.config/ranger/rifle.conf
 
