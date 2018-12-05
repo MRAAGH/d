@@ -99,7 +99,7 @@ bindsym $mod+Control+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
 #bindsym $mod+Shift+8
 bindsym $mod+Control+8 exec --no-startup-id "amixer -q set PCM 100%"
 
-#bindsym $mod+9
+bindsym $mod+9 exec --no-startup-id "urxvt -hold -e cal -y"
 #bindsym $mod+Shift+9
 bindsym $mod+Control+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
 
