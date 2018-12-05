@@ -230,6 +230,7 @@ set foldlevel=2
 " clear search results with esc
 " TODO: maybe move before the remap of colon
 " nnoremap <ESC> :noh<CR>
+nnoremap <CR> :noh<CR>
 
 " prevent automatic comment
 " can not be set inside vimrc because plugins override this setting
