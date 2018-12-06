@@ -30,7 +30,7 @@ endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+" set incsearch		" do incremental searching
 set number
 set relativenumber
 
@@ -120,12 +120,14 @@ else
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
   Plug 'ctrlpvim/ctrlp.vim'
-  " Plug 'scrooloose/nerdtree'
   Plug 'Valloric/YouCompleteMe'
-  Plug 'michaeljsmith/vim-indent-object'
+  " Plug 'michaeljsmith/vim-indent-object'
   Plug 'austintaylor/vim-commaobject'
   Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-smooth-scroll'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'haya14busa/incsearch.vim'
+
 
 
   " colors
@@ -217,7 +219,7 @@ set ignorecase
 set autoread
 
 " better Y
-nnoremap Y y$
+nmap Y y$
 
 " better S
 nnoremap S :!bash<CR>
@@ -228,9 +230,10 @@ set nofoldenable
 set foldlevel=2
 
 " clear search results with esc
-" TODO: maybe move before the remap of colon
 " nnoremap <ESC> :noh<CR>
-nnoremap <CR> :noh<CR>
+" actually, enter
+" nnoremap <CR> :noh<CR>
+" actually, nothing ... there's a good plugin for that
 
 " prevent automatic comment
 " can not be set inside vimrc because plugins override this setting
@@ -240,3 +243,21 @@ nnoremap <silent> O :set formatoptions-=o<CR>O
 
 let g:ycm_confirm_extra_conf = 0
 
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif
+
+let g:highlightedyank_highlight_duration = 200
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
