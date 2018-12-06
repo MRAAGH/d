@@ -182,8 +182,8 @@ bindsym $mod+s layout stacking
 #bindsym $mod+Shift+s 
 #bindsym $mod+Control+s
 
-bindsym $mod+d exec --no-startup-id dmenu_path | tac ~/.bash_history - | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
-bindsym $mod+Shift+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+bindsym $mod+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+# bindsym $mod+Shift+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
 #bindsym $mod+Control+d 
 
 bindsym $mod+f fullscreen toggle
