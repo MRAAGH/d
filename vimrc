@@ -238,3 +238,5 @@ nnoremap <CR> :noh<CR>
 nnoremap <silent> o :set formatoptions-=o<CR>o
 nnoremap <silent> O :set formatoptions-=o<CR>O
 
+let g:ycm_confirm_extra_conf = 0
+
