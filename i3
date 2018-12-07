@@ -353,6 +353,10 @@ for_window [instance="dropdown"] move scratchpad
 #for_window [instance="dropdown"] move position center 
 exec --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
 
+# gimp
+# for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move right; resize shrink width -31px or -31 ppt
+for_window [window_role="gimp-toolbox"] floating disable
+for_window [window_role="gimp-dock"] floating disable; move left
 
 # set up starting workspaces
 workspace 101 output HDMI-A-0
