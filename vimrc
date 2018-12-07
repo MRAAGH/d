@@ -112,6 +112,7 @@ else
   Plug 'haya14busa/incsearch.vim'
   Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-repeat'
+  Plug 'PotatoesMaster/i3-vim-syntax'
 
 
 
