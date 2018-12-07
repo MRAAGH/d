@@ -8,11 +8,6 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " choose your century
 set nocompatible
 
@@ -31,21 +26,13 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 " set incsearch		" do incremental searching
-set number
-set relativenumber
-
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" No mouse
-if has('mouse')
-"   set mouse=a
-endif
+" inoremap <C-U> <C-G>u<C-U>
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -67,10 +54,6 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  " NOPE
-  " autocmd FileType text setlocal textwidth=78
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -87,13 +70,13 @@ else
 
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+" " Convenient command to see the difference between the current buffer and the
+" " file it was loaded from, thus the changes you made.
+" " Only define it when not defined already.
+" if !exists(":DiffOrig")
+"   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+" 		  \ | wincmd p | diffthis
+" endif
 
 if has('langmap') && exists('+langnoremap')
   " Prevent that the langmap option applies to characters that result from a
@@ -127,6 +110,8 @@ else
   Plug 'terryma/vim-smooth-scroll'
   Plug 'machakann/vim-highlightedyank'
   Plug 'haya14busa/incsearch.vim'
+  Plug 'svermeulen/vim-easyclip'
+  Plug 'tpope/vim-repeat'
 
 
 
@@ -142,11 +127,11 @@ else
 
 endif
 
+" CUSTOMIZE
 
+" customize ctrlp
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
-
-" CUSTOMIZE
 
 " color scheme
 colorscheme twilight256
@@ -164,6 +149,8 @@ autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 
 " toggle numbers
 nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
+set number
+set relativenumber
 
 " Hex read
 nnoremap <silent> <F6> :%!xxd<CR> :set filetype=xxd<CR> :set noendofline<CR>
@@ -241,18 +228,20 @@ set foldlevel=2
 nnoremap <silent> o :set formatoptions-=o<CR>o
 nnoremap <silent> O :set formatoptions-=o<CR>O
 
+" configuration of youcompleteme
 let g:ycm_confirm_extra_conf = 0
 
+" configuration for highlightedyank
 if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
 endif
 
 let g:highlightedyank_highlight_duration = 200
-
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" configuration for incsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -261,3 +250,9 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" new key for mark (m is move now)
+nnoremap gm m
+
+" better s
+let g:EasyClipUseSubstituteDefaults = 1
