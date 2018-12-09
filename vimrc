@@ -1,12 +1,41 @@
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2016 Mar 25
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" PLUGINS
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+else
+
+  call plug#begin('~/.vim/plugged')
+
+  Plug 'tpope/vim-commentary'
+  Plug 'pangloss/vim-javascript'
+  Plug 'tpope/vim-surround'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'Valloric/YouCompleteMe'
+  " Plug 'michaeljsmith/vim-indent-object'
+  Plug 'austintaylor/vim-commaobject'
+  Plug 'tpope/vim-fugitive'
+  Plug 'terryma/vim-smooth-scroll'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'haya14busa/incsearch.vim'
+  Plug 'svermeulen/vim-easyclip'
+  Plug 'tpope/vim-repeat'
+  Plug 'PotatoesMaster/i3-vim-syntax'
+
+
+
+  " colors
+  Plug 'trusktr/seti.vim'
+  Plug 'wesgibbs/vim-irblack'
+  Plug 'Lokaltog/vim-distinguished'
+  Plug 'nanotech/jellybeans.vim'
+  Plug 'vim-scripts/twilight256.vim'
+
+
+  call plug#end()
+
+endif
+
+
+
 
 " choose your century
 set nocompatible
@@ -92,41 +121,13 @@ endif
 " compatible.
 packadd matchit
 
-" PLUGINS
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-else
-
-  call plug#begin('~/.vim/plugged')
-
-  Plug 'tpope/vim-commentary'
-  Plug 'pangloss/vim-javascript'
-  Plug 'tpope/vim-surround'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'Valloric/YouCompleteMe'
-  " Plug 'michaeljsmith/vim-indent-object'
-  Plug 'austintaylor/vim-commaobject'
-  Plug 'tpope/vim-fugitive'
-  Plug 'terryma/vim-smooth-scroll'
-  Plug 'machakann/vim-highlightedyank'
-  Plug 'haya14busa/incsearch.vim'
-  Plug 'svermeulen/vim-easyclip'
-  Plug 'tpope/vim-repeat'
-  Plug 'PotatoesMaster/i3-vim-syntax'
 
 
 
-  " colors
-  Plug 'trusktr/seti.vim'
-  Plug 'wesgibbs/vim-irblack'
-  Plug 'Lokaltog/vim-distinguished'
-  Plug 'nanotech/jellybeans.vim'
-  Plug 'vim-scripts/twilight256.vim'
 
 
-  call plug#end()
 
-endif
+
 
 " CUSTOMIZE
 
