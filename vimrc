@@ -19,6 +19,7 @@ else
   Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-repeat'
   Plug 'PotatoesMaster/i3-vim-syntax'
+  Plug 'vim-utils/vim-space'
 
 
 
@@ -258,3 +259,6 @@ nnoremap gm m
 
 " better s
 let g:EasyClipUseSubstituteDefaults = 1
+
+" ctrl s for saving
+nnoremap <C-S> :w<CR>
