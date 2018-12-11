@@ -15,6 +15,7 @@
 set $term urxvt
 # set $mod Mod4
 set $mod Mod1
+set $sup Control
 exec --no-startup-id feh --bg-scale ~/.bg
 
 exec --no-startup-id pulseaudio
@@ -64,11 +65,12 @@ floating_modifier $mod
 # client.unfocused    #0F0F0F #5697B2 #E5E5E5
 # client.urgent #0F0F0F #BC9B54 #E5E5E5
 
+# bindsym 0xffe3 exec --no-startup-id :
 
 
 
 #DANGER
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 bindsym $mod+Control+1 exec --no-startup-id systemctl poweroff
 bindsym $mod+Control+2 exec --no-startup-id systemctl reboot
@@ -83,10 +85,6 @@ bindsym $mod+Shift+c reload
 
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left
-bindsym $mod+j focus down
-bindsym $mod+Shift+j move down
-bindsym $mod+k focus up
-bindsym $mod+Shift+k move up
 bindsym $mod+l focus right
 bindsym $mod+Shift+l move right
 
@@ -94,6 +92,11 @@ bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspa
 bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
 bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
 bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
+
+bindsym $mod+j focus down
+bindsym $mod+Shift+j move down
+bindsym $mod+k focus up
+bindsym $mod+Shift+k move up
 
 bindsym $mod+Control+j exec --no-startup-id "mpc next"
 bindsym $mod+Control+k exec --no-startup-id "mpc prev"
@@ -246,12 +249,12 @@ bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 # default_border none
 hide_edge_borders both
 
-bindsym $mod+Shift+Control+7 border pixel 3
+bindsym $mod+Shift+Control+7 border pixel 0
 bindsym $mod+Shift+Control+8 border normal
 # new i3
 # for_window [tiling] border pixel 3
 # old i3
-for_window [workspace=__focused__] border pixel 3
+for_window [workspace=__focused__] border pixel 0
 
 #focus_wrapping no
 
