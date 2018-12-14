@@ -215,7 +215,6 @@ bindsym Mod4+Return exec --no-startup-id $term -hold -e figlet GO AWAY
 
 
 # a different caps lock
-# TODO: something else than mod5+backspace pls
 bindsym Mod4+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
