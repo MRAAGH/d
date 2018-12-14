@@ -16,7 +16,6 @@ else
   Plug 'terryma/vim-smooth-scroll'
   Plug 'machakann/vim-highlightedyank'
   Plug 'haya14busa/incsearch.vim'
-  Plug 'svermeulen/vim-easyclip'
   Plug 'tpope/vim-repeat'
   Plug 'PotatoesMaster/i3-vim-syntax'
   Plug 'vim-utils/vim-space'
@@ -253,12 +252,6 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-
-" new key for mark (m is move now)
-nnoremap gm m
-
-" better s
-let g:EasyClipUseSubstituteDefaults = 1
 
 " ctrl s for saving
 nnoremap <C-S> :w<CR>
