@@ -20,7 +20,10 @@ exec --no-startup-id feh --bg-scale ~/.bg
 
 exec --no-startup-id pulseaudio
 
+exec_always --no-startup-id setxkbmap -device 11 us_alt
 exec_always --no-startup-id setxkbmap -device 12 us_alt
+
+exec --no-startup-id compton
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -201,15 +204,19 @@ bar {
 	position bottom
         mode hide
         hidden_state hide
-        modifier Mod5
+        # modifier Mod5
+        modifier Mod4
         status_command i3status
         tray_output primary
 }
 
+# warning
+bindsym Mod4+Return exec --no-startup-id $term -hold -e figlet GO AWAY
+
 
 # a different caps lock
 # TODO: something else than mod5+backspace pls
-bindsym Mod5+BackSpace exec --no-startup-id xdotool key Caps_Lock
+bindsym Mod4+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
 # HALT ALL THE THINGS
