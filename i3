@@ -72,7 +72,42 @@ floating_modifier $mod
 
 
 
-#DANGER
+
+
+# UNUSED KEYS:
+# bindsym $mod+1
+# bindsym $mod+2
+# bindsym $mod+6
+# bindsym $mod+backspace
+# bindsym $mod+bracketleft
+# bindsym $mod+bracketright
+# bindsym $mod+equal
+# bindsym $mod+p
+# bindsym $mod+$sup+0
+# bindsym $mod+$sup+1
+# bindsym $mod+$sup+2
+# bindsym $mod+$sup+3
+# bindsym $mod+$sup+4
+# bindsym $mod+$sup+5
+# bindsym $mod+$sup+6
+# bindsym $mod+$sup+apostrophe
+# bindsym $mod+$sup+b
+# bindsym $mod+$sup+backslash
+# bindsym $mod+$sup+backspace
+# bindsym $mod+$sup+bracketright
+# bindsym $mod+$sup+equal
+# bindsym $mod+$sup+escape
+# bindsym $mod+$sup+p
+# bindsym $mod+$sup+q
+# bindsym $mod+$sup+return
+# bindsym $mod+$sup+semicolon
+# bindsym $mod+$sup+tab
+# bindsym $mod+$sup+v
+# bindsym $mod+tab
+
+
+
+# DANGER
 bindsym $mod+q kill
 bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
 bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
@@ -80,8 +115,9 @@ bindsym $mod+Shift+grave exit
 bindsym $mod+Shift+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %file% | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
 
 
-#SPECIAL
+# SPECIAL
 bindsym $mod+Shift+c reload
+
 
 
 bindsym $mod+h focus left
@@ -101,7 +137,7 @@ bindsym $mod+$sup+k move up
 
 bindsym $mod+f exec --no-startup-id "mpc next"
 bindsym $mod+d exec --no-startup-id "mpc prev"
-bindsym $mod+Escape exec --no-startup-id "mpc toggle"
+bindsym $mod+c exec --no-startup-id "mpc toggle"
 
 #############KEY TO SWAP WORKSPACE WITH NEXT bracketleft
 #############KEY TO SWAP WORKSPACE WITH PREV bracketright
@@ -116,7 +152,7 @@ bindsym $mod+Return exec --no-startup-id $term
 
 bindsym $mod+apostrophe exec /usr/bin/firefox
 
-bindsym $mod+c [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+Escape [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 bindsym $mod+a exec --no-startup-id amixer -q set Master 2dB+ unmute
 bindsym $mod+z exec --no-startup-id amixer -q set Master 2dB- unmute
@@ -136,6 +172,8 @@ bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@
 
 bindsym $mod+$sup+t exec --no-startup-id thunderbird
 
+bindsym $mod+backslash exec --no-startup-id ~/.bin/txth
+
 bindsym $mod+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
 bindsym $mod+8 exec --no-startup-id "amixer -q set PCM 100%"
 bindsym $mod+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
@@ -148,8 +186,6 @@ bindsym $mod+comma resize grow up 10 px or 10 ppt
 bindsym $mod+$sup+comma resize shrink down 10 px or 10 ppt
 bindsym $mod+period resize grow right 10 px or 10 ppt
 bindsym $mod+$sup+period resize shrink left 10 px or 10 ppt
-
-bindsym $mod+backslash exec --no-startup-id ~/.bin/txth
 
 bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 
