@@ -74,38 +74,37 @@ floating_modifier $mod
 
 #DANGER
 bindsym $mod+q kill
-bindsym $mod+Control+1 exec --no-startup-id systemctl poweroff
-bindsym $mod+Control+2 exec --no-startup-id systemctl reboot
+bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
+bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
 bindsym $mod+Shift+grave exit
-bindsym $mod+Control+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %file% | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
+bindsym $mod+Shift+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %file% | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
 
 
 #SPECIAL
-bindsym $mod+z exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
 bindsym $mod+Shift+c reload
 
 
 bindsym $mod+h focus left
-bindsym $mod+Shift+h move left
+bindsym $mod+$sup+h move left
 bindsym $mod+l focus right
-bindsym $mod+Shift+l move right
+bindsym $mod+$sup+l move right
 
 bindsym $mod+u exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
-bindsym $mod+Shift+u exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
+bindsym $mod+$sup+u exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
 bindsym $mod+i exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws + 1))"
-bindsym $mod+Shift+i exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws + 1))"
+bindsym $mod+$sup+i exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws + 1))"
 
 bindsym $mod+j focus down
-bindsym $mod+Shift+j move down
+bindsym $mod+$sup+j move down
 bindsym $mod+k focus up
-bindsym $mod+Shift+k move up
+bindsym $mod+$sup+k move up
 
-bindsym $mod+Control+j exec --no-startup-id "mpc next"
-bindsym $mod+Control+k exec --no-startup-id "mpc prev"
-bindsym $mod+Control+comma exec --no-startup-id "mpc toggle"
+bindsym $mod+f exec --no-startup-id "mpc next"
+bindsym $mod+d exec --no-startup-id "mpc prev"
+bindsym $mod+Escape exec --no-startup-id "mpc toggle"
 
-#############KEY TO SWAP WORKSPACE WITH NEXT
-#############KEY TO SWAP WORKSPACE WITH PREV
+#############KEY TO SWAP WORKSPACE WITH NEXT bracketleft
+#############KEY TO SWAP WORKSPACE WITH PREV bracketright
 #############KEY TO INSERT WORKSPACE
 
 #############KEY TO TURN ON UNCLUTTER
@@ -115,84 +114,82 @@ bindsym $mod+semicolon exec --no-startup-id "$term -e bash -c \\"source ~/.bashr
 
 bindsym $mod+Return exec --no-startup-id $term
 
-bindsym $mod+backslash exec /usr/bin/firefox
+bindsym $mod+apostrophe exec /usr/bin/firefox
 
-bindsym $mod+Control+semicolon [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+c [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-bindsym $mod+Control+minus exec --no-startup-id amixer -q set Master 2dB- unmute
-bindsym $mod+Control+equal exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym $mod+a exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym $mod+z exec --no-startup-id amixer -q set Master 2dB- unmute
 
-bindsym $mod+Control+y exec --no-startup-id "mpc seek -00:01:00"
-bindsym $mod+Control+u exec --no-startup-id "mpc seek -00:00:10"
-bindsym $mod+Control+i exec --no-startup-id "mpc seek +00:00:10"
-bindsym $mod+Control+o exec --no-startup-id "mpc seek +00:01:00"
-bindsym $mod+Control+h exec --no-startup-id "mpc seek -10%"
-bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
+bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
 
-bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
+bindsym $mod+e exec --no-startup-id "mpc seek -00:00:10"
+bindsym $mod+r exec --no-startup-id "mpc seek +00:00:10"
+bindsym $mod+w exec --no-startup-id "mpc seek -00:01:00"
+bindsym $mod+t exec --no-startup-id "mpc seek +00:01:00"
+bindsym $mod+s exec --no-startup-id "mpc seek -10%"
+bindsym $mod+g exec --no-startup-id "mpc seek +10%"
 
-bindsym $mod+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
+bindsym $mod+$sup+bracketleft exec --no-startup-id /usr/local/bin/riot-web
 
-bindsym $mod+t exec --no-startup-id thunderbird
+bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
-bindsym $mod+Control+8 exec --no-startup-id "amixer -q set PCM 100%"
-bindsym $mod+Control+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
-bindsym $mod+Control+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
+bindsym $mod+$sup+t exec --no-startup-id thunderbird
+
+bindsym $mod+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
+bindsym $mod+8 exec --no-startup-id "amixer -q set PCM 100%"
+bindsym $mod+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
 
 bindsym $mod+n resize grow left 10 px or 10 ppt
-bindsym $mod+Shift+n resize shrink right 10 px or 10 ppt
+bindsym $mod+$sup+n resize shrink right 10 px or 10 ppt
 bindsym $mod+m resize grow down 10 px or 10 ppt
-bindsym $mod+Shift+m resize shrink up 10 px or 10 ppt
+bindsym $mod+$sup+m resize shrink up 10 px or 10 ppt
 bindsym $mod+comma resize grow up 10 px or 10 ppt
-bindsym $mod+Shift+comma resize shrink down 10 px or 10 ppt
+bindsym $mod+$sup+comma resize shrink down 10 px or 10 ppt
 bindsym $mod+period resize grow right 10 px or 10 ppt
-bindsym $mod+Shift+period resize shrink left 10 px or 10 ppt
+bindsym $mod+$sup+period resize shrink left 10 px or 10 ppt
 
-bindsym $mod+bracketright exec --no-startup-id ~/.bin/txth
+bindsym $mod+backslash exec --no-startup-id ~/.bin/txth
 
 bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 
-bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
 bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/i3/config"
+bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
 bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/ranger/rc.conf"
 
-bindsym $mod+Shift+semicolon split v
+bindsym $mod+v split v
 bindsym $mod+b split h
 
 bindsym $mod+y focus output left
-bindsym $mod+Shift+y move container to output left
+bindsym $mod+$sup+y move container to output left
 bindsym $mod+o focus output right
-bindsym $mod+Shift+o move container to output right
+bindsym $mod+$sup+o move container to output right
 
-bindsym $mod+Control+e exec audacity ~/music/"$(mpc | head -1 | cut -d / -f 2)"
+bindsym $mod+$sup+e exec audacity ~/music/"$(mpc | head -1 | cut -d / -f 2)"
 ###########################AUDACITY KEY
 
-bindsym $mod+f fullscreen toggle
+bindsym $mod+$sup+f fullscreen toggle
 
 bindsym $mod+space focus mode_toggle
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+$sup+space floating toggle
 
-bindsym $mod+g exec --no-startup-id gimp
+bindsym $mod+$sup+g exec --no-startup-id gimp
 
-bindsym $mod+Shift+t exec --no-startup-id thunar
+bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
 
-bindsym $mod+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
-bindsym $mod+Shift+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio; sleep 1.0; mpc play"
-
-bindsym $mod+Shift+e layout toggle split
-bindsym $mod+9 exec --no-startup-id "urxvt -hold -e cal -y"
-bindsym $mod+Shift+r restart
-bindsym $mod+Control+period exec --no-startup-id "mpc stop"
-bindsym $mod+a focus parent
-bindsym $mod+c focus child
-bindsym $mod+e layout default
-bindsym $mod+w layout tabbed
-bindsym $mod+s layout stacking
+bindsym $mod+$sup+slash layout toggle split
+bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
+bindsym $mod+$sup+r restart
+bindsym $mod+$sup+a focus parent
+bindsym $mod+$sup+c focus child
+bindsym $mod+slash layout default
+bindsym $mod+$sup+w layout tabbed
+bindsym $mod+$sup+s layout stacking
+bindsym $mod+$sup+7 border pixel 0
+bindsym $mod+$sup+8 border normal
 bindsym $mod+minus scratchpad show
-bindsym $mod+Shift+minus move scratchpad
-# bindsym $mod+Control+m exec --no-startup-id "mpc single on"
-# bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
-bindsym $mod+Shift+z exec --no-startup-id kazam
+bindsym $mod+$sup+minus move scratchpad
+bindsym $mod+$sup+z exec --no-startup-id kazam
 
 
 
@@ -218,11 +215,7 @@ bindsym Mod4+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
 # HALT ALL THE THINGS
-bindsym $mod+Mod1+Control+Return exec --no-startup-id halt-scripts
-
-# lock screen
-# bindsym $mod+o exec --no-startup-id "i3lock -c 101820 -u"
-
+bindsym Mod4+Mod1+Control+Return exec --no-startup-id halt-scripts
 
 # scrot - root
 #bindsym Print exec --no-startup-id scrot -e 'mv $f ~/pict/scr'
@@ -254,8 +247,6 @@ bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 # default_border none
 hide_edge_borders both
 
-bindsym $mod+Shift+Control+7 border pixel 0
-bindsym $mod+Shift+Control+8 border normal
 # new i3
 # for_window [tiling] border pixel 3
 # old i3
