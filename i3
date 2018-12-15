@@ -6,8 +6,6 @@
 # this file and re-run i3-config-wizard(1).
 #
 
-# exec --no-startup-id feh --bg-scale ~/.bg
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -16,6 +14,8 @@ set $term urxvt
 # set $mod Mod4
 set $mod Mod1
 set $sup Control
+set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
+
 exec --no-startup-id feh --bg-scale ~/.bg
 
 exec --no-startup-id pulseaudio
@@ -23,7 +23,7 @@ exec --no-startup-id pulseaudio
 exec_always --no-startup-id setxkbmap -device 11 us_alt
 exec_always --no-startup-id setxkbmap -device 12 us_alt
 
-exec --no-startup-id compton
+exec_always --no-startup-id "killall compton; compton"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -73,7 +73,6 @@ floating_modifier $mod
 
 
 #DANGER
-# bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 bindsym $mod+Control+1 exec --no-startup-id systemctl poweroff
 bindsym $mod+Control+2 exec --no-startup-id systemctl reboot
@@ -91,10 +90,10 @@ bindsym $mod+Shift+h move left
 bindsym $mod+l focus right
 bindsym $mod+Shift+l move right
 
-bindsym $mod+u exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
-bindsym $mod+Shift+u exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') - $( if [ $(( $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') % 100)) -eq 1 ]; then echo 0; else echo 1; fi)))"
-bindsym $mod+i exec --no-startup-id "i3-msg workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
-bindsym $mod+Shift+i exec --no-startup-id "i3-msg move container to workspace $(($(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num') + 1))"
+bindsym $mod+u exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
+bindsym $mod+Shift+u exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
+bindsym $mod+i exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws + 1))"
+bindsym $mod+Shift+i exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws + 1))"
 
 bindsym $mod+j focus down
 bindsym $mod+Shift+j move down
@@ -112,7 +111,7 @@ bindsym $mod+Control+comma exec --no-startup-id "mpc toggle"
 #############KEY TO TURN ON UNCLUTTER
 #############KEY TO TURN OFF UNCLUTTER
 
-bindsym $mod+apostrophe exec --no-startup-id $term -e bash -c "source ~/.bashrc && env EDITOR=vim /usr/bin/ranger"
+bindsym $mod+semicolon exec --no-startup-id "$term -e bash -c \\"source ~/.bashrc; env EDITOR=vim /usr/bin/ranger\\""
 
 bindsym $mod+Return exec --no-startup-id $term
 
@@ -132,7 +131,7 @@ bindsym $mod+Control+l exec --no-startup-id "mpc seek +10%"
 
 bindsym $mod+bracketleft exec --no-startup-id /usr/local/bin/riot-web
 
-bindsym $mod+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.bash_history | ${SHELL:-"/bin/sh"} && bh-cleanup
+bindsym $mod+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
 bindsym $mod+t exec --no-startup-id thunderbird
 
@@ -191,8 +190,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+Control+m exec --no-startup-id "mpc single on"
-bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
+# bindsym $mod+Control+m exec --no-startup-id "mpc single on"
+# bindsym $mod+Control+slash exec --no-startup-id "mpc single off"
 bindsym $mod+Shift+z exec --no-startup-id kazam
 
 
