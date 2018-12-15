@@ -5,11 +5,12 @@ else
 
   call plug#begin('~/.vim/plugged')
 
+  Plug 'Valloric/YouCompleteMe'
+
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'Valloric/YouCompleteMe'
   " Plug 'michaeljsmith/vim-indent-object'
   Plug 'austintaylor/vim-commaobject'
   Plug 'tpope/vim-fugitive'
@@ -255,3 +256,6 @@ map g# <Plug>(incsearch-nohl-g#)
 
 " ctrl s for saving
 nnoremap <C-S> :w<CR>
+
+" ctrl d for quit
+nnoremap <C-D> :q<CR>
