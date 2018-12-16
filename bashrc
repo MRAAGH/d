@@ -130,9 +130,6 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
-alias up='sudo apt-get update && sudo apt-get upgrade -y'
-alias feeh='feh -ZPGd. --draw-tinted --force-aliasing -B black'
-
 
 # if [ $(( RANDOM % 100 )) -lt 8 ]; then
         # if [ $(( RANDOM % 100 )) -lt 20 ]; then

@@ -16,7 +16,8 @@ set $mod Mod1
 set $sup Control
 set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
 
-exec --no-startup-id feh --bg-scale ~/.bg
+# exec --no-startup-id feh --bg-scale ~/.bg
+exec ~/.fehbg &
 
 exec --no-startup-id pulseaudio
 
@@ -189,6 +190,7 @@ bindsym $mod+$sup+period resize shrink left 10 px or 10 ppt
 
 bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 
+bindsym $mod+2 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.bashrc"
 bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/i3/config"
 bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
 bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/ranger/rc.conf"
