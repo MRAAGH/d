@@ -141,7 +141,7 @@ bindsym $mod+c exec --no-startup-id "mpc toggle"
 
 #############KEY TO SWAP WORKSPACE WITH NEXT bracketleft
 #############KEY TO SWAP WORKSPACE WITH PREV bracketright
-#############KEY TO INSERT WORKSPACE
+#############KEY TO INSERT WORKSPACE p for page new
 
 #############KEY TO TURN ON UNCLUTTER
 #############KEY TO TURN OFF UNCLUTTER
