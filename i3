@@ -17,7 +17,7 @@ set $sup Control
 set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
 
 # exec --no-startup-id feh --bg-scale ~/.bg
-exec ~/.fehbg &
+exec --no-startup-id ~/.fehbg &
 
 exec --no-startup-id pulseaudio
 
