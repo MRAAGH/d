@@ -77,14 +77,12 @@ floating_modifier $mod
 
 # UNUSED KEYS:
 # bindsym $mod+1
-# bindsym $mod+2
 # bindsym $mod+6
 # bindsym $mod+backspace
 # bindsym $mod+bracketleft
 # bindsym $mod+bracketright
 # bindsym $mod+equal
 # bindsym $mod+p
-# bindsym $mod+$sup+0
 # bindsym $mod+$sup+1
 # bindsym $mod+$sup+2
 # bindsym $mod+$sup+3
@@ -178,6 +176,8 @@ bindsym $mod+backslash exec --no-startup-id ~/.bin/txth
 bindsym $mod+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
 bindsym $mod+8 exec --no-startup-id "amixer -q set PCM 100%"
 bindsym $mod+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
+
+bindsym $mod+$sup+0 exec --no-startup-id bash -c "mpc seek \$(( ( RANDOM % 100 ) )).\$(( ( RANDOM % 10 ) ))\$(( ( RANDOM % 10 ) ))%"
 
 bindsym $mod+n resize grow left 10 px or 10 ppt
 bindsym $mod+$sup+n resize shrink right 10 px or 10 ppt
