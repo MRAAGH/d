@@ -11,8 +11,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $term urxvt
-# set $mod Mod4
-set $mod Mod1
+set $mod Mod4
+# set $mod Mod1
 set $sup Control
 set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
 
@@ -76,7 +76,6 @@ floating_modifier $mod
 
 
 # UNUSED KEYS:
-# bindsym $mod+1
 # bindsym $mod+6
 # bindsym $mod+backspace
 # bindsym $mod+bracketleft
@@ -190,6 +189,7 @@ bindsym $mod+$sup+period resize shrink left 10 px or 10 ppt
 
 bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 
+bindsym $mod+1 exec --no-startup-id $term -cd /usr/share/X11/xkb
 bindsym $mod+2 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.bashrc"
 bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/i3/config"
 bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
@@ -239,17 +239,13 @@ bar {
         mode hide
         hidden_state hide
         # modifier Mod5
-        modifier Mod4
+        modifier Mod1
         status_command i3status
         tray_output primary
 }
 
-# warning
-bindsym Mod4+Return exec --no-startup-id $term -hold -e figlet GO AWAY
-
-
-# a different caps lock
-bindsym Mod4+BackSpace exec --no-startup-id xdotool key Caps_Lock
+# TODO: a different caps lock
+# bindsym Mod4+BackSpace exec --no-startup-id xdotool key Caps_Lock
 
 
 # HALT ALL THE THINGS

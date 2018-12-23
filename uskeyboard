@@ -3,7 +3,10 @@ xkb_symbols "basic" {
 
     name[Group1]= "English (US)";
 
-    key <LSGT> {	[Escape]	};
+    key <LSGT> {	[Escape, Escape, Escape, Escape]	};
+    key <LALT> {	[Super_L, Super_L, Super_L, Super_L]	};
+    key <LWIN> {	[Alt_L, Alt_L, Alt_L, Alt_L]	};
+
     key <TLDE> {	[     grave,	asciitilde	]	};
     #key <ESC> {	[     grave,	asciitilde	]	};
     #key <TLDE> {	[Escape]	};
