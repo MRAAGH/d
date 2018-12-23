@@ -155,7 +155,7 @@ bindsym $mod+Escape [instance="dropdown"] scratchpad show; [instance="dropdown"]
 bindsym $mod+a exec --no-startup-id amixer -q set Master 2dB+ unmute
 bindsym $mod+z exec --no-startup-id amixer -q set Master 2dB- unmute
 
-bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg -t -f -e"
+bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e"
 
 bindsym $mod+e exec --no-startup-id "mpc seek -00:00:10"
 bindsym $mod+r exec --no-startup-id "mpc seek +00:00:10"
@@ -238,8 +238,8 @@ bar {
 	position bottom
         mode hide
         hidden_state hide
-        # modifier Mod5
-        modifier Mod1
+        modifier Mod5
+        # modifier Mod1
         status_command i3status
         tray_output primary
 }
