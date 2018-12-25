@@ -1,4 +1,2 @@
-#!/bin/sh
-cat filelist | awk 'NF {print "cp " $1 " " $2;}' | /bin/sh
-type jq >/dev/null 2>&1 || { echo >&2 "I require jq for custom workspace switching logic, but it is not installed!"; }
+find -type f -not -path "./.git/*" | grep -Ev '(\.swp$|~$|unpack|pack|root*|.gitignore|README.md)' | awk 'NF {print "if ! cmp " $1 " ~/" $1 " >/dev/null 2>&1; then cp -i " $1 " ~/" $1 "; fi";}' | /bin/sh
 

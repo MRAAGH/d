@@ -1,4 +1,4 @@
-#!/bin/sh
-cat filelist | awk 'NF {print "cp " $2 " " $1;}' | /bin/sh
-cat rootfilelist | awk 'NF {print "cp " $2 " " $1;}' | /bin/sh
+find -type f -not -path "./.git/*" | grep -Ev '(\.swp$|~$|unpack|pack|root*|.gitignore|README.md)' | awk 'NF {print "cp ~/" $1 " " $1;}' | /bin/sh
+cd root
+find -type f | grep -Ev '(\.swp$|~$|^\.git|README.md)' | awk 'NF {print "cp /" $1 " " $1;}' | /bin/sh
 

@@ -189,7 +189,7 @@ bindsym $mod+$sup+period resize shrink left 10 px or 10 ppt
 
 bindsym $mod+0 exec --no-startup-id $term -cd ~/cd/d
 
-bindsym $mod+1 exec --no-startup-id $term -cd /usr/share/X11/xkb
+bindsym $mod+1 exec --no-startup-id $term -cd /usr/share/X11/xkb/symbols
 bindsym $mod+2 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.bashrc"
 bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/i3/config"
 bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
