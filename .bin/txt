@@ -1,0 +1,48 @@
+#!/bin/bash
+
+chosen="$(ls -A ~/txt/ | grep -Ev '(\.swp$|\.save)' | dmenu -l 15 -i)"
+
+# only use if there is something in the string
+if [ ! -z "$chosen" -a "$chosen" != " " ]; then
+	# make sure there is a history file:
+	touch ~/.txt_history
+
+	# is it a dupe?
+	if [ "$chosen" != "$(cat ~/.txt_history | tail -1)" ]; then
+		# add to history because it is not a dupe
+		echo "$chosen" >> ~/.txt_history
+	fi
+	urxvt -e vim ~/txt/"$chosen"
+fi
+
+# /usr/bin/gnome-terminal -e "/bin/nano ~/txt/\"$(/bin/ls -A ~/txt/ | /bin/grep -Ev '(\.swp$|\.save)' | dmenu)\""
+
+#!/usr/bin/python3
+
+
+# import subprocess
+# from os import listdir
+# from sys import exit
+
+# files = listdir('/home/maze/txt')
+#
+# options = []
+#
+# for file in files:
+# 	yes = True
+# 	if file.endswith(('.swp', '.save')):
+# 		yes = False # we are not looking at these files
+#
+# 	if yes:
+# 		options.append(file)
+#
+# optlist = '\n'.join(options)
+#
+# ps = subprocess.Popen(('echo', optlist), stdout=subprocess.PIPE)
+# output = subprocess.check_output(('dmenu'), stdin=ps.stdout)
+# chosen = output.decode()[:-1]
+#
+# with open("/home/maze/.txt_history", "a") as myfile:
+#     myfile.write(chosen + '\n')
+#
+# subprocess.call(['gnome-terminal', '-e', '/bin/nano "/home/maze/txt/' + chosen + '"'])

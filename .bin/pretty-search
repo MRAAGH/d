@@ -1,0 +1,30 @@
+#!/usr/bin/python
+
+# usage example:
+# grep -rn . -e "RunDialog" | pretty-search
+# lists all occurances of "RunDialog" in the files in the current dir and its subdirs,
+# and also prints surrounding code for context (5 lines before and 5 lines after occurence)
+
+import commands, string, fileinput
+
+for line in fileinput.input():
+	segments = line.split(':')
+	if len(segments) < 2:
+		print "\n\n\nIT'S A TRAP!"
+		print "IT'S A TRAP!"
+		print "IT'S A TRAP!"
+		print "IT'S A TRAP!"
+		print "IT'S A TRAP!"
+		print line + '\n\n\n'
+	else:
+		linenum = int(segments[1])
+		print segments[0] + ':' + segments[1] + '\n'
+		catres = commands.getoutput('cat ' + segments[0] + ' | head -n ' + str(linenum + 5) + ' | tail -n 11').split('\n')
+		curline = linenum - 5
+		for catline in catres:
+			if curline == linenum:
+				print '* ' + str(curline) + '  ' + catline
+			else:
+				print '  ' + str(curline) + '  ' + catline
+			curline = curline + 1
+		print '\n'

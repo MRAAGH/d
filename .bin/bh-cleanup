@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+# are the last two lines the same?
+if [ "$(cat ~/.bash_history | tail -1)" = "$(cat ~/.bash_history | tail -2 | head -1)" ]; then
+	# delete last line
+	sed -i '$ d' ~/.bash_history
+fi
