@@ -6,6 +6,7 @@ xkb_symbols "basic" {
     key <LSGT> {	[Escape, Escape, Escape, Escape]	};
     key <LALT> {	[Super_L, Super_L, Super_L, Super_L]	};
     key <LWIN> {	[Alt_L, Alt_L, Alt_L, Alt_L]	};
+    key <MENU> { [ Alt_L, Alt_L, Alt_L, Alt_L ] };
 
     key <TLDE> {	[     grave,	asciitilde	]	};
     #key <ESC> {	[     grave,	asciitilde	]	};
