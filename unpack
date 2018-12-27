@@ -1,7 +1,7 @@
 #!/bin/bash
 for x in $(find -type f -not -path "./.git/*" | grep -Ev '(\.swp$|~$|unpack|pack|root*|.gitignore|README.md)'); do
   if ! cmp $x ~/$x >/dev/null 2>&1; then
-    mkdir $(echo $x | sed 's/\/[^/]*$//')
+    mkdir ~/$(echo $x | sed 's/\/[^/]*$//') >/dev/null 2>&1
     cp -i $x ~/$x 
   fi
 done
