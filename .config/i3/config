@@ -14,8 +14,6 @@ set $term urxvt
 set $mod Mod4
 # set $mod Mod1
 set $sup Control
-set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
-set $allws $(i3-msg -t get_workspaces | jq -r '.[]|.name')
 
 # exec --no-startup-id feh --bg-scale ~/.bg
 exec --no-startup-id ~/.fehbg &
