@@ -1,9 +1,9 @@
 #!/bin/bash
-for x in `find -type f -not -path "./.git/*" | grep -Ev '(\.swp$|~$|unpack|pack|root*|.gitignore|README.md)'`; do
+for x in $(find -type f -not -path "./.git/*" | grep -Ev '(\.swp$|~$|unpack|pack|root*|.gitignore|README.md)'); do
   cp ~/$x $x
 done
 cd root
-for x in `find -type f | grep -Ev '(\.swp$|~$|^\.git|README.md)'`; do
+for x in $(find -type f | grep -Ev '(\.swp$|~$|^\.git|README.md)'); do
   cp /$x $x
 done
 
