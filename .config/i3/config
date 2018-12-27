@@ -311,6 +311,9 @@ for_window [window_role="gimp-toolbox"] floating disable
 for_window [window_role="gimp-dock"] floating disable; move left
 
 # set up starting workspaces
-workspace a1000 output DisplayPort-0
-workspace b1000 output HDMI-A-0
-workspace c1000 output DVI-D-0
+workspace p1000 output DisplayPort-0
+workspace o1000 output HDMI-A-0
+workspace n1000 output DVI-D-0
+workspace i1000 output LVDS-D-1
+workspace e1000 output DP-1
+workspace s1000 output VGA-1
