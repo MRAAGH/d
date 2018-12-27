@@ -259,3 +259,9 @@ nnoremap <C-S> :w<CR>
 
 " ctrl d for quit
 nnoremap <C-D> :q<CR>
+
+" swap visual and logical
+nnoremap gj j
+nnoremap j gj
+nnoremap gk k
+nnoremap k gk
