@@ -15,6 +15,7 @@ set $mod Mod4
 # set $mod Mod1
 set $sup Control
 set $focusedws $(i3-msg -t get_workspaces | jq '.[] | select(.focused == true).num')
+set $allws $(i3-msg -t get_workspaces | jq -r '.[]|.name')
 
 # exec --no-startup-id feh --bg-scale ~/.bg
 exec --no-startup-id ~/.fehbg &
@@ -123,10 +124,10 @@ bindsym $mod+$sup+h move left
 bindsym $mod+l focus right
 bindsym $mod+$sup+l move right
 
-bindsym $mod+u exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
-bindsym $mod+$sup+u exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws - $( if [ $(($ws % 100)) -gt 1 ]; then echo 1; else echo 0; fi)))"
-bindsym $mod+i exec --no-startup-id "ws=$focusedws; i3-msg workspace $(($ws + 1))"
-bindsym $mod+$sup+i exec --no-startup-id "ws=$focusedws; i3-msg move container to workspace $(($ws + 1))"
+bindsym $mod+u exec --no-startup-id i3-msg workspace $(i3-prev)
+bindsym $mod+$sup+u exec --no-startup-id i3-msg move container to workspace $(i3-prev)
+bindsym $mod+i exec --no-startup-id i3-msg workspace $(i3-next)
+bindsym $mod+$sup+i exec --no-startup-id i3-msg move container to workspace $(i3-next)
 
 bindsym $mod+j focus down
 bindsym $mod+$sup+j move down
@@ -198,16 +199,24 @@ bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/
 bindsym $mod+v split v
 bindsym $mod+b split h
 
-bindsym $mod+y focus output left
-bindsym $mod+$sup+y move container to output left
-bindsym $mod+o focus output right
-bindsym $mod+$sup+o move container to output right
+# show me the next thing that needs to be closed
+bindsym $mod+$sup+q workspace next
 
 bindsym $mod+$sup+e exec audacity ~/music/"$(mpc | head -1 | cut -d / -f 2)"
 ###########################AUDACITY KEY
 ###########################KDENLIVE KEY
 
 bindsym $mod+$sup+f fullscreen toggle
+
+bindsym $mod+$sup+slash layout toggle split
+bindsym $mod+slash layout default
+
+bindsym $mod+$sup+r restart
+
+bindsym $mod+y focus output left
+bindsym $mod+$sup+y move container to output left
+bindsym $mod+o focus output right
+bindsym $mod+$sup+o move container to output right
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+$sup+space floating toggle
@@ -216,12 +225,10 @@ bindsym $mod+$sup+g exec --no-startup-id gimp
 
 bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
 
-bindsym $mod+$sup+slash layout toggle split
 bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
-bindsym $mod+$sup+r restart
+
 bindsym $mod+$sup+a focus parent
 bindsym $mod+$sup+c focus child
-bindsym $mod+slash layout default
 bindsym $mod+$sup+w layout tabbed
 bindsym $mod+$sup+s layout stacking
 bindsym $mod+$sup+7 border pixel 0
@@ -306,5 +313,6 @@ for_window [window_role="gimp-toolbox"] floating disable
 for_window [window_role="gimp-dock"] floating disable; move left
 
 # set up starting workspaces
-workspace 101 output HDMI-A-0
-workspace 201 output DVI-D-0
+workspace a1000 output DisplayPort-0
+workspace b1000 output HDMI-A-0
+workspace c1000 output DVI-D-0
