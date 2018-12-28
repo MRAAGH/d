@@ -24,10 +24,10 @@ else
 
 
   " colors
-  Plug 'trusktr/seti.vim'
-  Plug 'wesgibbs/vim-irblack'
+  " Plug 'trusktr/seti.vim'
+  " Plug 'wesgibbs/vim-irblack'
   Plug 'Lokaltog/vim-distinguished'
-  Plug 'nanotech/jellybeans.vim'
+  " Plug 'nanotech/jellybeans.vim'
   Plug 'vim-scripts/twilight256.vim'
 
 
@@ -265,3 +265,10 @@ nnoremap gj j
 nnoremap j gj
 nnoremap gk k
 nnoremap k gk
+
+" paste from specific register
+nnoremap "P "0P
+nnoremap "p "0p
+
+nnoremap qq 0qq
+vnoremap q :norm@q<CR>
