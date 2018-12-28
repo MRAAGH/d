@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# makes sure the requested workspace name is unoccupied
+# without removing or reordering existing workspaces
+# used like this:
+# i3-clear p 999
+
+exists=$(i3-msg -t get_workspaces | jq -r '.[] | select(.name == "'${1}${2}'").name')
+
+if [ -n "$exists" ]; then
+  # recursive
+  i3-cascade-up $1 $(( $2 + 1 ))
+  i3-msg 'rename workspace '${1}${2}' to '${1}$(( $2 + 1 )) >/dev/null
+fi
+
