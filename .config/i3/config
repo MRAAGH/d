@@ -127,6 +127,11 @@ bindsym $mod+$sup+u exec --no-startup-id i3-msg move container to workspace $(i3
 bindsym $mod+i exec --no-startup-id i3-msg workspace $(i3-next)
 bindsym $mod+$sup+i exec --no-startup-id i3-msg move container to workspace $(i3-next)
 
+bindsym $mod+y exec --no-startup-id i3-msg workspace $(i3-insert-prev)
+bindsym $mod+$sup+y exec --no-startup-id i3-msg move container to workspace $(i3-insert-prev)
+bindsym $mod+o exec --no-startup-id i3-msg workspace $(i3-insert-next)
+bindsym $mod+$sup+o exec --no-startup-id i3-msg move container to workspace $(i3-insert-next)
+
 bindsym $mod+j focus down
 bindsym $mod+$sup+j move down
 bindsym $mod+k focus up
@@ -210,11 +215,6 @@ bindsym $mod+$sup+slash layout toggle split
 bindsym $mod+slash layout default
 
 bindsym $mod+$sup+r restart
-
-bindsym $mod+y focus output left
-bindsym $mod+$sup+y move container to output left
-bindsym $mod+o focus output right
-bindsym $mod+$sup+o move container to output right
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+$sup+space floating toggle

@@ -15,10 +15,12 @@ i3-msg -t get_workspaces | jq -rS '.[]|.name' | sed -n 's/^'$screen'\(.*\)$/\1/p
 
 # is this the last workspace?
 if [ $number == $(tail -1 $wsfile) ]; then
-  echo ${screen}$(($number))
+  echo ${screen}$(($number + 1))
 else
+  # TEMPORARY
+  echo ${screen}$(($number + 1))
   # next workspace (the builtin "workspace next" would work ... if it used alphabetical order >.>)
-  echo ${screen}$(head -$(( $(grep -nx $number $wsfile | cut -d : -f1) + 1 )) $wsfile | tail -1)
+  # echo ${screen}$(head -$(( $(grep -nx $number $wsfile | cut -d : -f1) + 1 )) $wsfile | tail -1)
 fi
 
 rm $wsfile
