@@ -17,7 +17,7 @@ i3-msg -t get_workspaces | jq -rS '.[]|.name' | sed -n 's/^'$screen'\(.*\)$/\1/p
 if [ $number == $(head -1 $wsfile) ]; then
   echo ${screen}$(($number))
 else
-  # next workspace (the builtin "workspace next" would work ... if it used alphabetical order >.>)
+  # prev workspace (the builtin "workspace prev_on_output" would work ... if it used alphabetical order >.>)
   echo ${screen}$(head -$(( $(grep -nx $number $wsfile | cut -d : -f1) - 1 )) $wsfile | tail -1)
 fi
 
