@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for x in $(ls ~/.config/unity3d/LoE/loe-settings-presets |cut -d . -f1); do
+  echo -e loe\ ${x}\ {0..16}\\n
+done | sed -n 's/^\ *loe/loe/p' | tac ~/.loe-history - | dmenu -l 10 | tee -a ~/.loe-history | /bin/sh

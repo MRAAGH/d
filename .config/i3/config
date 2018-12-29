@@ -81,8 +81,6 @@ floating_modifier $mod
 # bindsym $mod+bracketright
 # bindsym $mod+equal
 # bindsym $mod+p
-# bindsym $mod+$sup+1
-# bindsym $mod+$sup+2
 # bindsym $mod+$sup+3
 # bindsym $mod+$sup+4
 # bindsym $mod+$sup+5
@@ -95,7 +93,6 @@ floating_modifier $mod
 # bindsym $mod+$sup+equal
 # bindsym $mod+$sup+escape
 # bindsym $mod+$sup+p
-# bindsym $mod+$sup+q
 # bindsym $mod+$sup+return
 # bindsym $mod+$sup+semicolon
 # bindsym $mod+$sup+tab
@@ -105,6 +102,9 @@ floating_modifier $mod
 
 
 # DANGER
+# bindsym $mod+$sup+1
+# bindsym $mod+$sup+2
+# bindsym $mod+$sup+grave
 bindsym $mod+q kill
 bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
 bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
@@ -222,6 +222,8 @@ bindsym $mod+$sup+space floating toggle
 bindsym $mod+$sup+g exec --no-startup-id gimp
 
 bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
+
+bindsym $mod+Prior exec --no-startup-id "loe-dmenu"
 
 bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
 
