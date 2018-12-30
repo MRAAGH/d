@@ -138,7 +138,7 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 " color scheme
 colorscheme twilight256
-autocmd BufEnter *.js colorscheme distinguished
+autocmd FileType javascript colorscheme distinguished
 
 " go to next marker
 " nnoremap <Space><Space> /<++><CR>"_c4l
