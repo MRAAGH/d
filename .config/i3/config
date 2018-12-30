@@ -93,6 +93,7 @@ floating_modifier $mod
 # bindsym $mod+$sup+equal
 # bindsym $mod+$sup+escape
 # bindsym $mod+$sup+p
+# bindsym $mod+$sup+r
 # bindsym $mod+$sup+return
 # bindsym $mod+$sup+semicolon
 # bindsym $mod+$sup+tab
@@ -114,6 +115,7 @@ bindsym $mod+Shift+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %fil
 
 # SPECIAL
 bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
 
 
 
@@ -174,7 +176,7 @@ bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@
 
 bindsym $mod+$sup+t exec --no-startup-id thunderbird
 
-bindsym $mod+backslash exec --no-startup-id ~/.bin/txth
+bindsym $mod+backslash exec --no-startup-id txth
 
 bindsym $mod+7 exec --no-startup-id "amixer -q set PCM 0db+,0.6db-"
 bindsym $mod+8 exec --no-startup-id "amixer -q set PCM 100%"
@@ -213,8 +215,6 @@ bindsym $mod+$sup+f fullscreen toggle
 
 bindsym $mod+$sup+slash layout toggle split
 bindsym $mod+slash layout default
-
-bindsym $mod+$sup+r restart
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+$sup+space floating toggle
