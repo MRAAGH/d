@@ -278,3 +278,7 @@ vnoremap q :norm@q<CR>
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 set cursorline
+set cursorcolumn
+
+hi CursorLine cterm=NONE ctermbg=233
+hi CursorColumn cterm=NONE ctermbg=233
