@@ -313,6 +313,11 @@ exec --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
 for_window [window_role="gimp-toolbox"] floating disable
 for_window [window_role="gimp-dock"] floating disable; move left
 
+
+# kazam
+for_window [class="kazam"] floating enable
+
+
 # set up starting workspaces
 workspace p1000 output DisplayPort-0
 workspace o1000 output HDMI-A-0
