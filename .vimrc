@@ -21,6 +21,7 @@ else
   Plug 'tpope/vim-repeat'
   Plug 'PotatoesMaster/i3-vim-syntax'
   Plug 'vim-utils/vim-space'
+  Plug 'tpope/vim-vinegar'
 
 
 
@@ -273,3 +274,7 @@ nnoremap "p "0p
 
 nnoremap qq 0qq
 vnoremap q :norm@q<CR>
+
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
+set cursorline
