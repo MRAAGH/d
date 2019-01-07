@@ -28,9 +28,9 @@ else
   " colors
   " Plug 'trusktr/seti.vim'
   " Plug 'wesgibbs/vim-irblack'
-  Plug 'Lokaltog/vim-distinguished'
+  Plug 'MRAAGH/vim-distinguished'
   " Plug 'nanotech/jellybeans.vim'
-  Plug 'vim-scripts/twilight256.vim'
+  Plug 'MRAAGH/twilight256.vim'
 
 
   call plug#end()
@@ -280,5 +280,4 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set cursorline
 set cursorcolumn
 
-hi CursorLine cterm=NONE ctermbg=233
-hi CursorColumn cterm=NONE ctermbg=233
+
