@@ -205,7 +205,7 @@ bindsym $mod+v split v
 bindsym $mod+b split h
 
 # show me the next thing that needs to be closed
-bindsym $mod+$sup+q workspace next
+bindsym $mod+$sup+q exec --no-startup-id i3-find-hidden
 
 bindsym $mod+$sup+e exec audacity ~/music/"$(mpc | head -1 | cut -d / -f 2)"
 ###########################AUDACITY KEY
