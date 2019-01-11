@@ -317,6 +317,9 @@ for_window [window_role="gimp-dock"] floating disable; move left
 # kazam
 for_window [class="kazam"] floating enable
 
+# matplotlib (hopefully nothing else?)
+for_window [class="Tk"] floating enable
+
 
 # set up starting workspaces
 workspace p1000 output DisplayPort-0
