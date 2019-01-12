@@ -3,6 +3,8 @@ URxvt.scrollBar: false
 
 URxvt*foreground: #aEaEaE
 URxvt*background: #000000
+URxvt*transparent: true
+URxvt*shading: 12
 
 URxvt*color0:  #2E3436
 URxvt*color1:  #a40000
