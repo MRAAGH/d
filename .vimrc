@@ -11,17 +11,30 @@ else
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
   Plug 'tpope/vim-surround'
-  Plug 'ctrlpvim/ctrlp.vim'
-  " Plug 'michaeljsmith/vim-indent-object'
-  Plug 'austintaylor/vim-commaobject'
+  " Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'austintaylor/vim-commaobject' " a,
   Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-smooth-scroll'
   Plug 'machakann/vim-highlightedyank'
   Plug 'haya14busa/incsearch.vim'
   Plug 'tpope/vim-repeat'
   Plug 'PotatoesMaster/i3-vim-syntax'
-  Plug 'vim-utils/vim-space'
+  " Plug 'vim-utils/vim-space' " a<space>
   Plug 'tpope/vim-vinegar'
+  Plug 'JamesLinus/vim-angry' " a,
+  " Plug 'jeetsukumaran/vim-pythonsense' " af ac
+  Plug 'kana/vim-textobj-user'
+  Plug 'bps/vim-textobj-python' " af ac
+  " Plug 'libclang-vim/vim-textobj-clang' " a;
+  Plug 'Julian/vim-textobj-brace' " aj
+  " Plug 'Chun-Yang/vim-textobj-chunk' " ac
+  " Plug 'glts/vim-textobj-comment' " ac
+  Plug 'kana/vim-textobj-entire' " ae
+  " Plug 'sgur/vim-textobj-parameter' " a,
+  Plug 'saaguero/vim-textobj-pastedtext' " gb
+  Plug 'Julian/vim-textobj-variable-segment' " av
+  Plug 'idbrii/textobj-word-column.vim' " ac
+
 
 
 
@@ -280,4 +293,13 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 set cursorline
 set cursorcolumn
 
+" angry
+let g:angry_disable_maps = 1
+vmap <silent> a, <Plug>AngryOuterPrefix
+omap <silent> a, <Plug>AngryOuterPrefix
+vmap <silent> i, <Plug>AngryInnerPrefix
+omap <silent> i, <Plug>AngryInnerPrefix
 
+" pythonsense
+" let g:is_pythonsense_suppress_motion_keymaps = 1
+" let g:is_pythonsense_suppress_location_keymaps = 1
