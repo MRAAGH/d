@@ -16,5 +16,5 @@ if [ ! -z "$chosen" -a "$chosen" != " " ]; then
         fi
 
 	echo ~/txt/'$chosen'
-	urxvt -e vim ~/txt/"$chosen"
+	urxvt -e bash -c "source ~/.bashrc && vim ~/txt/\"$chosen\""
 fi
