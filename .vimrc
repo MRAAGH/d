@@ -303,3 +303,14 @@ omap <silent> i, <Plug>AngryInnerPrefix
 " pythonsense
 " let g:is_pythonsense_suppress_motion_keymaps = 1
 " let g:is_pythonsense_suppress_location_keymaps = 1
+
+" better key for vim-textobj-pastedtext
+let g:pastedtext_select_key = 'ab'
+
+" typescript is javascript
+au BufRead,BufNewFile *.ts set filetype=javascript
+
+" swap in visual too
+vnoremap : ;
+vnoremap ; :
+
