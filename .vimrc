@@ -285,7 +285,7 @@ nnoremap k gk
 nnoremap "P "0P
 nnoremap "p "0p
 
-nnoremap qq 0qq
+" nnoremap qq 0qq
 vnoremap q :norm@q<CR>
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
