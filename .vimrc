@@ -27,13 +27,13 @@ else
   Plug 'bps/vim-textobj-python' " af ac
   " Plug 'libclang-vim/vim-textobj-clang' " a;
   Plug 'Julian/vim-textobj-brace' " aj
-  " Plug 'Chun-Yang/vim-textobj-chunk' " ac
+  Plug 'Chun-Yang/vim-textobj-chunk' " ac
   " Plug 'glts/vim-textobj-comment' " ac
   Plug 'kana/vim-textobj-entire' " ae
   " Plug 'sgur/vim-textobj-parameter' " a,
   Plug 'saaguero/vim-textobj-pastedtext' " gb
   Plug 'Julian/vim-textobj-variable-segment' " av
-  Plug 'idbrii/textobj-word-column.vim' " ac
+  " Plug 'idbrii/textobj-word-column.vim' " ac
 
 
 
