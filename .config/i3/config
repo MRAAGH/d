@@ -225,6 +225,7 @@ bindsym $mod+$sup+g exec --no-startup-id gimp
 bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
 
 bindsym $mod+Prior exec --no-startup-id "loe-dmenu"
+bindsym $mod+Next exec --no-startup-id i3-msg "floating enable" && i3-msg "resize set 5760 1080" && i3-msg "move position center"
 
 # bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
 
