@@ -6,7 +6,7 @@ else
 
   call plug#begin('~/.vim/plugged')
 
-  Plug 'Valloric/YouCompleteMe'
+  " Plug 'Valloric/YouCompleteMe'
 
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
@@ -218,7 +218,8 @@ set splitbelow
 set splitright
 
 " case insensitive
-set ignorecase
+" set ignorecase
+set smartcase
 
 " reload files
 set autoread
@@ -314,3 +315,9 @@ au BufRead,BufNewFile *.ts set filetype=javascript
 vnoremap : ;
 vnoremap ; :
 
+set smartindent
+
+inoremap ;co console.log();<left><left>
+inoremap ;cl console.log();<left><left>
+
+nnoremap <C-P> "*p
