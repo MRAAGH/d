@@ -289,8 +289,10 @@ nnoremap "p "0p
 " nnoremap qq 0qq
 vnoremap q :norm@q<CR>
 
+" better netrw filter
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" LAZERS
 set cursorline
 set cursorcolumn
 
@@ -317,7 +319,9 @@ vnoremap ; :
 
 set smartindent
 
+" optimized javascript console
 inoremap ;co console.log();<left><left>
 inoremap ;cl console.log();<left><left>
 
+" easier pasting from primary selection
 nnoremap <C-P> "*p
