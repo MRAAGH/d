@@ -6,7 +6,7 @@ else
 
   call plug#begin('~/.vim/plugged')
 
-  " Plug 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe'
 
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
@@ -154,6 +154,7 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 " color scheme
 colorscheme twilight256
 autocmd FileType javascript colorscheme distinguished
+autocmd FileType html colorscheme distinguished
 
 " go to next marker
 " nnoremap <Space><Space> /<++><CR>"_c4l
@@ -189,6 +190,10 @@ nnoremap <silent> <F7> :%!xxd -r<CR> :set binary<CR> :set filetype=<CR> :set noe
 " swap colon and semicolon
 nnoremap ; :
 nnoremap : ;
+
+" swap in visual too
+vnoremap ; :
+vnoremap : ;
 
 " pane switching
 nnoremap <C-H> <C-W><C-H>
@@ -313,15 +318,11 @@ let g:pastedtext_select_key = 'ab'
 " typescript is javascript
 au BufRead,BufNewFile *.ts set filetype=javascript
 
-" swap in visual too
-vnoremap : ;
-vnoremap ; :
-
 set smartindent
 
 " optimized javascript console
-inoremap ;co console.log();<left><left>
-inoremap ;cl console.log();<left><left>
+autocmd FileType javascript inoremap ;co console.log();<left><left>
+autocmd FileType javascript inoremap ;cl console.log();<left><left>
 
 " easier pasting from primary selection
 nnoremap <C-P> "*p
