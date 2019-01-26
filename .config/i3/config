@@ -141,7 +141,7 @@ bindsym $mod+$sup+k move up
 
 bindsym $mod+f exec --no-startup-id "mpc next"
 bindsym $mod+d exec --no-startup-id "mpc prev"
-bindsym $mod+c exec --no-startup-id "mpc toggle"
+bindsym $mod+s exec --no-startup-id "mpc toggle"
 
 #############KEY TO SWAP WORKSPACE WITH NEXT bracketleft
 #############KEY TO SWAP WORKSPACE WITH PREV bracketright
@@ -156,10 +156,10 @@ bindsym $mod+Return exec --no-startup-id $term
 
 bindsym $mod+apostrophe exec /usr/bin/firefox
 
-bindsym $mod+Escape [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+a [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
-bindsym $mod+a exec --no-startup-id amixer -q set Master 2dB+ unmute
-bindsym $mod+z exec --no-startup-id amixer -q set Master 2dB- unmute
+bindsym $mod+z exec --no-startup-id amixer -q set Master 2dB+ unmute
+bindsym $mod+Escape exec --no-startup-id amixer -q set Master 2dB- unmute
 
 bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e"
 
@@ -167,7 +167,7 @@ bindsym $mod+e exec --no-startup-id "mpc seek -00:00:10"
 bindsym $mod+r exec --no-startup-id "mpc seek +00:00:10"
 bindsym $mod+w exec --no-startup-id "mpc seek -00:01:00"
 bindsym $mod+t exec --no-startup-id "mpc seek +00:01:00"
-bindsym $mod+s exec --no-startup-id "mpc seek -10%"
+bindsym $mod+c exec --no-startup-id "mpc seek -10%"
 bindsym $mod+g exec --no-startup-id "mpc seek +10%"
 
 bindsym $mod+$sup+bracketleft exec --no-startup-id /usr/local/bin/riot-web
