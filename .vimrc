@@ -224,7 +224,7 @@ set splitbelow
 set splitright
 
 " case insensitive
-" set ignorecase
+set ignorecase
 set smartcase
 
 " reload files
