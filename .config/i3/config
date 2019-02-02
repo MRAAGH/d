@@ -256,7 +256,10 @@ bar {
 }
 
 # TODO: a different caps lock
-bindsym Mod5+BackSpace exec --no-startup-id xdotool key Caps_Lock
+# bindsym Mod5+BackSpace exec --no-startup-id xdotool key Caps_Lock
+# bindsym Caps_Lock exec --no-startup-id xdotool key w
+# bindsym q exec --no-startup-id xdotool key Caps_Lock
+bindsym --release F24 exec --no-startup-id "xdotool key BackSpace"
 
 
 # HALT ALL THE THINGS
