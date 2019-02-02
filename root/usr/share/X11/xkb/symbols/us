@@ -62,6 +62,8 @@ xkb_symbols "basic" {
 
     key <BKSL> {	[ backslash,         bar, U017E, U017D	]	};
     key <CAPS> {	[ BackSpace, BackSpace, BackSpace, BackSpace]	};
+    //key <CAPS> {	[ F24, F24, F24, F24]	};
+    //key <CAPS> {	[ q, q, q, q]	};
 //    key <BKSP> {	[ KP_Delete, KP_Delete ]	};
 
 //    key <CAPS> { [    ISO_Level3_Shift,    ISO_Level3_Shift,       ISO_Level3_Shift,        ISO_Level3_Shift ] };
