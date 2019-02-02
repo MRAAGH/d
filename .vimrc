@@ -282,11 +282,17 @@ nnoremap <C-S> :w<CR>
 " ctrl d for quit
 nnoremap <C-D> :q<CR>
 
-" swap visual and logical
-nnoremap gj j
-nnoremap j gj
-nnoremap gk k
-nnoremap k gk
+" " swap visual and logical
+" nnoremap gj j
+" nnoremap j gj
+" nnoremap gk k
+" nnoremap k gk
+
+" HARD MODE
+nnoremap h <esc>
+nnoremap l <esc>
+vnoremap h <esc>
+vnoremap l <esc>
 
 " paste from specific register
 nnoremap "P "0P
@@ -327,3 +333,5 @@ autocmd FileType javascript inoremap ;cl console.log();<left><left>
 
 " easier pasting from primary selection
 nnoremap <C-P> "*p
+
+
