@@ -325,7 +325,7 @@ let g:pastedtext_select_key = 'ab'
 " typescript is javascript
 au BufRead,BufNewFile *.ts set filetype=javascript
 
-set smartindent
+" set smartindent
 
 " optimized javascript console
 autocmd FileType javascript inoremap ;co console.log();<left><left>
