@@ -334,4 +334,5 @@ autocmd FileType javascript inoremap ;cl console.log();<left><left>
 " easier pasting from primary selection
 nnoremap <C-P> "*p
 
-
+" replace with last yanked
+vnoremap P "0p
