@@ -227,6 +227,10 @@ bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
 bindsym $mod+Prior exec --no-startup-id "loe-dmenu"
 bindsym $mod+Next exec --no-startup-id i3-msg "floating enable" && i3-msg "resize set 5760 1080" && i3-msg "move position center"
 
+# cut and uncut ethernet
+bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
+bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
+
 # bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
 
 bindsym $mod+$sup+a focus parent
@@ -280,16 +284,6 @@ bindsym Print exec --no-startup-id xfce4-screenshooter
 # NOPE
 # bindsym $mod+Shift+Left move workspace to output left
 # bindsym $mod+Shift+Right move workspace to output right
-
-# cut and uncut ethernet
-bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
-bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
-
-
-
-
-
-
 
 # default_border pixel 0
 # default_border none
