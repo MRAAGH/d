@@ -161,7 +161,7 @@ autocmd FileType html colorscheme distinguished
 " nnoremap <Space><Space> /<++><CR>"_c4l
 
 " code snippet in md files
-autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
+" autocmd FileType markdown nnoremap <Space>s a```<CR>```<Esc>k$a
 
 " nmap <C-N><C-N> :set nu!<CR>:set rnu!<CR>
 
@@ -282,11 +282,11 @@ nnoremap <C-S> :w<CR>
 " ctrl d for quit
 nnoremap <C-D> :q<CR>
 
-" " swap visual and logical
-" nnoremap gj j
-" nnoremap j gj
-" nnoremap gk k
-" nnoremap k gk
+" swap visual and logical
+nnoremap gj j
+nnoremap j gj
+nnoremap gk k
+nnoremap k gk
 
 " HARD MODE
 nnoremap h <esc>
