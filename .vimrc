@@ -281,6 +281,8 @@ nnoremap <C-S> :w<CR>
 
 " ctrl d for quit
 nnoremap <C-D> :q<CR>
+" ctrl d for cancel
+vnoremap <C-D> <ESC>
 
 " swap visual and logical
 nnoremap gj j
@@ -336,3 +338,8 @@ nnoremap <C-P> "*p
 
 " replace with last yanked
 vnoremap P "0p
+
+" openscad
+" nnoremap <F8> :silent exec "!openscad % &"<CR>:redraw!<CR>
+autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
+autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
