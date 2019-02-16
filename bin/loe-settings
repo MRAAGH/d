@@ -23,7 +23,7 @@ import subprocess
 # args = parser.parse_args()
 
 usernames = ['#', '?', 'redsbone', 'potatodustfifth', 'pdf', 'w', 'j',
-             '[', ']', '[]', '][', '[[]]', '[][]', '[server]', '^', '-.-', 'dun']
+             '[', ']', '[]', '][', '[[]]', '[][]', '[server]', '^', '-.-', 'dun', '!']
 
 positions = [
     (0, 0),
