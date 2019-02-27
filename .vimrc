@@ -35,7 +35,8 @@ else
   Plug 'saaguero/vim-textobj-pastedtext' " gb
   Plug 'Julian/vim-textobj-variable-segment' " av
   " Plug 'idbrii/textobj-word-column.vim' " ac
-
+  Plug 'sirtaj/vim-openscad'
+  
 
 
 
@@ -168,15 +169,16 @@ autocmd FileType html colorscheme distinguished
 " nnoremap <C-N> :NERDTreeToggle<CR>
 
 " toggle numbers
-nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
+" nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
+nnoremap <silent> <C-N> :set nu!<CR>
 set number
-set relativenumber
+" set relativenumber
 
 " Hex read
-nnoremap <silent> <F6> :%!xxd<CR> :set filetype=xxd<CR> :set noendofline<CR>
+nnoremap <silent> <F6> :%!xxd -c 8 -b<CR> :set filetype=xxd<CR> :set noendofline<CR>
 
 " Hex write
-nnoremap <silent> <F7> :%!xxd -r<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
+nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
 :set scrolloff=8
@@ -290,11 +292,11 @@ nnoremap j gj
 nnoremap gk k
 nnoremap k gk
 
-" HARD MODE
-nnoremap h <esc>
-nnoremap l <esc>
-vnoremap h <esc>
-vnoremap l <esc>
+" " HARD MODE
+" nnoremap h <esc>
+" nnoremap l <esc>
+" vnoremap h <esc>
+" vnoremap l <esc>
 
 " paste from specific register
 nnoremap "P "0P
