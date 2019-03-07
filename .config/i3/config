@@ -172,7 +172,7 @@ bindsym $mod+t exec --no-startup-id "mpc seek +00:01:00"
 bindsym $mod+c exec --no-startup-id "mpc seek -10%"
 bindsym $mod+g exec --no-startup-id "mpc seek +10%"
 
-bindsym $mod+$sup+bracketleft exec --no-startup-id /usr/local/bin/riot-web
+# bindsym $mod+$sup+bracketleft exec --no-startup-id "if /usr/local/bin/riot-web; then echo ye; else riot-desktop; fi"
 
 bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
