@@ -7,6 +7,4 @@ rsync -rtuz $1:~/txt/* ~/txt
 # rsync -rtuz -e 'ssh -p 44741' $1:~/txt/* ~/txt
 else
 	echo 'specify target machine as argument'
-#rsync -rtuz -e 'ssh -p 44741' ~/txt/* pi@hidden-network:~/txt
-#rsync -rtuz -e 'ssh -p 44741' pi@hidden-network:~/txt/* ~/txt
 fi
