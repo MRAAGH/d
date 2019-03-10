@@ -83,9 +83,6 @@ floating_modifier $mod
 # bindsym $mod+bracketright
 # bindsym $mod+equal
 # bindsym $mod+p
-# bindsym $mod+$sup+3
-# bindsym $mod+$sup+4
-# bindsym $mod+$sup+5
 # bindsym $mod+$sup+6
 # bindsym $mod+$sup+apostrophe
 # bindsym $mod+$sup+b
@@ -242,6 +239,9 @@ bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 # bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
 
+bindsym $mod+$sup+3 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate right"
+bindsym $mod+$sup+4 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate normal"
+bindsym $mod+$sup+5 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate left"
 bindsym $mod+$sup+a focus parent
 bindsym $mod+$sup+c focus child
 bindsym $mod+$sup+w layout tabbed
