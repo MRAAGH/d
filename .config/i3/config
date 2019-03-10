@@ -176,6 +176,8 @@ bindsym $mod+Control+z exec --no-startup-id "mpc seek +00:01:00"
 bindsym $mod+Control+Shift+Escape exec --no-startup-id "mpc seek -10%"
 bindsym $mod+Control+Shift+z exec --no-startup-id "mpc seek +10%"
 
+# bindsym $mod+$sup+bracketleft exec --no-startup-id "if /usr/local/bin/riot-web; then echo ye; else riot-desktop; fi"
+
 bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
 bindsym $mod+$sup+t exec --no-startup-id thunderbird
