@@ -181,7 +181,7 @@ nnoremap <silent> <F6> :%!xxd -c 8 -b<CR> :set filetype=xxd<CR> :set noendofline
 nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
-:set scrolloff=8
+:set scrolloff=4
 
 " tabs to spaces
 ":se et
@@ -204,9 +204,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-" tabs
-nnoremap <C-Y> gT
-nnoremap <C-O> gt
+" " tabs
+" nnoremap <C-Y> gT
+" nnoremap <C-O> gt
 
 " scrolling
 " nnoremap <C-U> <C-D>
@@ -291,6 +291,12 @@ nnoremap gj j
 nnoremap j gj
 nnoremap gk k
 nnoremap k gk
+
+" " HARD MODE
+" nnoremap j <esc>
+" nnoremap k <esc>
+" vnoremap j <esc>
+" vnoremap k <esc>
 
 " " HARD MODE
 " nnoremap h <esc>
