@@ -83,7 +83,7 @@ floating_modifier $mod
 # bindsym $mod+bracketright
 # bindsym $mod+equal
 # bindsym $mod+p
-# bindsym $mod+$sup+6
+bindsym $mod+$sup+6 exec --no-startup-id "sxiv ~/pict/timetable2019.png"
 # bindsym $mod+$sup+apostrophe
 # bindsym $mod+$sup+b
 # bindsym $mod+$sup+backslash
