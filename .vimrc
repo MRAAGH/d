@@ -46,6 +46,8 @@ else
   Plug 'MRAAGH/vim-distinguished'
   " Plug 'nanotech/jellybeans.vim'
   Plug 'MRAAGH/twilight256.vim'
+  Plug 'w0ng/vim-hybrid'
+
 
 
   call plug#end()
@@ -191,7 +193,8 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 :set softtabstop=2
 
 " swap colon and semicolon
-nnoremap ; :
+" super annoying delay
+nnoremap ; 2gs:
 nnoremap : ;
 
 " swap in visual too
@@ -351,3 +354,5 @@ vnoremap P "0p
 " nnoremap <F8> :silent exec "!openscad % &"<CR>:redraw!<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
+
+set noswapfile
