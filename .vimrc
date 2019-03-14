@@ -356,3 +356,6 @@ autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
 
 set noswapfile
+
+" in an perfect world, you wouldn't need this:
+set mouse=n
