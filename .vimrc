@@ -152,13 +152,14 @@ packadd matchit
 " CUSTOMIZE
 
 " customize ctrlp
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+" let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 "let g:ctrlp_custom_ignore = 'node_modules\|git'
 
-" color scheme
-colorscheme twilight256
-autocmd FileType javascript colorscheme distinguished
-autocmd FileType html colorscheme distinguished
+" " color scheme
+" colorscheme twilight256
+" autocmd FileType javascript colorscheme distinguished
+" autocmd FileType html colorscheme distinguished
+colorscheme distinguished
 
 " go to next marker
 " nnoremap <Space><Space> /<++><CR>"_c4l
@@ -172,7 +173,7 @@ autocmd FileType html colorscheme distinguished
 
 " toggle numbers
 " nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
-nnoremap <silent> <C-N> :set nu!<CR>
+" nnoremap <silent> <C-N> :set nu!<CR>
 set number
 " set relativenumber
 
@@ -183,7 +184,7 @@ nnoremap <silent> <F6> :%!xxd -c 8 -b<CR> :set filetype=xxd<CR> :set noendofline
 nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
-:set scrolloff=4
+:set scrolloff=5
 
 " tabs to spaces
 ":se et
@@ -194,7 +195,7 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 
 " swap colon and semicolon
 " super annoying delay
-nnoremap ; 2gs:
+nnoremap ; gs:
 nnoremap : ;
 
 " swap in visual too
@@ -239,12 +240,12 @@ set autoread
 nmap Y y$
 
 " better S
-nnoremap S :!bash<CR>
+" nnoremap S :!bash<CR>
 
-" foldmethod
-set foldmethod=indent
-set nofoldenable
-set foldlevel=2
+" " foldmethod
+" set foldmethod=indent
+" set nofoldenable
+" set foldlevel=2
 
 " clear search results with esc
 " nnoremap <ESC> :noh<CR>
@@ -265,8 +266,9 @@ let g:ycm_confirm_extra_conf = 0
 if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
 endif
-
 let g:highlightedyank_highlight_duration = 200
+
+" TODO: map this only if plugin exists (as with highlightedyank)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -307,9 +309,9 @@ nnoremap k gk
 " vnoremap h <esc>
 " vnoremap l <esc>
 
-" paste from specific register
-nnoremap "P "0P
-nnoremap "p "0p
+" " paste from specific register
+" nnoremap "P "0P
+" nnoremap "p "0p
 
 " nnoremap qq 0qq
 vnoremap q :norm@q<CR>
@@ -333,7 +335,7 @@ omap <silent> i, <Plug>AngryInnerPrefix
 " let g:is_pythonsense_suppress_location_keymaps = 1
 
 " better key for vim-textobj-pastedtext
-let g:pastedtext_select_key = 'ab'
+" let g:pastedtext_select_key = 'ab'
 
 " typescript is javascript
 au BufRead,BufNewFile *.ts set filetype=javascript
@@ -359,3 +361,4 @@ set noswapfile
 
 " in an perfect world, you wouldn't need this:
 set mouse=n
+
