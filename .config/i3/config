@@ -232,6 +232,8 @@ bindsym $mod+$sup+x exec --no-startup-id "pulseaudio -k; sleep 0.1; pulseaudio"
 
 bindsym $mod+Prior exec --no-startup-id "loe-dmenu"
 bindsym $mod+Next exec --no-startup-id i3-msg "floating enable" && i3-msg "resize set 5760 1080" && i3-msg "move position center"
+bindsym $mod+Home exec --no-startup-id xdotool getactivewindow >> ~/.marked_loe_windows
+bindsym $mod+End exec --no-startup-id rm ~/.marked_loe_windows
 
 # cut and uncut ethernet
 bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
