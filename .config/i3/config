@@ -77,13 +77,14 @@ floating_modifier $mod
 
 
 # UNUSED KEYS:
+# bindsym $mod+$sup+w layout tabbed
+# bindsym $mod+$sup+s layout stacking
 # bindsym $mod+6
 # bindsym $mod+backspace
 # bindsym $mod+bracketleft
 # bindsym $mod+bracketright
 # bindsym $mod+equal
 # bindsym $mod+p
-bindsym $mod+$sup+6 exec --no-startup-id "sxiv ~/pict/timetable2019.png"
 # bindsym $mod+$sup+apostrophe
 # bindsym $mod+$sup+b
 # bindsym $mod+$sup+backslash
@@ -208,6 +209,8 @@ bindsym $mod+3 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/
 bindsym $mod+4 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.vimrc"
 bindsym $mod+5 exec --no-startup-id $term -e bash -c "source ~/.bashrc && vim ~/.config/ranger/rc.conf"
 
+bindsym $mod+$sup+6 exec --no-startup-id "sxiv ~/pict/timetable2019.png"
+
 bindsym $mod+v split v
 bindsym $mod+b split h
 
@@ -246,8 +249,8 @@ bindsym $mod+$sup+4 exec --no-startup-id "xrandr --output $(xrandr -q |grep prim
 bindsym $mod+$sup+5 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate left"
 bindsym $mod+$sup+a focus parent
 bindsym $mod+$sup+c focus child
-bindsym $mod+$sup+w layout tabbed
-bindsym $mod+$sup+s layout stacking
+# bindsym $mod+$sup+w layout tabbed
+# bindsym $mod+$sup+s layout stacking
 bindsym $mod+$sup+7 border pixel 0
 bindsym $mod+$sup+8 border normal
 bindsym $mod+minus scratchpad show
