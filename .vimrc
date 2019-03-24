@@ -184,7 +184,7 @@ nnoremap <silent> <F6> :%!xxd -c 8 -b<CR> :set filetype=xxd<CR> :set noendofline
 nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :set noendofline<CR>
 " ;set display=uhex<CR>
 
-:set scrolloff=5
+:set scrolloff=6
 
 " tabs to spaces
 ":se et
@@ -195,7 +195,8 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 
 " swap colon and semicolon
 " super annoying delay
-nnoremap ; gs:
+" nnoremap ; gs:
+nnoremap ; :
 nnoremap : ;
 
 " swap in visual too
@@ -350,7 +351,8 @@ autocmd FileType javascript inoremap ;cl console.log();<left><left>
 nnoremap <C-P> "*p
 
 " replace with last yanked
-vnoremap P "0p
+" vnoremap P "0p
+" (doesn't work)
 
 " openscad
 " nnoremap <F8> :silent exec "!openscad % &"<CR>:redraw!<CR>
@@ -362,3 +364,25 @@ set noswapfile
 " in an perfect world, you wouldn't need this:
 set mouse=n
 
+"TODO: key to toggle syntax checking
+
+
+nnoremap '' `'
+
+autocmd FileType cpp inoremap ;co std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+autocmd FileType cpp inoremap ;so std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+autocmd FileType cpp inoremap ;st std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+
+autocmd FileType xml set nowrap
+set lazyredraw
+
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a pink cursor otherwise
+  let &t_EI = "\<Esc>]12;16\x7"
+  silent !echo -ne "\033]12;16\007"
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+endif
