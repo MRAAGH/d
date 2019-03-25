@@ -1,5 +1,5 @@
-!URxvt.font: xft:monospace:size=12
-URxvt.font: xft:Noto Sans Mono:size=12
+URxvt.font: xft:monospace:size=12
+!URxvt.font: xft:Noto Sans Mono:size=12
 !URxvt.font: xft:Andale Mono:size=12
 !URxvt.font: xft:Bitstream Vera Sans Mono:size=12
 !URxvt.font: xft:Andale Mono:size=12

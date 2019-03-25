@@ -127,12 +127,12 @@ endif " has("autocmd")
 " 		  \ | wincmd p | diffthis
 " endif
 
-if has('langmap') && exists('+langnoremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If unset (default), this may break plugins (but it's backward
-  " compatible).
-  set langnoremap
-endif
+" if has('langmap') && exists('+langnoremap')
+"   " Prevent that the langmap option applies to characters that result from a
+"   " mapping.  If unset (default), this may break plugins (but it's backward
+"   " compatible).
+"   set langnoremap
+" endif
 
 
 " Add optional packages.
@@ -193,15 +193,15 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 :set shiftwidth=2
 :set softtabstop=2
 
-" swap colon and semicolon
-" super annoying delay
-" nnoremap ; gs:
-nnoremap ; :
-nnoremap : ;
+" " swap colon and semicolon
+" " super annoying delay
+" " nnoremap ; gs:
+" nnoremap ; :
+" nnoremap : ;
 
-" swap in visual too
-vnoremap ; :
-vnoremap : ;
+" " swap in visual too
+" vnoremap ; :
+" vnoremap : ;
 
 " pane switching
 nnoremap <C-H> <C-W><C-H>
@@ -369,13 +369,14 @@ set mouse=n
 
 nnoremap '' `'
 
+" cout
 autocmd FileType cpp inoremap ;co std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 autocmd FileType cpp inoremap ;so std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
-autocmd FileType cpp inoremap ;st std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 autocmd FileType xml set nowrap
 set lazyredraw
 
+" pretty colors ^^
 if &term =~ "xterm\\|rxvt"
   " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
