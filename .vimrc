@@ -17,7 +17,7 @@ else
   Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-smooth-scroll'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'haya14busa/incsearch.vim'
+  " Plug 'haya14busa/incsearch.vim'
   Plug 'tpope/vim-repeat'
   Plug 'PotatoesMaster/i3-vim-syntax'
   " Plug 'vim-utils/vim-space' " a<space>
@@ -36,7 +36,7 @@ else
   Plug 'Julian/vim-textobj-variable-segment' " av
   " Plug 'idbrii/textobj-word-column.vim' " ac
   Plug 'sirtaj/vim-openscad'
-  
+ 
 
 
 
@@ -71,10 +71,10 @@ else
   set backup		" keep a backup file (restore to previous version)
   set undofile		" keep an undo file (undo changes after closing)
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+set history=100		" keep 50 lines of command line history
+" set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-" set incsearch		" do incremental searching
+set incsearch		" do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -85,10 +85,10 @@ map Q gq
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+" if &t_Co > 2 || has("gui_running")
+syntax on
+set hlsearch
+" endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -270,19 +270,19 @@ endif
 let g:highlightedyank_highlight_duration = 200
 
 " TODO: map this only if plugin exists (as with highlightedyank)
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
 
 " configuration for incsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+" set hlsearch
+" let g:incsearch#auto_nohlsearch = 1
+" map n  <Plug>(incsearch-nohl-n)
+" map N  <Plug>(incsearch-nohl-N)
+" map *  <Plug>(incsearch-nohl-*)
+" map #  <Plug>(incsearch-nohl-#)
+" map g* <Plug>(incsearch-nohl-g*)
+" map g# <Plug>(incsearch-nohl-g#)
 
 " ctrl s for saving
 nnoremap <C-S> :w<CR>
@@ -293,10 +293,11 @@ nnoremap <C-D> :q<CR>
 vnoremap <C-D> <ESC>
 
 " swap visual and logical
+" (also no highlight)
 nnoremap gj j
-nnoremap j gj
+nnoremap <silent> j :noh<cr>gj
 nnoremap gk k
-nnoremap k gk
+nnoremap <silent> k :noh<cr>gk
 
 " " HARD MODE
 " nnoremap j <esc>
@@ -311,8 +312,8 @@ nnoremap k gk
 " vnoremap l <esc>
 
 " " paste from specific register
-" nnoremap "P "0P
-" nnoremap "p "0p
+nnoremap "P "0P
+nnoremap "p "0p
 
 " nnoremap qq 0qq
 vnoremap q :norm@q<CR>
@@ -387,3 +388,18 @@ if &term =~ "xterm\\|rxvt"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
   " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
 endif
+
+
+
+ " leave insert mode quickly
+  if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+    augroup END
+  endif
+
+
+
