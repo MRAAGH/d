@@ -345,8 +345,7 @@ au BufRead,BufNewFile *.ts set filetype=javascript
 " set smartindent
 
 " optimized javascript console
-autocmd FileType javascript inoremap ;co console.log();<left><left>
-autocmd FileType javascript inoremap ;cl console.log();<left><left>
+autocmd FileType javascript inoremap ;c console.log();<left><left>
 
 " easier pasting from primary selection
 nnoremap <C-P> "*p
@@ -371,8 +370,8 @@ set mouse=n
 nnoremap '' `'
 
 " cout
-autocmd FileType cpp inoremap ;co std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
-autocmd FileType cpp inoremap ;so std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+autocmd FileType cpp inoremap ;c std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
+autocmd FileType cpp inoremap ;s std::cout <<  << std::endl;<left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 autocmd FileType xml set nowrap
 set lazyredraw
@@ -390,16 +389,12 @@ if &term =~ "xterm\\|rxvt"
 endif
 
 
+" timeout fixes
+set ttimeoutlen=0
+set ttimeout
+set notimeout
+au InsertEnter * set timeout
+au InsertLeave * set notimeout
 
- " leave insert mode quickly
-  if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-      autocmd!
-      au InsertEnter * set timeoutlen=0
-      au InsertLeave * set timeoutlen=1000
-    augroup END
-  endif
-
-
-
+" tilde is an operator now, as it should
+set tildeop
