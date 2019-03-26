@@ -247,6 +247,7 @@ bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 bindsym $mod+$sup+3 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate right"
 bindsym $mod+$sup+4 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate normal"
 bindsym $mod+$sup+5 exec --no-startup-id "xrandr --output $(xrandr -q |grep primary |cut -d ' ' -f 1) --rotate left"
+bindsym $mod+$sup+6 exec --no-startup-id "surf https://www.fimfiction.net/story/291019/$(echo '' |dmenu)/"
 bindsym $mod+$sup+a focus parent
 bindsym $mod+$sup+c focus child
 # bindsym $mod+$sup+w layout tabbed
