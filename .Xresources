@@ -10,7 +10,7 @@ URxvt*background: #000000
 URxvt*transparent: true
 URxvt*shading: 12
 
-URxvt*cursorColor: FF00FF
+URxvt*cursorColor: #fe6bad
 
 ! something, idk, cool colors
 ! black
