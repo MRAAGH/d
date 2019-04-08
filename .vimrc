@@ -262,6 +262,8 @@ nnoremap <silent> O :set formatoptions-=o<CR>O
 
 " configuration of youcompleteme
 let g:ycm_confirm_extra_conf = 0
+" and syntastic
+let g:syntastic_always_populate_loc_list = 1
 
 " configuration for highlightedyank
 if !exists('##TextYankPost')
