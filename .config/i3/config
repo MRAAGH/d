@@ -167,10 +167,10 @@ bindsym $mod+e exec --no-startup-id amixer -q set Master 2dB- unmute
 
 bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e"
 
-bindsym $mod+Escape exec --no-startup-id "mpc seek -00:00:10"
-bindsym $mod+z exec --no-startup-id "mpc seek +00:00:10"
-bindsym $mod+Control+Escape exec --no-startup-id "mpc seek -00:01:00"
-bindsym $mod+Control+z exec --no-startup-id "mpc seek +00:01:00"
+bindsym $mod+Escape exec --no-startup-id "mpc seek -10"
+bindsym $mod+z exec --no-startup-id "mpc seek +10"
+bindsym $mod+Control+Escape exec --no-startup-id "mpc seek -60"
+bindsym $mod+Control+z exec --no-startup-id "mpc seek +60"
 bindsym $mod+Control+Shift+Escape exec --no-startup-id "mpc seek -10%"
 bindsym $mod+Control+Shift+z exec --no-startup-id "mpc seek +10%"
 
