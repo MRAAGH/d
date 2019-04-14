@@ -27,7 +27,7 @@ else
   Plug 'kana/vim-textobj-user'
   Plug 'bps/vim-textobj-python' " af ac
   " Plug 'libclang-vim/vim-textobj-clang' " a;
-  Plug 'Julian/vim-textobj-brace' " aj
+  " Plug 'Julian/vim-textobj-brace' " aj
   Plug 'Chun-Yang/vim-textobj-chunk' " ac
   " Plug 'glts/vim-textobj-comment' " ac
   Plug 'kana/vim-textobj-entire' " ae
@@ -36,7 +36,7 @@ else
   Plug 'Julian/vim-textobj-variable-segment' " av
   " Plug 'idbrii/textobj-word-column.vim' " ac
   Plug 'sirtaj/vim-openscad'
- 
+  Plug 'airblade/vim-gitgutter'
 
 
 
@@ -318,7 +318,7 @@ nnoremap "P "0P
 nnoremap "p "0p
 
 " nnoremap qq 0qq
-vnoremap q :norm@q<CR>
+" vnoremap q :norm@q<CR>
 
 " better netrw filter
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
