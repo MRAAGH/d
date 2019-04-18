@@ -167,14 +167,14 @@ bindsym $mod+e exec --no-startup-id amixer -q set Master 2dB- unmute
 
 bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e"
 
-bindsym $mod+Escape exec --no-startup-id "mpc seek -00:00:10"
-bindsym $mod+z exec --no-startup-id "mpc seek +00:00:10"
-bindsym $mod+Control+Escape exec --no-startup-id "mpc seek -00:01:00"
-bindsym $mod+Control+z exec --no-startup-id "mpc seek +00:01:00"
+bindsym $mod+Escape exec --no-startup-id "mpc seek -10"
+bindsym $mod+z exec --no-startup-id "mpc seek +10"
+bindsym $mod+Control+Escape exec --no-startup-id "mpc seek -60"
+bindsym $mod+Control+z exec --no-startup-id "mpc seek +60"
 bindsym $mod+Control+Shift+Escape exec --no-startup-id "mpc seek -10%"
 bindsym $mod+Control+Shift+z exec --no-startup-id "mpc seek +10%"
 
-# bindsym $mod+$sup+bracketleft exec --no-startup-id "if /usr/local/bin/riot-web; then echo ye; else riot-desktop; fi"
+bindsym $mod+$sup+bracketleft exec --no-startup-id "if /usr/local/bin/riot-web; then echo ye; else riot-desktop; fi"
 
 bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
@@ -320,7 +320,8 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] move scratchpad 
 #for_window [instance="dropdown"] resize set 960 700
 #for_window [instance="dropdown"] move position center 
-exec --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
+exec_always --no-startup-id killall ncmpc
+exec_always --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
 
 # gimp
 # for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move right; resize shrink width -31px or -31 ppt

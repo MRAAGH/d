@@ -27,7 +27,7 @@ else
   Plug 'kana/vim-textobj-user'
   Plug 'bps/vim-textobj-python' " af ac
   " Plug 'libclang-vim/vim-textobj-clang' " a;
-  Plug 'Julian/vim-textobj-brace' " aj
+  " Plug 'Julian/vim-textobj-brace' " aj
   Plug 'Chun-Yang/vim-textobj-chunk' " ac
   " Plug 'glts/vim-textobj-comment' " ac
   Plug 'kana/vim-textobj-entire' " ae
@@ -36,7 +36,7 @@ else
   Plug 'Julian/vim-textobj-variable-segment' " av
   " Plug 'idbrii/textobj-word-column.vim' " ac
   Plug 'sirtaj/vim-openscad'
- 
+  Plug 'airblade/vim-gitgutter'
 
 
 
@@ -262,6 +262,8 @@ nnoremap <silent> O :set formatoptions-=o<CR>O
 
 " configuration of youcompleteme
 let g:ycm_confirm_extra_conf = 0
+" and syntastic
+let g:syntastic_always_populate_loc_list = 1
 
 " configuration for highlightedyank
 if !exists('##TextYankPost')
@@ -316,7 +318,7 @@ nnoremap "P "0P
 nnoremap "p "0p
 
 " nnoremap qq 0qq
-vnoremap q :norm@q<CR>
+" vnoremap q :norm@q<CR>
 
 " better netrw filter
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -356,8 +358,9 @@ nnoremap <C-P> "*p
 
 " openscad
 " nnoremap <F8> :silent exec "!openscad % &"<CR>:redraw!<CR>
-autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
+autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
+autocmd BufRead,BufNewFile *.scad nnoremap <F8> :!ln -s %:p:r.stl ~/3d/<CR>
 
 set noswapfile
 
