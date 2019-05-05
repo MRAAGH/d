@@ -37,8 +37,8 @@ else
   " Plug 'idbrii/textobj-word-column.vim' " ac
   Plug 'sirtaj/vim-openscad'
   Plug 'airblade/vim-gitgutter'
-
-
+  Plug 'sirver/ultisnips'
+  Plug 'honza/vim-snippets'
 
   " colors
   " Plug 'trusktr/seti.vim'
@@ -358,7 +358,8 @@ nnoremap <C-P> "*p
 
 " openscad
 " nnoremap <F8> :silent exec "!openscad % &"<CR>:redraw!<CR>
-autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
+" autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<left><left><left><left><c-d>
+autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!openscad % &<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F8> :!ln -s %:p:r.stl ~/3d/<CR>
 
@@ -401,3 +402,10 @@ au InsertLeave * set notimeout
 
 " tilde is an operator now, as it should
 set tildeop
+
+" UltiSnip config
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:UltiSnipsEditSplit="vertical"
