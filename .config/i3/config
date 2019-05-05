@@ -101,7 +101,6 @@ floating_modifier $mod
 # bindsym $mod+tab
 # bindsym $mod+w
 # bindsym $mod+t
-# bindsym $mod+c
 # bindsym $mod+g
 
 
@@ -113,6 +112,7 @@ floating_modifier $mod
 bindsym $mod+q kill
 bindsym $mod+Shift+1 exec --no-startup-id systemctl poweroff
 bindsym $mod+Shift+2 exec --no-startup-id systemctl reboot
+bindsym $mod+Shift+3 exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e && systemctl suspend"
 bindsym $mod+Shift+grave exit
 bindsym $mod+Shift+Delete exec --no-startup-id mv ~/music/"$(mpc current -f %file% | cut -d / -f 2)" ~/musicgraveyard/ && mpc del 0
 
@@ -147,10 +147,6 @@ bindsym $mod+f exec --no-startup-id "mpc next"
 bindsym $mod+d exec --no-startup-id "mpc prev"
 bindsym $mod+s exec --no-startup-id "mpc toggle"
 
-#############KEY TO SWAP WORKSPACE WITH NEXT bracketleft
-#############KEY TO SWAP WORKSPACE WITH PREV bracketright
-#############KEY TO INSERT WORKSPACE p for page new
-
 #############KEY TO TURN ON UNCLUTTER
 #############KEY TO TURN OFF UNCLUTTER
 
@@ -158,7 +154,7 @@ bindsym $mod+semicolon exec --no-startup-id "$term -e bash -c \\"source ~/.bashr
 
 bindsym $mod+Return exec --no-startup-id $term
 
-bindsym $mod+apostrophe exec /usr/bin/firefox
+bindsym $mod+apostrophe exec --no-startup-id waterfox
 
 bindsym $mod+a [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
@@ -176,7 +172,7 @@ bindsym $mod+Control+Shift+z exec --no-startup-id "mpc seek +10%"
 
 bindsym $mod+$sup+bracketleft exec --no-startup-id "if /usr/local/bin/riot-web; then echo ye; else riot-desktop; fi"
 
-bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
+bindsym $mod+$sup+d exec --no-startup-id dmenu_path | awk '!a[$0]++' | dmenu "$@" -l 10 -fn 'Ubuntu Mono:pixelsize=24' | tee -a ~/.dmenu_history | ${SHELL:-"/bin/sh"}
 
 bindsym $mod+$sup+t exec --no-startup-id thunderbird
 
@@ -189,8 +185,7 @@ bindsym $mod+9 exec --no-startup-id "amixer -q set PCM 0.6db-,0db+"
 bindsym $mod+$sup+0 exec --no-startup-id "mpc seek 0"
 bindsym $mod+$sup+9 exec --no-startup-id bash -c "mpc seek \$(( ( RANDOM % 100 ) )).\$(( ( RANDOM % 10 ) ))\$(( ( RANDOM % 10 ) ))%"
 
-###########################SLIC3R KEY
-###########################CURA KEY
+bindsym $mod+c exec --no-startup-id cura
 
 bindsym $mod+n resize grow left 10 px or 10 ppt
 bindsym $mod+$sup+n resize shrink right 10 px or 10 ppt
