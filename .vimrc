@@ -294,6 +294,9 @@ nnoremap <C-D> :q<CR>
 " ctrl d for cancel
 vnoremap <C-D> <ESC>
 
+" ctrl q for true quit
+nnoremap <C-Q> :qall!<CR>
+
 " swap visual and logical
 " (also no highlight)
 nnoremap gj j
