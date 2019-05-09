@@ -2,7 +2,7 @@
 
 # /usr/bin/gnome-terminal -e "/bin/nano ~/txt/'$(/usr/bin/tac ~/.txt_history | dmenu -l 15 -i)'"
 
-chosen="$(ls -A ~/txt/ | grep -Ev '(\.swp$|\.save|~)$' | tac ~/.txt_history - | awk '!a[$0]++' | dmenu -l 15 -i -fn 'Ubuntu Mono:pixelsize=24')"
+chosen="$(ls -A ~/txt/ | grep -Ev '(\.swp$|\.save|~)$' | tac ~/.txt_history - | awk '!a[$0]++' | dmenu -l 15 -i -fn 'Noto Sans Mono:size=12')"
 
 # only use if there is something in the string
 if [ ! -z "$chosen" -a "$chosen" != " " ]; then
