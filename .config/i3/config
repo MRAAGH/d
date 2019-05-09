@@ -99,7 +99,6 @@ floating_modifier $mod
 # bindsym $mod+$sup+tab
 # bindsym $mod+$sup+v
 # bindsym $mod+tab
-# bindsym $mod+w
 # bindsym $mod+t
 # bindsym $mod+g
 
@@ -155,6 +154,8 @@ bindsym $mod+semicolon exec --no-startup-id "$term -e bash -c \\"source ~/.bashr
 bindsym $mod+Return exec --no-startup-id $term
 
 bindsym $mod+apostrophe exec --no-startup-id waterfox
+
+bindsym $mod+w exec --no-startup-id "$term -e bash -c \\"source ~/.bashrc; env EDITOR=vim nmtui-connect\\""
 
 bindsym $mod+a [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
@@ -245,8 +246,7 @@ bindsym $mod+$sup+5 exec --no-startup-id "xrandr --output $(xrandr -q |grep prim
 # bindsym $mod+$sup+6 exec --no-startup-id "surf https://www.fimfiction.net/story/291019/$(echo '' |dmenu)/"
 bindsym $mod+$sup+a focus parent
 bindsym $mod+$sup+c focus child
-## wifi restart
-bindsym $mod+$sup+w exec --no-startup-id "sudo /usr/bin/systemctl restart NetworkManager"
+# bindsym $mod+$sup+w layout tabbed
 # bindsym $mod+$sup+s layout stacking
 bindsym $mod+$sup+7 border pixel 0
 bindsym $mod+$sup+8 border normal
