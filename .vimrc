@@ -299,10 +299,12 @@ nnoremap <C-Q> :qall!<CR>
 
 " swap visual and logical
 " (also no highlight)
-nnoremap gj j
-nnoremap <silent> j :noh<cr>gj
-nnoremap gk k
-nnoremap <silent> k :noh<cr>gk
+" nnoremap gj j
+" nnoremap <silent> j :noh<cr>gj
+" nnoremap gk k
+" nnoremap <silent> k :noh<cr>gk
+nnoremap <silent> j :noh<cr>j
+nnoremap <silent> k :noh<cr>k
 
 " " HARD MODE
 " nnoremap j <esc>
