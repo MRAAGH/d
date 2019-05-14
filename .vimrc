@@ -216,8 +216,8 @@ nnoremap <C-L> <C-W><C-L>
 " scrolling
 " nnoremap <C-U> <C-D>
 " nnoremap <C-I> <C-U>
-noremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
-noremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
+nnoremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
+nnoremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
 " noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 " noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
