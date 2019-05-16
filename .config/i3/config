@@ -18,7 +18,8 @@ set $sup Control
 # exec --no-startup-id feh --bg-scale ~/.bg
 exec --no-startup-id ~/.fehbg &
 
-exec --no-startup-id pulseaudio && pulseaudio-equalizer enable
+exec --no-startup-id pulseaudio
+exec_always --no-startup-id sleep 2 && pulseaudio-equalizer enable
 
 exec_always --no-startup-id setxkbmap -device 11 us_alt
 exec_always --no-startup-id setxkbmap -device 12 us_alt
