@@ -1,8 +1,5 @@
-!URxvt.font: xft:monospace:size=12
-URxvt.font: xft:Ubuntu Mono:size=16
-!URxvt.font: xft:Andale Mono:size=12
-!URxvt.font: xft:Bitstream Vera Sans Mono:size=12
-!URxvt.font: xft:Andale Mono:size=12
+URxvt.font: xft:monospace:size=18
+
 URxvt.scrollBar: false
 
 URxvt*foreground: #aEaEaE
