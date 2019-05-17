@@ -1,4 +1,4 @@
-URxvt.font: xft:monospace:size=18
+URxvt.font: xft:monospace:size=16
 
 URxvt.scrollBar: false
 

@@ -26,7 +26,8 @@ exec_always --no-startup-id setxkbmap -device 12 us_alt
 
 exec_always --no-startup-id "killall compton; compton"
 
-exec_always --no-startup-id xrdb ~/.Xresources
+# was moved next to ncmpc
+# exec_always --no-startup-id xrdb ~/.Xresources
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -318,7 +319,7 @@ for_window [instance="dropdown"] move scratchpad
 #for_window [instance="dropdown"] resize set 960 700
 #for_window [instance="dropdown"] move position center 
 exec_always --no-startup-id killall ncmpc
-exec_always --no-startup-id $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc"
+exec_always --no-startup-id xrdb ~/.Xresources && $term -name dropdown -e bash -c "source ~/.bashrc && ncmpc -C"
 
 # gimp
 # for_window [window_role="gimp-toolbox"] floating disable; layout stacking; move right; resize shrink width -31px or -31 ppt
