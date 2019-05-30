@@ -408,7 +408,8 @@ au InsertEnter * set timeout
 au InsertLeave * set notimeout
 
 " tilde is an operator now, as it should
-set tildeop
+" nah
+" set tildeop
 
 " UltiSnip config
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -416,3 +417,15 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:UltiSnipsEditSplit="vertical"
+
+" enable invisible characters:
+set list
+" define how to display them:
+set listchars=space:·,tab:-->
+
+" make a new highlight group for displaying spaces:
+hi MySpaceGroup ctermfg=239
+" display spaces in this group:
+" match MySpaceGroup / /
+autocmd BufRead,BufNewFile * match MySpaceGroup / /
+
