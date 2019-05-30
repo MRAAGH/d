@@ -1,4 +1,4 @@
-URxvt.font: xft:monospace:size=16
+URxvt.font: xft:monospace:size=17
 
 URxvt.scrollBar: false
 
@@ -109,3 +109,15 @@ URxvt.keysym.C-0x4b: \027K
 ! bind Control-Shift-l to Ctrl-w_L
 URxvt.keysym.C-0x4c: \027L
 
+!!URxvt.perl-ext: default,url-select,clipboard
+URxvt.perl-ext: url-select,clipboard
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+URxvt*skipBuiltinGlyphs:    true
+
+!! no printing on paper
+URxvt.print-pipe: "cat > /dev/null"
