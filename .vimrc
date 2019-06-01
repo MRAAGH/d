@@ -425,7 +425,10 @@ set listchars=space:·,tab:-->
 
 " make a new highlight group for displaying spaces:
 hi MySpaceGroup ctermfg=239
+hi MyTabGroup ctermfg=239
 " display spaces in this group:
 " match MySpaceGroup / /
-autocmd BufRead,BufNewFile * match MySpaceGroup / /
+autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
+" equivalent:
+autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
 
