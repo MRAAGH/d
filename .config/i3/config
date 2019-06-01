@@ -305,7 +305,7 @@ hide_edge_borders both
 # new i3
 # for_window [tiling] border pixel 3
 # old i3
-for_window [workspace=__focused__] border pixel 0
+for_window [workspace=__focused__] border pixel 1
 
 #focus_wrapping no
 
