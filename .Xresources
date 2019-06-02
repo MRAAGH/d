@@ -1,4 +1,16 @@
-URxvt.font: xft:monospace:size=17
+URxvt.font: xft:monospace:size=18
+URxvt.letterSpace: -1
+URxvt.lineSpace: 0
+
+! 1920x1080:
+! 18
+! -1
+! 0
+
+! 1920x1080:
+! 17
+! -1
+! 2
 
 URxvt.scrollBar: false
 
