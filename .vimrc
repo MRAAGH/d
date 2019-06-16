@@ -15,7 +15,7 @@ else
   " Plug 'ctrlpvim/ctrlp.vim'
   " Plug 'austintaylor/vim-commaobject' " a,
   Plug 'tpope/vim-fugitive'
-  Plug 'terryma/vim-smooth-scroll'
+  " Plug 'terryma/vim-smooth-scroll'
   Plug 'machakann/vim-highlightedyank'
   " Plug 'haya14busa/incsearch.vim'
   Plug 'tpope/vim-repeat'
@@ -214,14 +214,12 @@ nnoremap <C-L> <C-W><C-L>
 " nnoremap <C-O> gt
 
 " scrolling
-" nnoremap <C-U> <C-D>
-" nnoremap <C-I> <C-U>
-nnoremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
-nnoremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
+nnoremap <C-U> <C-D>
+nnoremap <C-I> <C-U>
+" nnoremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
+" nnoremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
 vnoremap <silent> <C-I> <C-U>
 vnoremap <silent> <C-U> <C-D>
-" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 
 " swap ^ and 0
@@ -432,3 +430,5 @@ autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
 " equivalent:
 autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
 
+" don't hide long lines
+set display=lastline
