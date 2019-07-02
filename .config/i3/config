@@ -18,7 +18,8 @@ set $sup Control
 # exec --no-startup-id feh --bg-scale ~/.bg
 exec --no-startup-id ~/.fehbg &
 
-exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/octavia.png &
+# exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/octavia.png &
+# exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/mountain_temple.jpeg &
 
 exec_always --no-startup-id "killall pulseaudio; sleep 2 && pulseaudio & sleep 3 && pulseaudio-equalizer enable"
 
@@ -88,7 +89,6 @@ floating_modifier $mod
 # bindsym $mod+bracketleft
 # bindsym $mod+bracketright
 # bindsym $mod+equal
-# bindsym $mod+p
 # bindsym $mod+$sup+apostrophe
 # bindsym $mod+$sup+b
 # bindsym $mod+$sup+backslash
@@ -165,6 +165,8 @@ bindsym $mod+a [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 
 bindsym $mod+r exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
 bindsym $mod+e exec --no-startup-id amixer -c 0 -q set Master 2dB- unmute
+
+bindsym $mod+p exec --no-startup-id passmenu -l 15 -i -fn 'monospace:size=16'
 
 bindsym $mod+x exec --no-startup-id "i3lock -i ~/.lockbg.png -t -f -e"
 
@@ -293,7 +295,8 @@ bindsym Mod4+Mod1+Control+Return exec --no-startup-id halt-scripts
 # scrot & gimp - select window or rectangle
 #bindsym --release Shift+Control+Print exec --no-startup-id scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
-bindsym Print exec --no-startup-id xfce4-screenshooter
+# bindsym Print exec --no-startup-id xfce4-screenshooter
+bindsym Print exec --no-startup-id dmenu-scrot ~/pict/scr/
 
 # # move workspaces between screens
 # NOPE
@@ -343,3 +346,5 @@ workspace n1000 output DVI-D-0
 workspace i1000 output LVDS-1
 workspace e1000 output DP-1
 workspace s1000 output VGA-1
+workspace y1000 output HDMI-1
+workspace a1000 output DVI-D-1
