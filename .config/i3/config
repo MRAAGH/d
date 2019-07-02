@@ -18,13 +18,15 @@ set $sup Control
 # exec --no-startup-id feh --bg-scale ~/.bg
 exec --no-startup-id ~/.fehbg &
 
+exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/octavia.png &
 
 exec_always --no-startup-id "killall pulseaudio; sleep 2 && pulseaudio & sleep 3 && pulseaudio-equalizer enable"
 
 exec_always --no-startup-id setxkbmap -device 11 us_alt
 exec_always --no-startup-id setxkbmap -device 12 us_alt
 
-exec_always --no-startup-id "killall compton; compton"
+# exec_always --no-startup-id "killall compton; compton"
+exec_always --no-startup-id "compton"
 
 # was moved next to ncmpc
 # exec_always --no-startup-id xrdb ~/.Xresources
@@ -237,8 +239,8 @@ bindsym $mod+Home exec --no-startup-id xdotool getactivewindow >> ~/.marked_loe_
 bindsym $mod+End exec --no-startup-id rm ~/.marked_loe_windows
 
 # cut and uncut ethernet
-bindsym $mod+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
-bindsym $mod+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
+bindsym Control+KP_Subtract exec --no-startup-id sudo /sbin/ifconfig enp4s0 down
+bindsym Control+KP_Add exec --no-startup-id sudo /sbin/ifconfig enp4s0 up
 
 # bindsym $mod+$sup+9 exec --no-startup-id "urxvt -hold -e cal -y"
 
@@ -269,7 +271,7 @@ bar {
         # modifier Mod1
         status_command i3status
         tray_output primary
-        workspace_buttons no
+        workspace_buttons yes
 }
 
 # TODO: a different caps lock
@@ -305,7 +307,7 @@ hide_edge_borders both
 # new i3
 # for_window [tiling] border pixel 3
 # old i3
-for_window [workspace=__focused__] border pixel 1
+for_window [workspace=__focused__] border pixel 0
 
 #focus_wrapping no
 
