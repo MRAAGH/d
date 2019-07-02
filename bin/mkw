@@ -6,7 +6,7 @@ y=$(( RANDOM % $(( $(convert $1 -format %h info:) - $scale * 54 )) ))
 echo $scale $x $y
 
 blur=1.5
-rad=6
+rad=9
 
 mkdir -p ~/.bgs
 tmp=$(mktemp)
