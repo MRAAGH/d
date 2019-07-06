@@ -21,7 +21,8 @@ exec --no-startup-id ~/.fehbg &
 # exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/octavia.png &
 # exec_always --no-startup-id mkw ~/Pictures/0.0wp/ponpon/mountain_temple.jpeg &
 
-exec_always --no-startup-id "killall pulseaudio; sleep 2 && pulseaudio & sleep 3 && pulseaudio-equalizer enable"
+# exec_always --no-startup-id "killall pulseaudio; sleep 2 && pulseaudio & sleep 3 && pulseaudio-equalizer enable"
+exec_always --no-startup-id "pulseaudio --daemonize=no & sleep 3 && pulseaudio-equalizer enable"
 
 exec_always --no-startup-id setxkbmap -device 11 us_alt
 exec_always --no-startup-id setxkbmap -device 12 us_alt
