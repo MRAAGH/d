@@ -77,7 +77,7 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 " Don't use Ex mode, use Q for formatting
-map Q gq
+" map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -295,7 +295,8 @@ nnoremap <C-D> :q<CR>
 vnoremap <C-D> <ESC>
 
 " ctrl q for true quit
-nnoremap <C-Q> :qall!<CR>
+" removed because too dangerous
+" nnoremap <C-Q> :qall!<CR>
 
 " swap visual and logical
 " (also no highlight)
