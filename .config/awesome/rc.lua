@@ -337,8 +337,16 @@ local tasklist_buttons = gears.table.join(
       end,
       {description = "focus prev empty tag", group = "tag"}),
 
-      -- awful.key({ modkey,           }, "i",  awful.tag.viewnext,
-      --   {description = "view next", group = "tag"}),
+      awful.key({ modkey, }, "l",      function () awful.screen.focus(awful.screen.focused().index+1) end,
+        {description = "move to screen", group = "client"}),
+
+      awful.key({ modkey, }, "h",      function ()
+        if awful.screen.focused().index > 1 then
+          awful.screen.focus(awful.screen.focused().index-1)
+        end
+      end,
+        {description = "move to screen", group = "client"}),
+
       awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
         {description = "go back", group = "tag"}),
 
@@ -902,24 +910,24 @@ local tasklist_buttons = gears.table.join(
       awful.key({ modkey, "Shift"   }, "q", awesome.quit,
         {description = "quit awesome", group = "awesome"}),
 
-      -- TODO resize is perhaps not important enough to be on h and l
-      awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-        {description = "increase master width factor", group = "layout"}),
-      awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
-        {description = "decrease master width factor", group = "layout"}),
-      -- TODO I guess this is important enough so maybe keep defaults? idk
-      -- TODO soru doesn't use
-      awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
-        {description = "increase the number of master clients", group = "layout"}),
-      awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
-        {description = "decrease the number of master clients", group = "layout"}),
-      -- TODO alright so with shift it's changing master count, with ctrl it's changing column count. really. omg. this is so confusing. why. gah guess I'll keep it for now
-      -- TODO soru doesn't use
-      awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
-        {description = "increase the number of columns", group = "layout"}),
-      awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
-        {description = "decrease the number of columns", group = "layout"}),
-      -- TODO as there's a fixed number of possible layouts, absolute navigation would maybe be better in this case. Not sure though. Anyway space is a strange key to bind this to.
+      -- -- TODO resize is perhaps not important enough to be on h and l
+      -- awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+      --   {description = "increase master width factor", group = "layout"}),
+      -- awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+      --   {description = "decrease master width factor", group = "layout"}),
+      -- -- TODO I guess this is important enough so maybe keep defaults? idk
+      -- -- TODO soru doesn't use
+      -- awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+      --   {description = "increase the number of master clients", group = "layout"}),
+      -- awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+      --   {description = "decrease the number of master clients", group = "layout"}),
+      -- -- TODO alright so with shift it's changing master count, with ctrl it's changing column count. really. omg. this is so confusing. why. gah guess I'll keep it for now
+      -- -- TODO soru doesn't use
+      -- awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
+      --   {description = "increase the number of columns", group = "layout"}),
+      -- awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+      --   {description = "decrease the number of columns", group = "layout"}),
+      -- -- TODO as there's a fixed number of possible layouts, absolute navigation would maybe be better in this case. Not sure though. Anyway space is a strange key to bind this to.
       awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
         {description = "select next", group = "layout"}),
       awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
@@ -1010,11 +1018,17 @@ local tasklist_buttons = gears.table.join(
       end,
       {description = "move to next empty tag", group = "tag"}),
 
-      awful.key({ modkey, "Control" }, "y", function(c)
-        local nexttag = insert(-1)
-        c:move_to_tag(nexttag)
-      end,
-      {description = "move to prev empty tag", group = "tag"}),
+    awful.key({ modkey, "Control" }, "y", function(c)
+      local nexttag = insert(-1)
+      c:move_to_tag(nexttag)
+    end,
+    {description = "move to prev empty tag", group = "tag"}),
+
+    awful.key({ modkey, "Control" }, "l",      function (c) c:move_to_screen(c.screen.index+1)               end,
+      {description = "move to screen", group = "client"}),
+
+    awful.key({ modkey, "Control" }, "h",      function (c) c:move_to_screen(c.screen.index-1)               end,
+      {description = "move to screen", group = "client"}),
 
     awful.key({ modkey,           }, "q",      function (c) c:kill()                         end,
       {description = "close", group = "client"}),
