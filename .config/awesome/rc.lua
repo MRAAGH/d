@@ -423,7 +423,8 @@ local tasklist_buttons = gears.table.join(
         function () awful.spawn("cura") end),
 
       awful.key({ modkey,  }, "0",
-        function () awful.spawn(terminal.." -cd ~/cd/d", false) end),
+        -- TODO use ~
+        function () awful.spawn(terminal.." -cd /home/maze/cd/d", false) end),
 
       awful.key({ modkey,  }, "1",
         function () awful.spawn(terminal.." -cd /usr/share/X11/xkb/symbols", false) end),
