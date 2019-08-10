@@ -39,6 +39,7 @@ else
   Plug 'airblade/vim-gitgutter'
   Plug 'sirver/ultisnips'
   Plug 'honza/vim-snippets'
+  Plug 'tbastos/vim-lua'
 
   " colors
   " Plug 'trusktr/seti.vim'
