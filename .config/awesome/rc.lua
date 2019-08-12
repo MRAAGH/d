@@ -153,7 +153,9 @@ local function makeclear(tagname, direction)
   local screen = awful.screen.focused()
   local tag = awful.tag.find_by_name(screen, tagname)
   if not tag then
-    tag = awful.tag.add(tagname)
+    tag = awful.tag.add(tagname, {
+        layout = awful.layout.suit.tile,
+      })
   else
     if #(tag:clients()) > 0 then
       -- need to clear out these clients
@@ -347,8 +349,8 @@ local tasklist_buttons = gears.table.join(
       end,
         {description = "move to screen", group = "client"}),
 
-      awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-        {description = "go back", group = "tag"}),
+      -- awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
+      --   {description = "go back", group = "tag"}),
 
       awful.key({ modkey,           }, "j",
         function ()
