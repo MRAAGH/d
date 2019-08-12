@@ -292,24 +292,21 @@ local tasklist_buttons = gears.table.join(
 
     -- {{{ Key bindings
     globalkeys = gears.table.join(
+
+      -- DANGER
+
+      awful.key({ modkey, "Shift" }, "1",
+        function () awful.spawn("systemctl poweroff", false) end),
+
+      awful.key({ modkey, "Shift" }, "2",
+        function () awful.spawn("systemctl reboot", false) end),
+
+      awful.key({ modkey, "Shift" }, "3", function ()
+        awful.spawn.with_shell("i3lock -i ~/.lockbg.png -t -f -ed && systemctl suspend", false)
+      end),
+
       awful.key({ modkey, "Control" }, "s",      hotkeys_popup.show_help,
         {description="show help", group="awesome"}),
-
-      -- awful.key({ modkey,           }, "u",   awful.tag.viewprev,
-      --   {description = "view previous", group = "tag"}),
-
-      -- awful.key({ modkey }, "i", function (c)
-      --   local s = awful.screen.focused()
-      --   local tagname = s.selected_tag.name
-      --   local nexttagname = tostring(tonumber(tagname)+1)
-      --   local nexttag = awful.tag.find_by_name(s, nexttagname)
-      --   if not nexttag then
-      --     nexttag = awful.tag.add(nexttagname)
-      --   end
-      --   local arr = {}
-      --   arr[1] = nexttag
-      --   awful.tag.viewmore(arr)
-      -- end,
 
       awful.key({ modkey }, "i", function()
         local nexttag = nextoccupied(1)
