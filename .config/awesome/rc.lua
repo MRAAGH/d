@@ -302,7 +302,7 @@ local tasklist_buttons = gears.table.join(
         function () awful.spawn("systemctl reboot", false) end),
 
       awful.key({ modkey, "Shift" }, "3", function ()
-        awful.spawn.with_shell("i3lock -i ~/.lockbg.png -t -f -ed && systemctl suspend", false)
+        awful.spawn.with_shell("i3lock -i ~/.lockbg.png -t -f -e && systemctl suspend", false)
       end),
 
       awful.key({ modkey, "Control" }, "s",      hotkeys_popup.show_help,
@@ -390,7 +390,7 @@ local tasklist_buttons = gears.table.join(
         function () awful.spawn("passmenu -l 15 -i -fn 'monospace:size=16'", false) end),
 
       awful.key({ modkey, "Control" }, "x",
-        function () awful.spawn("i3lock -i ~/.lockbg.png -t -f -e", false) end),
+        function () awful.spawn.with_shell("i3lock -i ~/.lockbg.png -t -f -e", false) end),
 
       awful.key({ modkey, }, "Escape",
         function () awful.spawn("mpc seek -10", false) end),
