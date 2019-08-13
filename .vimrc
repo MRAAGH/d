@@ -369,6 +369,8 @@ nnoremap <C-P> "*p
 autocmd BufRead,BufNewFile *.scad nnoremap <F5> :!openscad % &<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F6> :!openscad % -o %:r.stl<CR>
 autocmd BufRead,BufNewFile *.scad nnoremap <F7> :!ln -s %:p:r.stl ~/3d/<CR>
+autocmd BufRead,BufNewFile *.scad nnoremap <C-A> <C-A>:w<CR>
+autocmd BufRead,BufNewFile *.scad nnoremap <C-X> <C-X>:w<CR>
 
 set noswapfile
 
@@ -434,3 +436,5 @@ autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
 
 " don't hide long lines
 set display=lastline
+
+inoremap {<CR> {<CR>}<ESC>ko
