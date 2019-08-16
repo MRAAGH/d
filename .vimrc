@@ -432,11 +432,11 @@ hi MyTabGroup ctermfg=239
 " match MySpaceGroup / /
 autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
 " equivalent:
-autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
+" autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
 
 " don't hide long lines
 set display=lastline
 
 inoremap {<CR> {<CR>}<ESC>ko
 
-nnoremap g<CR> yyp:.!bash<CR>
+nnoremap g<CR> yyo<ESC>p:.!bash<CR>
