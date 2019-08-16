@@ -175,7 +175,7 @@ colorscheme distinguished
 " toggle numbers
 " nnoremap <silent> <C-N> :set nu! relativenumber!<CR>
 " nnoremap <silent> <C-N> :set nu!<CR>
-set number
+" set number
 " set relativenumber
 
 " Hex read
@@ -438,3 +438,5 @@ autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
 set display=lastline
 
 inoremap {<CR> {<CR>}<ESC>ko
+
+nnoremap g<CR> yyp:.!bash<CR>
