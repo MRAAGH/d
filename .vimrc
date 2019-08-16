@@ -439,4 +439,4 @@ set display=lastline
 
 inoremap {<CR> {<CR>}<ESC>ko
 
-nnoremap g<CR> yyo<ESC>p:.!bash<CR>
+nnoremap g<CR> mmyyo<ESC>p:.!bash<CR>`m
