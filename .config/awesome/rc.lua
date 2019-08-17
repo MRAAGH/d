@@ -378,7 +378,7 @@ local tasklist_buttons = gears.table.join(
       awful.key({ modkey, }, "apostrophe",
         function () awful.spawn("waterfox") end),
 
-      awful.key({ modkey, }, "w",
+      awful.key({ modkey, "Control" }, "w",
         function () awful.spawn(terminal.." -e bash -c \"source ~/.bashrc; env EDITOR=vim nmtui-connect\"", false) end),
 
       awful.key({ modkey, }, "r",
@@ -1165,12 +1165,10 @@ local tasklist_buttons = gears.table.join(
           "pinentry",
         },
         class = {
-          "Arandr",
           "Blueman-manager",
           "Gpick",
           "Kruler",
           "MessageWin",  -- kalarm.
-          "Sxiv",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
