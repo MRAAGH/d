@@ -323,6 +323,9 @@ nnoremap <silent> k :noh<cr>k
 " " paste from specific register
 nnoremap "P "0P
 nnoremap "p "0p
+nnoremap qp "qp
+vnoremap qp "qp
+nnoremap yq "qy
 
 " nnoremap qq 0qq
 " vnoremap q :norm@q<CR>
