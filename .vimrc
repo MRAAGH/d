@@ -443,3 +443,4 @@ set display=lastline
 inoremap {<CR> {<CR>}<ESC>ko
 
 nnoremap g<CR> mmyyo<ESC>p:.!bash<CR>`m
+vnoremap g<CR> ymm}o<ESC>kpvip:!bash<CR>`m
