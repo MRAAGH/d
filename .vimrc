@@ -352,12 +352,14 @@ omap <silent> i, <Plug>AngryInnerPrefix
 " let g:pastedtext_select_key = 'ab'
 
 " typescript is javascript
-au BufRead,BufNewFile *.ts set filetype=javascript
+" not any more, got a ts plugin now
+" au BufRead,BufNewFile *.ts set filetype=javascript
 
 " set smartindent
 
 " optimized javascript console
 autocmd FileType javascript inoremap ;c console.log();<left><left>
+autocmd FileType typescript inoremap ;c console.log();<left><left>
 
 " easier pasting from primary selection
 nnoremap <C-P> "*p
