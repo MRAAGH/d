@@ -19,7 +19,7 @@ else
   Plug 'machakann/vim-highlightedyank'
   " Plug 'haya14busa/incsearch.vim'
   Plug 'tpope/vim-repeat'
-  Plug 'PotatoesMaster/i3-vim-syntax'
+  " Plug 'PotatoesMaster/i3-vim-syntax'
   " Plug 'vim-utils/vim-space' " a<space>
   Plug 'tpope/vim-vinegar'
   Plug 'JamesLinus/vim-angry' " a,
@@ -40,6 +40,7 @@ else
   Plug 'sirver/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'tbastos/vim-lua'
+  Plug 'leafgarland/typescript-vim'
 
   " colors
   " Plug 'trusktr/seti.vim'
@@ -51,6 +52,7 @@ else
 
 
 
+
   call plug#end()
 
 endif
@@ -58,13 +60,9 @@ endif
 
 
 
-" choose your century
-set nocompatible
 
-" allow backspacing over everything in insert mode
-" nope
-" set backspace=indent,eol,start
-set backspace=indent,eol
+" do not allow backspace
+set backspace=
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -188,21 +186,10 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 :set scrolloff=6
 
 " tabs to spaces
-":se et
-":se ts=4
+":set tabstop=4
 :set expandtab
 :set shiftwidth=2
 :set softtabstop=2
-
-" " swap colon and semicolon
-" " super annoying delay
-" " nnoremap ; gs:
-" nnoremap ; :
-" nnoremap : ;
-
-" " swap in visual too
-" vnoremap ; :
-" vnoremap : ;
 
 " pane switching
 nnoremap <C-H> <C-W><C-H>
@@ -210,15 +197,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-" " tabs
-" nnoremap <C-Y> gT
-" nnoremap <C-O> gt
-
 " scrolling
 nnoremap <C-U> <C-D>
 nnoremap <C-I> <C-U>
-" nnoremap <silent> <C-I> :call smooth_scroll#up(&scroll, 4, 2)<CR>
-" nnoremap <silent> <C-U> :call smooth_scroll#down(&scroll, 4, 2)<CR>
 vnoremap <silent> <C-I> <C-U>
 vnoremap <silent> <C-U> <C-D>
 
@@ -239,7 +220,7 @@ set smartcase
 set autoread
 
 " better Y
-nmap Y y$
+nnoremap Y y$
 
 " better S
 " nnoremap S :!bash<CR>
@@ -248,12 +229,6 @@ nmap Y y$
 " set foldmethod=indent
 " set nofoldenable
 " set foldlevel=2
-
-" clear search results with esc
-" nnoremap <ESC> :noh<CR>
-" actually, enter
-" nnoremap <CR> :noh<CR>
-" actually, nothing ... there's a good plugin for that
 
 " prevent automatic comment
 " can not be set inside vimrc because plugins override this setting
@@ -355,8 +330,6 @@ omap <silent> i, <Plug>AngryInnerPrefix
 " not any more, got a ts plugin now
 " au BufRead,BufNewFile *.ts set filetype=javascript
 
-" set smartindent
-
 " optimized javascript console
 autocmd FileType javascript inoremap ;c console.log();<left><left>
 autocmd FileType typescript inoremap ;c console.log();<left><left>
@@ -431,8 +404,8 @@ set list
 set listchars=space:·,tab:-->
 
 " make a new highlight group for displaying spaces:
-hi MySpaceGroup ctermfg=239
-hi MyTabGroup ctermfg=239
+autocmd BufRead,BufNewFile * highlight MySpaceGroup ctermfg=239
+autocmd BufRead,BufNewFile * highlight MyTabGroup ctermfg=239
 " display spaces in this group:
 " match MySpaceGroup / /
 autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
