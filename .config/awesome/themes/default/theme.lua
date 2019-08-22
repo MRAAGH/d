@@ -98,7 +98,10 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 -- theme.wallpaper = themes_path.."default/background.png"
-theme.wallpaper = "/home/maze/pict/0.0wp/ponpon/twilight_in_bed_by_gign_3208_d9kwml9_shady.png" 
+
+-- #!/bin/sh
+-- feh --bg-scale '/home/maze/.bgs/a.png' '/home/maze/.bgs/b.png' '/home/maze/.bgs/c.png' 
+-- theme.wallpaper = "/home/maze/.bgs/a.png" 
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
