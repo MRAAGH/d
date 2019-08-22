@@ -67,8 +67,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
   -- awful.layout.suit.floating,
-  awful.layout.suit.tile,
-  -- awful.layout.suit.tile.left,
+  -- awful.layout.suit.tile,
+  awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
   -- awful.layout.suit.tile.top,
   -- awful.layout.suit.fair,
@@ -154,7 +154,7 @@ local function makeclear(tagname, direction)
   local tag = awful.tag.find_by_name(screen, tagname)
   if not tag then
     tag = awful.tag.add(tagname, {
-        layout = awful.layout.suit.tile,
+        layout = awful.layout.suit.tile.left,
       })
   else
     if #(tag:clients()) > 0 then
@@ -947,8 +947,8 @@ local tasklist_buttons = gears.table.join(
 
       -- Prompt
       -- TODO if I want to keep my volume keys, this has to go. To mod ctrl D probably.
-      awful.key({ modkey, "Control" },            "d",     function () awful.screen.focused().mypromptbox:run() end,
-        {description = "run prompt", group = "launcher"}),
+      -- awful.key({ modkey, "Control" },            "d",     function () awful.screen.focused().mypromptbox:run() end,
+      --   {description = "run prompt", group = "launcher"}),
 
       -- TODO my lock screen was here. although gotta admit this is not the best spot for lock screen because it can be hit accidentally. soru doesn't use
       awful.key({ modkey }, "x",
@@ -1254,9 +1254,9 @@ local tasklist_buttons = gears.table.join(
   end)
 
   -- Enable sloppy focus, so that focus follows mouse.
-  -- client.connect_signal("mouse::enter", function(c)
-  --     c:emit_signal("request::activate", "mouse_enter", {raise = false})
-  -- end)
+  client.connect_signal("mouse::enter", function(c)
+      c:emit_signal("request::activate", "mouse_enter", {raise = false})
+  end)
 
   client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
   client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
