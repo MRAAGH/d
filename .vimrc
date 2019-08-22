@@ -443,8 +443,18 @@ autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
 set display=lastline
 
 inoremap {<CR> {<CR>}<ESC>ko
+inoremap ({<CR> ({<CR>});<ESC>ko
 
 nnoremap g<CR> mmyyo<ESC>p:.!bash<CR>`m
 vnoremap g<CR> ymm}o<ESC>kpvip:!bash<CR>`m
 
 nnoremap <C-F> <C-I>
+
+" no arrows
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" open current file in another tab
+nnoremap <C-W>t :tabe %<CR>
