@@ -7,7 +7,7 @@ else
 
   call plug#begin('~/.vim/plugged')
 
-  Plug 'Valloric/YouCompleteMe'
+  " Plug 'Valloric/YouCompleteMe'
 
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
@@ -100,7 +100,7 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+  autocmd!
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -328,7 +328,7 @@ omap <silent> i, <Plug>AngryInnerPrefix
 
 " typescript is javascript
 " not any more, got a ts plugin now
-" au BufRead,BufNewFile *.ts set filetype=javascript
+" autocmd BufRead,BufNewFile *.ts set filetype=javascript
 
 " optimized javascript console
 autocmd FileType javascript inoremap ;c console.log();<left><left>
@@ -384,8 +384,8 @@ autocmd VimLeave * silent !echo -ne "\033]112\007"
 set ttimeoutlen=0
 set ttimeout
 set notimeout
-au InsertEnter * set timeout
-au InsertLeave * set notimeout
+autocmd InsertEnter * set timeout
+autocmd InsertLeave * set notimeout
 
 " tilde is an operator now, as it should
 " nah
@@ -431,3 +431,6 @@ inoremap <right> <nop>
 
 " open current file in another tab
 nnoremap <C-W>t :tabe %<CR>
+
+" arduino is c++
+autocmd BufRead,BufNewFile *.ino set filetype=cpp
