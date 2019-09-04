@@ -11,7 +11,8 @@ xrdb .Xresources
 setxkbmap -device 11 us_alt
 setxkbmap -device 12 us_alt
 run unclutter
-feh --bg-scale ~/.bgs
+~/.fehbg
+# feh --bg-scale ~/.bgs
 
 pulseaudio -k
 sleep 1
