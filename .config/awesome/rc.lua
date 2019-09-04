@@ -68,10 +68,10 @@ modkey = "Mod4"
 awful.layout.layouts = {
   -- awful.layout.suit.floating,
   -- awful.layout.suit.tile,
-  awful.layout.suit.tile.left,
+  awful.layout.suit.fair,
+  -- awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
   -- awful.layout.suit.tile.top,
-  -- awful.layout.suit.fair,
   -- awful.layout.suit.fair.horizontal,
   -- awful.layout.suit.spiral,
   -- awful.layout.suit.spiral.dwindle,
@@ -154,7 +154,7 @@ local function makeclear(tagname, direction)
   local tag = awful.tag.find_by_name(screen, tagname)
   if not tag then
     tag = awful.tag.add(tagname, {
-        layout = awful.layout.suit.tile.left,
+        layout = awful.layout.suit.fair,
       })
   else
     if #(tag:clients()) > 0 then
@@ -365,6 +365,9 @@ local tasklist_buttons = gears.table.join(
         {description = "focus previous by index", group = "client"}
         ),
 
+      awful.key({ modkey, }, "a",
+        function () awful.spawn.with_shell("mpc searchplay filename \"$(mpc listall | rofi -i -dmenu)\"", false) end),
+
       awful.key({ modkey, }, "f",
         function () awful.spawn("mpc next", false) end),
       awful.key({ modkey, }, "d",
@@ -450,6 +453,430 @@ local tasklist_buttons = gears.table.join(
 
       awful.key({ modkey, "Control" }, "g",
         function () awful.spawn("gimp") end),
+
+      awful.key({ modkey,  }, "Prior",
+        function () awful.spawn("firejail loe-dmenu") end),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -949,21 +1376,19 @@ local tasklist_buttons = gears.table.join(
         {description = "restore minimized", group = "client"}),
 
       -- Prompt
-      -- TODO if I want to keep my volume keys, this has to go. To mod ctrl D probably.
       -- awful.key({ modkey, "Control" },            "d",     function () awful.screen.focused().mypromptbox:run() end,
       --   {description = "run prompt", group = "launcher"}),
 
-      -- TODO my lock screen was here. although gotta admit this is not the best spot for lock screen because it can be hit accidentally. soru doesn't use
-      awful.key({ modkey }, "x",
-        function ()
-          awful.prompt.run {
-            prompt       = "Run Lua code: ",
-            textbox      = awful.screen.focused().mypromptbox.widget,
-            exe_callback = awful.util.eval,
-            history_path = awful.util.get_cache_dir() .. "/history_eval"
-          }
-        end,
-        {description = "lua execute prompt", group = "awesome"}),
+      -- awful.key({ modkey }, "x",
+      --   function ()
+      --     awful.prompt.run {
+      --       prompt       = "Run Lua code: ",
+      --       textbox      = awful.screen.focused().mypromptbox.widget,
+      --       exe_callback = awful.util.eval,
+      --       history_path = awful.util.get_cache_dir() .. "/history_eval"
+      --     }
+      --   end,
+      --   {description = "lua execute prompt", group = "awesome"}),
       -- Menubar
       -- soru doesn't use this menu. I won't use it either
       -- awful.key({ modkey }, "p", function() menubar.show() end,
@@ -1160,34 +1585,39 @@ local tasklist_buttons = gears.table.join(
       }
     },
 
-    -- Floating clients.
     { rule_any = {
-        instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-          "pinentry",
-        },
-        class = {
-          "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-        "xtightvncviewer"},
-
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
         name = {
-          "Event Tester",  -- xev.
-        },
-        role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+          "Legends of Equestria",
         }
-    }, properties = { floating = true }},
+    }, properties = { floating = false }},
+
+    -- Floating clients.
+    -- { rule_any = {
+    --     instance = {
+    --       "DTA",  -- Firefox addon DownThemAll.
+    --       "copyq",  -- Includes session name in class.
+    --       "pinentry",
+    --     },
+    --     class = {
+    --       "Blueman-manager",
+    --       "Gpick",
+    --       "Kruler",
+    --       "MessageWin",  -- kalarm.
+    --       "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+    --       "Wpa_gui",
+    --       "veromix",
+    --     "xtightvncviewer"},
+    --     -- Note that the name property shown in xprop might be set slightly after creation of the client
+    --     -- and the name shown there might not match defined rules here.
+    --     name = {
+    --       "Event Tester",  -- xev.
+    --     },
+    --     role = {
+    --       "AlarmWindow",  -- Thunderbird's calendar.
+    --       "ConfigManager",  -- Thunderbird's about:config.
+    --       "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
+    --     }
+    -- }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
@@ -1256,7 +1686,7 @@ local tasklist_buttons = gears.table.join(
     }
   end)
 
-  -- Enable sloppy focus, so that focus follows mouse.
+  -- Enable lazy sloppy focus, so that focus follows mouse.
   client.connect_signal("mouse::enter", function(c)
       c:emit_signal("request::activate", "mouse_enter", {raise = false})
   end)
