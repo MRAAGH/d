@@ -365,6 +365,9 @@ local tasklist_buttons = gears.table.join(
         {description = "focus previous by index", group = "client"}
         ),
 
+      awful.key({ modkey, }, "a",
+        function () awful.spawn.with_shell("mpc searchplay filename \"$(mpc listall | rofi -i -dmenu)\"", false) end),
+
       awful.key({ modkey, }, "f",
         function () awful.spawn("mpc next", false) end),
       awful.key({ modkey, }, "d",
