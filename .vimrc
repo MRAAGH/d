@@ -7,7 +7,7 @@ else
 
   call plug#begin('~/.vim/plugged')
 
-  Plug 'Valloric/YouCompleteMe'
+  " Plug 'Valloric/YouCompleteMe'
 
   Plug 'tpope/vim-commentary'
   Plug 'pangloss/vim-javascript'
@@ -237,9 +237,9 @@ nnoremap <silent> o :set formatoptions-=o<CR>o
 nnoremap <silent> O :set formatoptions-=o<CR>O
 
 " configuration of youcompleteme
-let g:ycm_confirm_extra_conf = 0
+" let g:ycm_confirm_extra_conf = 0
 " and syntastic
-let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 1
 
 " configuration for highlightedyank
 if !exists('##TextYankPost')
@@ -431,3 +431,8 @@ inoremap <right> <nop>
 
 " open current file in another tab
 nnoremap <C-W>t :tabe %<CR>
+
+set path=.,**
+set wildmenu
+
+" inoremap <tab> <C-N>
