@@ -186,10 +186,10 @@ nnoremap <silent> <F7> :%!xxd -c 8 -br<CR> :set binary<CR> :set filetype=<CR> :s
 :set scrolloff=6
 
 " tabs to spaces
-":set tabstop=4
+:set tabstop=8
+:set shiftwidth=4
+:set softtabstop=4
 :set expandtab
-:set shiftwidth=2
-:set softtabstop=2
 
 " pane switching
 nnoremap <C-H> <C-W><C-H>
