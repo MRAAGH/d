@@ -1,16 +1,16 @@
 {
   "Resolution": {
-    "width": 960,
+    "width": 640,
     "height": 500,
     "refreshRate": 60
   },
   "Fullscreen": false,
-  "Shadows": true,
-  "OverallVideoSettings": 0,
+  "Shadows": false,
+  "OverallVideoSettings": 4,
   "AntiAliasing": 0,
   "PixelLightCount": 6,
   "MasterTextureLimit": 0,
-  "AnisotropicFiltering": 2,
+  "AnisotropicFiltering": 0,
   "SoftVegetation": false,
   "VSyncCount": 0,
   "LodBias": 1.0,
@@ -20,65 +20,77 @@
 {
   "ChatBounds": {
     "x": 0.0,
-    "y": 0.0,
+    "y": -198.0,
     "position": {
       "x": 0.0,
-      "y": 0.0,
-      "magnitude": 0.0,
-      "sqrMagnitude": 0.0
-    },
-    "center": {
-      "x": 439.5,
-      "y": 185.5,
+      "y": -198.0,
       "normalized": {
-        "x": 0.921299636,
-        "y": 0.388853431,
+        "x": 0.0,
+        "y": -1.0,
         "magnitude": 1.0,
         "sqrMagnitude": 1.0
       },
-      "magnitude": 477.0435,
-      "sqrMagnitude": 227570.5
+      "magnitude": 198.0,
+      "sqrMagnitude": 39204.0
+    },
+    "center": {
+      "x": 172.5,
+      "y": -98.0,
+      "normalized": {
+        "x": 0.869481146,
+        "y": -0.4939661,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 198.39418,
+      "sqrMagnitude": 39360.25
     },
     "min": {
       "x": 0.0,
-      "y": 0.0,
-      "magnitude": 0.0,
-      "sqrMagnitude": 0.0
+      "y": -198.0,
+      "normalized": {
+        "x": 0.0,
+        "y": -1.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 198.0,
+      "sqrMagnitude": 39204.0
     },
     "max": {
-      "x": 879.0,
-      "y": 371.0,
+      "x": 345.0,
+      "y": 2.0,
       "normalized": {
-        "x": 0.921299636,
-        "y": 0.388853431,
+        "x": 0.9999832,
+        "y": 0.005797004,
         "magnitude": 1.0,
         "sqrMagnitude": 1.0
       },
-      "magnitude": 954.087,
-      "sqrMagnitude": 910282.0
+      "magnitude": 345.0058,
+      "sqrMagnitude": 119029.0
     },
-    "width": 879.0,
-    "height": 371.0,
+    "width": 345.0,
+    "height": 200.0,
     "size": {
-      "x": 879.0,
-      "y": 371.0,
+      "x": 345.0,
+      "y": 200.0,
       "normalized": {
-        "x": 0.921299636,
-        "y": 0.388853431,
+        "x": 0.86514,
+        "y": 0.5015304,
         "magnitude": 1.0,
         "sqrMagnitude": 1.0
       },
-      "magnitude": 954.087,
-      "sqrMagnitude": 910282.0
+      "magnitude": 398.7794,
+      "sqrMagnitude": 159025.0
     },
     "xMin": 0.0,
-    "yMin": 0.0,
-    "xMax": 879.0,
-    "yMax": 371.0,
+    "yMin": -198.0,
+    "xMax": 345.0,
+    "yMax": 2.0,
     "left": 0.0,
-    "right": 879.0,
-    "top": 0.0,
-    "bottom": 371.0
+    "right": 345.0,
+    "top": -198.0,
+    "bottom": 2.0
   },
   "ChatMinimized": false,
   "ModBounds": {

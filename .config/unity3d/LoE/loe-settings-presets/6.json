@@ -8,13 +8,13 @@
   "Shadows": false,
   "OverallVideoSettings": 4,
   "AntiAliasing": 0,
-  "PixelLightCount": 6,
+  "PixelLightCount": 0,
   "MasterTextureLimit": 0,
   "AnisotropicFiltering": 0,
   "SoftVegetation": false,
   "VSyncCount": 0,
   "LodBias": 1.0,
-  "RenderDistanceBias": 1.0
+  "RenderDistanceBias": 0.01
 }
 -
 {
