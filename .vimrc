@@ -298,9 +298,9 @@ nnoremap <silent> k :noh<cr>k
 " " paste from specific register
 nnoremap "P "0P
 nnoremap "p "0p
-nnoremap qp "qp
-vnoremap qp "qp
-nnoremap yq "qy
+" nnoremap qp "qp
+" vnoremap qp "qp
+" nnoremap yq "qy
 
 " nnoremap qq 0qq
 " vnoremap q :norm@q<CR>
@@ -399,6 +399,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " enable invisible characters:
+" TODO: this line is causing cursor to fail loading
 set list
 " define how to display them:
 set listchars=space:·,tab:-->
@@ -408,6 +409,7 @@ autocmd BufRead,BufNewFile * highlight MySpaceGroup ctermfg=239
 autocmd BufRead,BufNewFile * highlight MyTabGroup ctermfg=239
 " display spaces in this group:
 " match MySpaceGroup / /
+" TODO: this line is causing cursor to fail loading
 autocmd BufRead,BufNewFile * match MySpaceGroup / \|\t/
 " equivalent:
 " autocmd BufRead,BufNewFile * match MySpaceGroup /\v |\t/
@@ -440,3 +442,8 @@ set path=.,**
 set wildmenu
 
 " inoremap <tab> <C-N>
+
+" vim matrix (riot)
+autocmd BufRead,BufNewFile *.matrix set filetype=matrix
+autocmd FileType matrix nnoremap <silent> <CR> :.w !riot-vim<CR><CR>
+autocmd FileType matrix vnoremap <silent> <CR> :w !riot-vim<CR><CR>
