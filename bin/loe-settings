@@ -23,27 +23,8 @@ import subprocess
 # args = parser.parse_args()
 
 usernames = ['#', '?', 'redsbone', 'potatodustfifth', 'pdf', 'w', 'j',
-             '[', ']', '[]', '][', '[[]]', '[][]', '[server]', '^', '-.-', 'dun', '!']
-
-# positions = [
-#     (0, 0),
-#     (0, 0),
-#     (640, 0),
-#     (1280, 0),
-#     (0, 540),
-#     (640, 540),
-#     (1280, 540),
-#     (0, 0),
-#     (640, 0),
-#     (1280, 0),
-#     (0, 540),
-#     (640, 540),
-#     (1280, 540),
-#     (1280, 540),
-#     (0, 0),
-#     (0, 0),
-#     (0, 0)
-# ]
+             '[', ']', '[]', '][', '[[]]', '[][]', '[server]', '^', '-.-', 'dun', '!',
+             '!!', '$', '(', ')', '-']
 
 # profilename = args.profile[0]
 # usernameindex = 0
@@ -54,14 +35,8 @@ usernames = ['#', '?', 'redsbone', 'potatodustfifth', 'pdf', 'w', 'j',
 
 profilename = sys.argv[1]
 usernameindex = 0
-# positionindex = 0
 if len(sys.argv) > 2:
     usernameindex = int(sys.argv[2])
-    # positionindex = usernameindex
-    if len(sys.argv) > 3:
-        positionindex = int(sys.argv[3])
-# posx = positions[positionindex][0]
-# posy = positions[positionindex][1]
 
 encodedusername = base64.b64encode(usernames[usernameindex].encode('ascii')).decode("utf-8")
 

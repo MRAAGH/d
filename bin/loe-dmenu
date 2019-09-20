@@ -1,5 +1,27 @@
 #!/bin/bash
 
 for x in $(ls ~/.config/unity3d/LoE/loe-settings-presets |cut -d . -f1); do
-  echo -e loe\ ${x}\ {0..16}\\n
-done | sed -n 's/^\ *loe/loe/p' | tac ~/.loe-history - | dmenu -l 10 -fn 'Ubuntu Mono:pixelsize=24' | tee -a ~/.loe-history | /bin/sh
+  echo -e ${x}\ {0\ \ \#,1\ \ ?,2\ \ redsbone,3\ \ potatodustfifth,4\ \ pdf,5\ \ w,6\ \ j,7\ \ [,8\ \ ],9\ \ [],10\ ][,11\ [[]],12\ [][],13\ [server],14\ ^,15\ -.-,16\ dun,17\ !}\\n
+done | sed 's/^ *//g' | tac ~/.loe-history - | dmenu -l 10 -fn 'Ubuntu Mono:pixelsize=24'| tee -a ~/.loe-history | awk '{print "loe " $1 " " $2}' | /bin/sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
