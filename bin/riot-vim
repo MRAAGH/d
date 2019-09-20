@@ -1,0 +1,9 @@
+#!/bin/bash
+vim=$(xdotool getactivewindow)
+xdotool search --name Riot windowactivate
+while IFS= read -r p || [ -n "$p" ]
+do
+  xdotool search --name Riot key shift+Return type "$p"
+done
+xdotool search --name Riot key Return
+xdotool windowactivate $vim
