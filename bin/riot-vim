@@ -3,7 +3,10 @@ vim=$(xdotool getactivewindow)
 xdotool search --name Riot windowactivate
 while IFS= read -r p || [ -n "$p" ]
 do
-  xdotool search --name Riot key shift+Return type "$p"
+    printf '%s\n' "$p" | xclip -selection clipboard
+    xdotool search --name Riot key ctrl+v
+    sleep 0.05
 done
+sleep 0.05
 xdotool search --name Riot key Return
 xdotool windowactivate $vim
