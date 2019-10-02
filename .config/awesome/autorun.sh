@@ -14,6 +14,9 @@ run unclutter
 ~/.fehbg
 # feh --bg-scale ~/.bgs
 
+# preload everything in home dir
+ls ~/* >/dev/null
+
 pulseaudio -k
 sleep 1
 run pulseaudio
