@@ -1,12 +1,22 @@
-#!/bin/bash
+#!/bin/sh
+
+# NOTE: you might need to play with the delays
+# because the electron tends to be kinda laggy
+
+# remember id of vim window
 vim=$(xdotool getactivewindow)
-xdotool search --name Riot windowactivate
-while IFS= read -r p || [ -n "$p" ]
-do
-    printf '%s\n' "$p" | xclip -selection clipboard
-    xdotool search --name Riot key ctrl+v
-    sleep 0.05
-done
-sleep 0.05
-xdotool search --name Riot key Return
-xdotool windowactivate $vim
+
+# jump to riot
+xdotool search --class Riot windowactivate
+
+if [ "$#" -gt 0 ]; then
+    xdotool search --class Riot key ctrl+k \
+    sleep 0.1 key ctrl+v \
+    sleep 0.1 key Tab \
+    sleep 0.1 key Return \
+    sleep 0.3 windowactivate $vim
+else
+    xdotool search --class Riot key ctrl+v \
+    sleep 0.15 key Return \
+    sleep 0.2 windowactivate $vim
+fi
