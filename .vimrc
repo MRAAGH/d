@@ -420,12 +420,14 @@ set display=lastline
 inoremap {<CR> {<CR>}<ESC>ko
 inoremap ({<CR> ({<CR>});<ESC>ko
 
+" run current line with bash
 nnoremap g<CR> mmyyo<ESC>p:.!bash<CR>`m
+" run selection with bash
 vnoremap g<CR> ymm}o<ESC>kpvip:!bash<CR>`m
 
 nnoremap <C-F> <C-I>
 
-" no arrows
+" arrows are for dummies
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
@@ -441,9 +443,12 @@ autocmd BufRead,BufNewFile *.ino set filetype=cpp
 set path=.,**
 set wildmenu
 
-" inoremap <tab> <C-N>
+" vim riot
+autocmd BufEnter .vimriot set filetype=vimriot
+autocmd FileType vimriot nnoremap <silent> <CR> :.w !xclip -selection clipboard && riot-vim &<CR><CR>
+autocmd FileType vimriot vnoremap <silent> <CR> :w !xclip -selection clipboard && riot-vim &<CR><CR>
+autocmd BufEnter .vimriotselect set filetype=vimriotselect
+autocmd FileType vimriotselect nnoremap <silent> <CR> :.w !xclip -selection clipboard && riot-vim -s &<CR><CR>
 
-" vim matrix (riot)
-autocmd BufRead,BufNewFile *.matrix set filetype=matrix
-autocmd FileType matrix nnoremap <silent> <CR> :.w !riot-vim<CR><CR>
-autocmd FileType matrix vnoremap <silent> <CR> :w !riot-vim<CR><CR>
+" search files
+nnoremap g/ :fin **<left>
