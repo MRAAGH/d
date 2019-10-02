@@ -1,0 +1,9 @@
+mpc update
+mpc clear
+mpc add /
+mpc random on
+mpc single on
+mpc repeat on
+pulseaudio-equalizer enable
+mpc next
+mpc play
