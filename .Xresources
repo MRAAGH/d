@@ -18,6 +18,7 @@ URxvt*foreground: #aEaEaE
 URxvt*background: #000000
 URxvt*transparent: true
 URxvt*shading: 12
+URxvt*fading: 25
 
 URxvt*cursorColor: #fe6bad
 
