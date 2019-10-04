@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+rsync -rvaz $1:~/.uploads/* ~/Downloads
+else
+	echo 'specify source machine as argument'
+fi
