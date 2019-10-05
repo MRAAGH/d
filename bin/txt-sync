@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [ $# -gt 0 ]; then
-rsync -rtuz ~/txt/* $1:~/txt
-rsync -rtuz $1:~/txt/* ~/txt
+rsync -rtuzv ~/txt/* $1:~/txt
+rsync -rtuzv $1:~/txt/* ~/txt
 # rsync -rtuz -e 'ssh -p 44741' ~/txt/* $1:~/txt
 # rsync -rtuz -e 'ssh -p 44741' $1:~/txt/* ~/txt
 else
