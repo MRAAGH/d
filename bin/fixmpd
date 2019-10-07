@@ -4,6 +4,8 @@ mpc add /
 mpc random on
 mpc single on
 mpc repeat on
+pulseaudio -k
+pulseaudio &
 pulseaudio-equalizer enable
 mpc next
 mpc play
