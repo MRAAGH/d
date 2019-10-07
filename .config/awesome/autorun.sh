@@ -10,6 +10,7 @@ function run {
 xrdb .Xresources
 setxkbmap -device 11 us_alt
 setxkbmap -device 12 us_alt
+xinput disable "SynPS/2 Synaptics TouchPad"
 run unclutter
 ~/.fehbg
 # feh --bg-scale ~/.bgs
