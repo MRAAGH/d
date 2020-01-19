@@ -1,6 +1,0 @@
-#!/usr/bin/python3
-
-import os
-
-with open('/tmp/HALT_ALL_THE_THINGS', 'a'):
-    os.utime('/tmp/HALT_ALL_THE_THINGS', None)

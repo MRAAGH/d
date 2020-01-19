@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# just finds the first non-visible workspace and shows it.
-
-i3-msg 'workspace '$(i3-msg -t get_workspaces | jq -r '.[] | select(.visible == false).name' | head -1)

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $# -gt 0 ]; then
-rsync -rvazL ~/.uploads/* $1:~/Downloads
-else
-	echo 'specify destination machine as argument'
-fi
