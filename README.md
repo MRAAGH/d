@@ -1,1 +1,1 @@
-## MOVED TO: https://gitlab.com/MRAAGH/d
+# https://gitlab.com/MRAAGH/d
